@@ -63,7 +63,7 @@ OPENBLAS="$(brew --prefix openblas)" pip install numpy
 
 Fixed :thumbsup:
 
-P.S. Once you've done this once the NumPy wheel is cached and will be used for all future pip installs until a new version is released, you won't need to do `OPENBLAS=...` again unless you:
+P.S. Once you've done this for the first time, the NumPy wheel is cached and will be used for all future pip installs until a new version is released, you won't need to do `OPENBLAS=...` again unless you:
 
 * Install a different version of NumPy
 * Remove pips cache
