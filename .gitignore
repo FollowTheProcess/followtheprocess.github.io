@@ -1,0 +1,7 @@
+demo/
+.hugo/*
+!.hugo/version
+.vscode/
+.venv/
+.mypy_cache
+.DS_Store

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Tom Fleet Profile</title>
+    <link>https://followtheprocess.github.io/tags/automation/</link>
+    <description>Recent content in automation on Tom Fleet Profile</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pymechtest</title>
+      <link>https://followtheprocess.github.io/projects/pymechtest/</link>
+      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
+      <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data.</description>
+    </item>
+    
+  </channel>
+</rss>

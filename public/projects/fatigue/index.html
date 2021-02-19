@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Tom Fleet | Fatigue Damage Prediction </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Materials Science, Engineering, Python, Data Analysis, Machine Learning.">
+    
+    <link rel="stylesheet"
+          href="https://followtheprocess.github.io/css/style.min.9a6700e4461b50dccdddfc4f81dc65d77e7fca22c35665e398a0c36568db59c7.css"
+          integrity="sha256-mmcA5EYbUNzN3fxPgdxl135/yiLDVmXjmKDDZWjbWcc="
+          crossorigin="anonymous"
+          type="text/css">
+    
+    <link rel="stylesheet"
+        href="https://followtheprocess.github.io/css/markupHighlight.min.cc84ed683057cc175ddfa738ea6ba2d5c882b95cb64f50bf9be918cb3791887b.css"
+        integrity="sha256-zITtaDBXzBdd36c46mui1ciCuVy2T1C/m&#43;kYyzeRiHs="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+
+    
+    <link rel="shortcut icon" href="https://followtheprocess.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://followtheprocess.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://followtheprocess.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://followtheprocess.github.io/favicons/favicon-16x16.png">
+
+    <link rel="canonical" href="https://followtheprocess.github.io/projects/fatigue/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="https://followtheprocess.github.io/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js"
+            integrity="sha256-2Fme4Ht9PxG6&#43;6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="https://followtheprocess.github.io/js/anatole-theme-switcher.min.e289e9ebb2a4e7a7f895859c8a2b0da2de1ec73f22cea58d8475aa0597023837.js"
+                integrity="sha256-4onp67Kk56f4lYWciisNot4exz8izqWNhHWqBZcCODc="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fatigue Damage Prediction"/>
+<meta name="twitter:description" content="ML approach to prediction of complex fatigue crack growth and thermo-mechanical loading interactions."/>
+
+</head>
+<body><div class="sidebar animated fadeInDown ">
+    <div class="logo-title">
+        <div class="title">
+            <img src="https://followtheprocess.github.io/images/profile.jpg" alt="profile picture">
+            <h3 title=""><a href="/">Tom Fleet</a></h3>
+            <div class="description">
+                <p>Materials Science, Engineering, Python, Data Analysis, Machine Learning.</p>
+            </div>
+        </div>
+    </div>
+    <ul class="social-links">
+        
+            <li>
+                <a href="https://github.com/FollowTheProcess/" rel="me" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="https://www.linkedin.com/in/tom-fleet-03b03280/" rel="me" aria-label="Linkedin">
+                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="mailto:tomfleet2018@gmail.com" rel="me" aria-label="e-mail">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Tom Fleet  2021 </div>
+    </div>
+</div>
+<div class="main">
+    <div class="page-top  animated fadeInDown ">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <ul class="nav" id="navMenu">
+        
+        
+            
+            <li><a 
+                   href="/"
+                        
+                   title="">Home</a></li>
+        
+            
+            <li><a 
+                   href="/posts/"
+                        
+                   title="">Posts</a></li>
+        
+            
+            <li><a 
+                   href="/projects/"
+                        
+                   title="">Projects</a></li>
+        
+            
+            <li><a 
+                   href="/contact/"
+                        
+                   title="">Contact</a></li>
+        
+        
+        
+            <li class="theme-switch-item">
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="autopagerize_page_element">
+        <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>Fatigue Damage Prediction</h3>
+                
+            </div>
+
+            <p><em>Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.</em></p>
+<p>Tom Fleet, Sep 2020</p>
+<h2 id="background">Background</h2>
+<p>Repeated cyclic loading of a material will eventually lead to a phenomenon called &ldquo;fatigue crack growth&rdquo;. I&rsquo;m not going to explain the details here but I&rsquo;d point you to <a href="https://en.wikipedia.org/wiki/Fatigue_(material)">this</a> for more info. Essentially, a crack will start to form and repeated cyclic loading will progressively grow this crack until it is large enough such that the remaining material can no longer handle the stress and the component will break.</p>
+<p>Ever since the <a href="https://en.wikipedia.org/wiki/De_Havilland_Comet#Accidents_and_incidents">comet disasters</a> in the 1950&rsquo;s, understanding exactly how this process works and predicting how long (or more accurately: how many cycles) components can survive for has been a crucial part of the design process. This is done with the so-called Paris Law (although in reality, it&rsquo;s a lot more complicated than this theoretical abstraction).</p>
+<p>$$
+da/dN = C(\Delta K)^m
+$$</p>
+<p>Where $da$ is the increment in crack length, $dN$ is the increment in number of cycles, $C$ and $m$ are material-specific constants and $\Delta K$ is the increment in stress intensity factor (effectively a way of accounting for the increased stress around a defect such as a crack).</p>
+<p>Pure loading fatigue is very well understood nowadays. However, when you combine fatigue crack growth with other environmental effects such as corrosion, thermal cycling etc. this can result in very unpredictable behaviour.</p>
+<p>The aim of this project was to understand how one of these combinations (fatigue and thermal effects) could be better understood with the application of machine learning.</p>
+<p>Experimental data on the effect of crack propagation on dynamic response (vibration) was generated in a series of earlier experiments on two different materials and given to me to work with for my MSc Advanced Materials thesis project in Spring 2020.</p>
+<p><img src="/images/projects/msc_project/dynamic_response_by_material.png" alt="Dynamic Response"></p>
+<p>Starting notches were machined into test specimens which were then vibrated at their natural frequencies at a variety of temperatures. The cracks were then allowed to grow whilst natural frequency and amplitude measurements were continuously taken in order to determine the effect of crack propagation on dynamic properties.</p>
+<p>The objectives of this work were to:</p>
+<ul>
+<li>
+<p>Build a predictive model capable of accurately predicting damage severity and location from a simple vibration test.</p>
+</li>
+<li>
+<p>Use the introspection of the model to attempt to inform the fundamental underlying theory</p>
+</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>After using <a href="https://mlflow.org">mlflow</a> to record parameters and shortlist promising models, I chose a Ridge-regularised multiple Linear Regression model to enable easy introspection as this was a key objective of the project.</p>
+<p>The models were able to predict the depth of the crack with high accuracy (shown below) for both materials.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Material</th>
+<th style="text-align:center">RMSE</th>
+<th style="text-align:center">$R^2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Aluminium</td>
+<td style="text-align:center">0.176 mm</td>
+<td style="text-align:center">0.95</td>
+</tr>
+<tr>
+<td style="text-align:center">ABS</td>
+<td style="text-align:center">0.256 mm</td>
+<td style="text-align:center">0.86</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/projects/msc_project/combined_accuracy_altair.png" alt="Model Accuracy"></p>
+<p>Traditionally in engineering, data of this sort is usually fed into something like matlab and subject to curve fitting. This was done on this data as a benchmark against which to judge the ML model&rsquo;s accuracy. Below is a comparison of the RMSE between traditional polynomial curve fitting in matlab, and the ridge-regularised multiple linear regression model used in this project.</p>
+<p><img src="/images/projects/msc_project/ml_vs_curve_fitting.png" alt="Comparison vs Curve Fitting"></p>
+<p>As you can see, the ML model significantly outperformed the traditional polynomial curve fitting method, shaving over 0.6mm off the average prediction error.</p>
+<p>The predictions for Aluminium were also more accurate than those for ABS, the reduced accuracy for the ABS being explained by the anisotropic structure and stress crazing at the crack tip caused by the method of manufacture of the test specimens (FDM additive manufacturing).</p>
+<h3 id="feature-importance">Feature Importance</h3>
+<p>A key part of the project was to understand the underlying factors behind these effects, rather than simply generate predictions. Hence the earlier decision to use a linear model as it&rsquo;s coefficients could be easily inspected.</p>
+<p>A feature importance study was conducted, results shown below.</p>
+<p><img src="/images/projects/msc_project/relative_importance_in_crack_depth_prediction.png" alt="Feature Importance"></p>
+<p>The data show that the natural frequency was the most important predictor for both materials. Temperature and crack position were shown to be comparatively less important - an interesting finding.</p>
+<p>Infact, the comparatively low importance of crack position in the prediction of crack depth allowed me to pull crack position out of the feature pool entirely and predict it alongside crack depth and only sacrifice a small amount of accuracy (shown below).</p>
+<p><img src="/images/projects/msc_project/multi_output_accuracy.png" alt="Multi Output Prediction"></p>
+<p>The end result was a model that could predict the severity of a thermomechanical fatigue crack to within ±0.22mm and simultaneously predict its position in the component to within ±7.0mm, an incredibly powerful result!</p>
+<p><img src="/images/projects/msc_project/multi_output_crack_depth.png" alt="Multi Output Crack Depth"></p>
+<p><img src="/images/projects/msc_project/multi_output_crack_position.png" alt="Multi Output Crack Position"></p>
+<h3 id="further-information">Further Information</h3>
+<p>This work was submitted for publication in the academic journal <a href="https://www.mdpi.com/journal/sensors">MDPI Sensors</a> and was accepted and published on 30/11/2020. Full text available <a href="https://www.mdpi.com/1424-8220/20/23/6847">here</a></p>
+<p>[1] Fleet, T.; Kamei, K.; He, F.; Khan, M.A.; Khan, K.A.; Starr, A. A Machine Learning Approach to Model Interdependencies between Dynamic Response and Crack Propagation. Sensors 2020, 20, 6847. <a href="https://doi.org/10.3390/s20236847">https://doi.org/10.3390/s20236847</a></p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                <span class="separator"><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/material-science/">material science</a><a class="tag" href="/tags/engineering/">engineering</a><a class="tag" href="/tags/machine-learning/">machine learning</a></span>
+
+            </div>
+        </div>
+
+        
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://followtheprocess.github.io/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js"
+        integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="
+        crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript"
+        src="https://followtheprocess.github.io/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js"
+        integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+        src="https://followtheprocess.github.io/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js"
+        integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro="
+        crossorigin="anonymous"></script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></body>
+
+</html>
