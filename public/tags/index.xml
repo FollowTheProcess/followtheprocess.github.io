@@ -17,24 +17,6 @@
     </item>
     
     <item>
-      <title>macos</title>
-      <link>https://followtheprocess.github.io/tags/macos/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>numpy</title>
-      <link>https://followtheprocess.github.io/tags/numpy/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/numpy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>python</title>
       <link>https://followtheprocess.github.io/tags/python/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
@@ -76,6 +58,24 @@
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://followtheprocess.github.io/tags/oss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macos</title>
+      <link>https://followtheprocess.github.io/tags/macos/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>numpy</title>
+      <link>https://followtheprocess.github.io/tags/numpy/</link>
+      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/tags/numpy/</guid>
       <description></description>
     </item>
     
