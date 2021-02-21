@@ -181,7 +181,7 @@ python3 -m venv .venv
 <span class="c1"># Point numpy to openblas</span>
 <span class="nv">OPENBLAS</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>brew --prefix openblas<span class="k">)</span><span class="s2">&#34;</span> pip install numpy
 </code></pre></div><p>Fixed 👍</p>
-<p>P.S. Once you&rsquo;ve done this once the NumPy wheel is cached and will be used for all future pip installs until a new version is released, you won&rsquo;t need to do <code>OPENBLAS=...</code> again unless you:</p>
+<p>P.S. Once you&rsquo;ve done this for the first time, the NumPy wheel is cached and will be used for all future pip installs until a new version is released, you won&rsquo;t need to do <code>OPENBLAS=...</code> again unless you:</p>
 <ul>
 <li>Install a different version of NumPy</li>
 <li>Remove pips cache</li>

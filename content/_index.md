@@ -1,32 +1,38 @@
 +++
-title = "About"
-description = "About me"
+title = "Home"
+description = "Home"
 date = "2021-02-17"
 author = "Tom Fleet"
 +++
 
-# About
+## About
 
 Hi!
 
-You've somehow stumbled on my page! I'm treating this as a step further than the profile README and a bit less rubbish than linkedin :hand_over_mouth:.
+*You've somehow stumbled on my page! I'm treating this as a step further than the profile README and a bit less rubbish than linkedin* :hand_over_mouth:. *Here you'll find some of my projects and interesting thoughts or useful tips and tricks to do with programming/data.*
 
-I'm Tom, and I'm currently in the process of turning a career in engineering (the old fashioned mechanical kind) into one where I get the computer to do all the work like automating everything in sight, doing fancy statistics, making tasty graphs, analysing data that would make excel explode, machine learning, APIs and just generally levelling up my nerd score.
+I'm Tom, my background is in aerospace engineering and materials science but I'm learning how to get the computer to do all the work one step at a time by:
+
+* automating everything in sight
+* doing fancy statistics
+* making tasty graphs
+* analysing data that would make excel explode
+* machine learning
+* APIs
+
+And just generally levelling up my overall nerd score.
 
 I've spent the past year or so teaching myself computer science, python, bash, SQL, Go, API's, Docker, CI/CD, TDD and a host of other stuff (not javascript though :nauseated_face:).
 
-This site serves as equal parts CV, a nicer overview of my projects than just a README, and a place to put anything I discover along the way that I think needs sharing (the word blog makes me cringe a little bit...).
-
-# Projects
+## Projects
 
 Below you'll find a list of some of the projects I've built.
 
 There is a mix of:
 
 * OSS packages
-* Data Analysis/Visualisation projects
+* Data Analysis/Visualisation
 * Automation
-* ML projects
-* etc.
+* ML
 
 :nerd_face:
