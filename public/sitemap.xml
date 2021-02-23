@@ -4,16 +4,46 @@
   
   <url>
     <loc>https://followtheprocess.github.io/categories/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://followtheprocess.github.io/tags/installation/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
+    <loc>https://followtheprocess.github.io/tags/pip/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://followtheprocess.github.io/posts/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://followtheprocess.github.io/posts/require_venv/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://followtheprocess.github.io/tags/python/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://followtheprocess.github.io/tags/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://followtheprocess.github.io/categories/tips-tricks/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://followtheprocess.github.io/tags/virtual-environments/</loc>
+    <lastmod>2021-02-23T14:21:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://followtheprocess.github.io/tags/installation/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,22 +53,7 @@
   </url>
   
   <url>
-    <loc>https://followtheprocess.github.io/tags/python/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://followtheprocess.github.io/tags/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://followtheprocess.github.io/categories/useful-tools/</loc>
-    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://followtheprocess.github.io/tags/virtual-environments/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -89,11 +104,6 @@
   
   <url>
     <loc>https://followtheprocess.github.io/tags/numpy/</loc>
-    <lastmod>2021-02-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://followtheprocess.github.io/categories/tips-tricks/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url>
   

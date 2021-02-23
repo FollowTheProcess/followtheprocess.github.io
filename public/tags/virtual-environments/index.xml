@@ -6,7 +6,16 @@
     <description>Recent content in virtual environments on Tom Fleet Profile</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/virtual-environments/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 14:21:11 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/virtual-environments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prevent Global Pip Installs</title>
+      <link>https://followtheprocess.github.io/posts/require_venv/</link>
+      <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/posts/require_venv/</guid>
+      <description>This is going to be a short one, about something I discovered in the pip documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!</description>
+    </item>
+    
     <item>
       <title>Pyenv is Awesome!</title>
       <link>https://followtheprocess.github.io/posts/pyenv/</link>
