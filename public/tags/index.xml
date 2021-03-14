@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Tom Fleet Profile</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Feb 2021 14:21:11 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 17:27:07 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>automation</title>
+      <link>https://followtheprocess.github.io/tags/automation/</link>
+      <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://followtheprocess.github.io/tags/python/</link>
+      <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtual environments</title>
+      <link>https://followtheprocess.github.io/tags/virtual-environments/</link>
+      <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/tags/virtual-environments/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>pip</title>
       <link>https://followtheprocess.github.io/tags/pip/</link>
@@ -17,38 +44,11 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://followtheprocess.github.io/tags/python/</link>
-      <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>virtual environments</title>
-      <link>https://followtheprocess.github.io/tags/virtual-environments/</link>
-      <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/virtual-environments/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>installation</title>
       <link>https://followtheprocess.github.io/tags/installation/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://followtheprocess.github.io/tags/installation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>automation</title>
-      <link>https://followtheprocess.github.io/tags/automation/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/automation/</guid>
       <description></description>
     </item>
     

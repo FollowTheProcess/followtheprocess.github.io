@@ -9,7 +9,7 @@ tags:
 - "automation"
 categories:
 - "tips & tricks"
-draft: true
+draft: false
 ---
 
 We all know virtual environments are important! But they are a bit of a pain if you do them a lot...
@@ -113,7 +113,7 @@ If you're happy with what we did above or some of it was confusing and you're no
 Why don't we make a function that you can call from anywhere and does the following:
 
 * Go to any project (even get it off GitHub first) and set up its virtual environment
-* Set up VSCode to use the environment (and even testing if you want) and open the project for you
+* Set up VSCode to use the environment and open the project for you
 
 This sounds a bit better, but more complicated... and it kind of is, but not too much!
 
@@ -266,11 +266,9 @@ I think most people use the JSON view for the settings, but incase you've never 
 
 And they live here: `.vscode/settings.json` inside your project.
 
-There are two settings I'm interested in here:
+The setting I'm interested in here is:
 
-1) `python.pythonPath`: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically
-   
-2) `python.testing.pytestEnabled`: This tells VSCode that our project has tests and we can use some of the cool built in features for running and debugging tests. These really come in handy!
+`python.pythonPath`: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically
 
 #### Setting python.pythonPath
 
@@ -397,7 +395,9 @@ function checkout() {
 }
 ```
 
-#### Configuring VSCode for pytest
+And that's it! Now when we call `checkout`, we'll end up with VSCode open in the root of our project, whether or not we had it on our computer in the first place, and VSCode will be set up to use the right environment!
+
+You can even inject stuff like installing from `requirements.txt` or whatever you want so you can just get to codingTM :grin:
 
 [jq]: https://stedolan.github.io/jq/
 [gh]: https://cli.github.com
