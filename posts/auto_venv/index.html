@@ -1,0 +1,201 @@
+<!doctype html><html lang=en data-theme><head><title>Tom Fleet | Automate your Virtual Environments... and everything else.</title><meta charset=utf-8><meta name=generator content="Hugo 0.81.0"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Materials Science, Engineering, Python, Data Analysis, Machine Learning."><link rel=stylesheet href=https://followtheprocess.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI+eFeRAZQ=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://followtheprocess.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS+yuWSR4=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous><link rel="shortcut icon" href=https://followtheprocess.github.io/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=https://followtheprocess.github.io/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://followtheprocess.github.io/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://followtheprocess.github.io/favicons/favicon-16x16.png><link rel=canonical href=https://followtheprocess.github.io/posts/auto_venv/><script type=text/javascript src=https://followtheprocess.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ=" crossorigin=anonymous></script><script type=text/javascript src=https://followtheprocess.github.io/js/anatole-theme-switcher.min.8ef71e0fd43f21a303733dbbecae5438b791d2b826c68a9883bd7aa459a076d2.js integrity="sha256-jvceD9Q/IaMDcz277K5UOLeR0rgmxoqYg716pFmgdtI=" crossorigin=anonymous></script><meta name=twitter:card content="summary"><meta name=twitter:title content="Automate your Virtual Environments... and everything else."><meta name=twitter:description content="Description"></head><body><div class="sidebar animated fadeInDown"><div class=logo-title><div class=title><img src=https://followtheprocess.github.io/images/profile.jpg alt="profile picture"><h3 title><a href=/>Tom Fleet</a></h3><div class=description><p>Materials Science, Engineering, Python, Data Analysis, Machine Learning.</p></div></div></div><ul class=social-links><li><a href=https://github.com/FollowTheProcess/ rel=me aria-label=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li><a href=https://www.linkedin.com/in/tom-fleet-03b03280/ rel=me aria-label=Linkedin><i class="fab fa-linkedin fa-2x" aria-hidden=true></i></a></li><li><a href=mailto:tomfleet2018@gmail.com rel=me aria-label=e-mail><i class="fas fa-envelope fa-2x" aria-hidden=true></i></a></li></ul><div class=footer><div class=by_farbox>&copy; Tom Fleet 2021</div></div></div><div class=main><div class="page-top animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a><ul class=nav id=navMenu><li><a href=/ title>Home</a></li><li><a href=/posts/ title>Posts</a></li><li><a href=/projects/ title>Projects</a></li><li><a href=/contact/ title>Contact</a></li><li class=theme-switch-item><a class=theme-switch title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></li></ul></div><div class=autopagerize_page_element><div class=content><div class="post animated fadeInDown"><div class=post-content><div class=post-title><h3>Automate your Virtual Environments... and everything else.</h3></div><p>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&mldr;</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># Make it</span>
+python -m venv .venv
+
+<span class=c1># Activate it</span>
+<span class=nb>source</span> .venv/bin/activate
+
+<span class=c1># Install/upgrade seeds</span>
+python -m pip install --upgrade pip setuptools wheel
+
+<span class=c1># Install what you actually wanted</span>
+python -m pip install things i actually wanted
+
+python -m pip install this needs to be automated
+</code></pre></div><h2 id=automation>Automation</h2><p>I <strong>LOVE</strong> automating things and given that the commands we see above have to be typed <em>every time</em> you start a new project, this should scream automation to you!</p><p>There are two approaches that I want to point out here:</p><ol><li>Easy, low-key, takes 5 mins</li><li><strong>AUTOMATE ALL THE THINGS</strong></li></ol><p>I of course chose option 2, but we&rsquo;ll start with option 1 😉</p><h2 id=option-1-the-quick-and-easy>Option 1: The quick and easy</h2><p>Like most things, 80% of the results can be achieved with 20% of the effort 👍</p><h3 id=step-1-create-a-file-to-hold-all-your-custom-stuff>Step 1: Create a file to hold all your custom stuff</h3><p>You don&rsquo;t want to clutter up your <code>~/.zshrc</code> too much so it&rsquo;s best to keep this sort of thing separate. I used <code>.my_commands.sh</code> for mine but the name is up to you.</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># Go home if you&#39;re not there already</span>
+<span class=nb>cd</span> <span class=nv>$HOME</span>
+
+touch .my_commands.sh
+
+<span class=c1># I use VSCode but any editor will do</span>
+code ~/.my_commands.sh
+</code></pre></div><h3 id=step-2-write-your-function>Step 2: Write your function</h3><p>Now in that file, we&rsquo;re going to make a function that you can call from any terminal session. This function will:</p><ul><li>Create a new virtual environment (if there isnt one already in the current directory)</li><li>If there is one, it&rsquo;ll activate it for us</li></ul><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/usr/bin/env bash
+</span><span class=cp></span>
+<span class=k>function</span> venv<span class=o>()</span> <span class=o>{</span>
+    <span class=c1># First check if there already is a venv</span>
+    <span class=c1># If so just activate it</span>
+
+    <span class=k>if</span> <span class=o>[[</span> -d .venv <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Activating venv...&#34;</span>
+        <span class=nb>source</span> .venv/bin/activate
+    <span class=k>else</span>
+        <span class=c1># Make a new one</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Creating new venv...&#34;</span>
+        python3 -m venv .venv
+        <span class=c1># Clever recursive call so it now traverses the top branch</span>
+        venv
+    <span class=k>fi</span>
+<span class=o>}</span>
+</code></pre></div><h3 id=step-3-source-it-in-each-shell>Step 3: Source it in each shell</h3><p>That&rsquo;s your function done, now we just need to do one more thing to make this available to every terminal session.</p><p>Open your <code>~/.zshrc</code> (or <code>~/.bashrc</code>, the syntax is the same) and type the following:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># ~/.zshrc</span>
+
+<span class=nb>source</span> ~/.my_commands.sh <span class=c1># Or whatever you named it</span>
+</code></pre></div><p>Save and close and you&rsquo;re done! That was easy wasn&rsquo;t it! 😁</p><p>Now this <code>venv</code> command is available in every terminal session because your shell runs <code>~/.zshrc</code> every time it starts up. This is very handy and infinitely better than typing it out yourself.</p><p>This is fine, but it&rsquo;s a bit&mldr; plain. We can do better 😏</p><h2 id=option-2-automate-all-the-things>Option 2: AUTOMATE ALL THE THINGS</h2><p>If you&rsquo;re happy with what we did above or some of it was confusing and you&rsquo;re not quite sure what we did, then stop here. If you want automation at all costs, come with me!</p><p>Why don&rsquo;t we make a function that you can call from anywhere and does the following:</p><ul><li>Go to any project (even get it off GitHub first) and set up its virtual environment</li><li>Set up VSCode to use the environment and open the project for you</li></ul><p>This sounds a bit better, but more complicated&mldr; and it kind of is, but not too much!</p><h3 id=find-any-project-by-name-from-anywhere-on-your-computer>Find any project by name from anywhere on your computer</h3><p>I&rsquo;m assuming here that you keep all your development projects in one place.</p><p>The function we&rsquo;re going to write is going to be called <code>checkout</code> will take a single argument: the name of a project.</p><p>You&rsquo;ll use it like this:</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>checkout my_project
+</code></pre></div><p>Now to the writing&mldr;</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Where you keep your projects</span>
+<span class=nv>PROJECTS_DIR</span> <span class=o>=</span> <span class=nv>$HOME</span>/Development
+
+<span class=c1># As in &#34;check out&#34; a project</span>
+<span class=c1># Not to be confused with git checkout</span>
+<span class=k>function</span> checkout<span class=o>()</span> <span class=o>{</span>
+    
+    <span class=c1># Now we are in PROJECTS_DIR and can find anything we want</span>
+    <span class=nb>cd</span> PROJECTS_DIR
+
+    <span class=k>if</span> <span class=o>[[</span> -d <span class=nv>$1</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found locally&#34;</span> <span class=c1># Helpful to say whats going on</span>
+        <span class=nb>cd</span> <span class=nv>$1</span> <span class=c1># Go there</span>
+        venv <span class=c1># Call your venv function from before</span>
+        code . <span class=c1># Open the project in VSCode</span>
+    <span class=k>else</span>
+        <span class=nb>echo</span> <span class=s2>&#34;Uh oh, couldn&#39;t find &#39;</span><span class=nv>$1</span><span class=s2>&#39;&#34;</span>
+    <span class=k>fi</span>
+<span class=o>}</span>
+</code></pre></div><p>This is already much better! You can call <code>checkout my_project</code> from anywhere in a terminal and it will find the right project, activate a virtual environment, then open up the project in VSCode, all from one command!</p><h3 id=what-if-the-project-is-on-github>What if the project is on GitHub?</h3><p>Now we&rsquo;re cooking! Who wants to use their browser to go to the GitHub repo they want, copy the clone link, go back to the terminal, clone it&mldr; blah blah blah when you could just automate it!</p><p>To do what we want, we&rsquo;re going to have to install some stuff to make our lives easier:</p><ul><li><a href=https://cli.github.com>gh</a> - The official GitHub CLI. Get version >=1.7.0.</li></ul><p>This can be installed with <a href=https://brew.sh>homebrew</a>.</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>brew install gh
+</code></pre></div><p>Full disclosure: you don&rsquo;t actually <em>need</em> the GitHub CLI you could do this with <code>jq</code> and <code>cURL</code>, <code>gh</code> just makes it so easy, and I use it all the time anyway now it really is great!</p><p>What we&rsquo;re going to do with these new tools is:</p><ol><li>Hit the GitHub API to see what repos you have</li><li>If we find a match to what you typed in to <code>checkout</code>, clone it</li><li>If not, then you don&rsquo;t have the project. So why not make one?</li></ol><p>First you&rsquo;ll need to set up the GitHub CLI and authorise it but they&rsquo;ve made this ridiculously easy I think you just fire it up for the first time and it guides you through the auth flow.</p><p>Now we can get automating&mldr;</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Where you keep your projects</span>
+<span class=nv>PROJECTS_DIR</span> <span class=o>=</span> <span class=nv>$HOME</span>/Development
+
+<span class=c1># As in &#34;check out&#34; a project</span>
+<span class=c1># Not to be confused with git checkout</span>
+<span class=k>function</span> checkout<span class=o>()</span> <span class=o>{</span>
+    
+    <span class=c1># Now we are in PROJECTS_DIR and can find anything we want</span>
+    <span class=nb>cd</span> PROJECTS_DIR
+
+    <span class=k>if</span> <span class=o>[[</span> -d <span class=nv>$1</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found locally&#34;</span> <span class=c1># Helpful to say whats going on</span>
+        <span class=nb>cd</span> <span class=nv>$1</span> <span class=c1># Go there</span>
+        venv <span class=c1># Call your venv function from before</span>
+        code . <span class=c1># Open the project in VSCode</span>
+    
+    <span class=c1># Now, instead of just giving up we will search GitHub</span>
+    <span class=k>elif</span> gh repo list <span class=p>|</span> grep -qFe <span class=nv>$1</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found on GitHub. Cloning...&#34;</span>
+        gh repo clone <span class=nv>$1</span> <span class=c1># See, gh makes everything easy</span>
+
+        <span class=c1># Now it will exist locally, so just recurse</span>
+        checkout <span class=nv>$1</span>
+    <span class=k>else</span>
+        <span class=c1># No project?</span>
+        <span class=c1># Let&#39;s make one</span>
+        mkdir <span class=nv>$1</span>
+        touch <span class=nv>$1</span>/README.md <span class=c1># You can make whatever files you want here</span>
+        checkout <span class=nv>$1</span>
+    <span class=k>fi</span>
+<span class=o>}</span>
+</code></pre></div><p>This is a bit more complicated so I&rsquo;ll walk through what&rsquo;s happening in our new <code>elif</code> block:</p><ol><li><p><code>gh repo list</code> does exactly what it says on the tin. It will list your (the authorised user&rsquo;s) repos and some info about them. We don&rsquo;t really care about the info for this use case, just the name.</p></li><li><p><code>| grep -qFe $1</code> essentially just means &ldquo;go through whatever is on the left of the pipe (<code>|</code>) and see if <code>$1</code> is in it. And don&rsquo;t forget, <code>$1</code> is the name of our project. The other flags like <code>-q</code>, <code>-F</code> and <code>-e</code> just tweak the behaviour of <code>grep</code>. So in our case, we&rsquo;re asking &ldquo;In my list of repos, is there one called <code>my_project</code>?&rdquo;</p></li><li><p>If the <code>grep</code> bit found a match, we use the GitHub CLI to easily clone it by name (easier than constructing the full clone URL).</p></li><li><p>Once cloned, the project exists locally so now our very top branch <code>if [[ -d $1 ]]</code> will now be true and it will do everything it would do if the project had always been local. Recursive calls like this are useful in bash functions because they avoid repetition.</p></li><li><p>Finally, instead of giving up here if we haven&rsquo;t found a project. Let&rsquo;s just make one and again, do the recursive call.</p></li></ol><p>This is cool. But we can go one step further and automatically set up VSCode to use the environment.</p><h3 id=automatically-set-up-vscode>Automatically Set Up VSCode</h3><p>If you&rsquo;re not familiar with how VSCode manages it&rsquo;s settings. The quick summary is you have two lots of settings:</p><ul><li><p>User settings - These are global and affect everything</p></li><li><p>Workspace settings - Settings for a particular project</p></li></ul><p>Both of these settings are stored under the hood as JSON files, which means we can access and manipulate them just like any normal text file! This is where <a href=https://stedolan.github.io/jq/>jq</a> comes in.</p><p><a href=https://stedolan.github.io/jq/>jq</a> lets you pipe json through a query-like language filter. So for instance if we had a JSON file like this:</p><div class=highlight><pre class=chroma><code class=language-json data-lang=json><span class=p>{</span>
+    <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;you&#34;</span><span class=p>,</span>
+    <span class=nt>&#34;age&#34;</span><span class=p>:</span> <span class=mi>207</span><span class=p>,</span>
+    <span class=nt>&#34;occupation&#34;</span><span class=p>:</span> <span class=s2>&#34;Door handle polisher&#34;</span>
+<span class=p>}</span>
+</code></pre></div><p>You could do something like this to find your name&mldr;</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>cat that_file.json <span class=p>|</span> jq <span class=s1>&#39;.&#34;name&#34;&#39;</span>
+</code></pre></div><p>See how that works? <a href=https://stedolan.github.io/jq/>jq</a> actually has really great <a href=https://stedolan.github.io/jq/>docs</a> and interactive sandbox to play with.</p><p>I think most people use the JSON view for the settings, but incase you&rsquo;ve never seen them they look like this:</p><p><img src=/images/posts/vscode_settings_json.png alt="VSCode Settings"></p><p>And they live here: <code>.vscode/settings.json</code> inside your project.</p><p>The setting I&rsquo;m interested in here is:</p><p><code>python.pythonPath</code>: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically</p><h4 id=setting-pythonpythonpath>Setting python.pythonPath</h4><p>Okay so now we know where these settings are kept, what to do? 🤔</p><p>This is our function so far:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Where you keep your projects</span>
+<span class=nv>PROJECTS_DIR</span> <span class=o>=</span> <span class=nv>$HOME</span>/Development
+
+<span class=c1># As in &#34;check out&#34; a project</span>
+<span class=c1># Not to be confused with git checkout</span>
+<span class=k>function</span> checkout<span class=o>()</span> <span class=o>{</span>
+    
+    <span class=c1># Now we are in PROJECTS_DIR and can find anything we want</span>
+    <span class=nb>cd</span> PROJECTS_DIR
+
+    <span class=k>if</span> <span class=o>[[</span> -d <span class=nv>$1</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found locally&#34;</span> <span class=c1># Helpful to say whats going on</span>
+        <span class=nb>cd</span> <span class=nv>$1</span> <span class=c1># Go there</span>
+        venv <span class=c1># Call your venv function from before</span>
+        code . <span class=c1># Open the project in VSCode</span>
+    
+    <span class=c1># Now, instead of just giving up we will search GitHub</span>
+    <span class=k>elif</span> gh repo list <span class=p>|</span> grep -qFe <span class=nv>$1</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found on GitHub. Cloning...&#34;</span>
+        gh repo clone <span class=nv>$1</span> <span class=c1># See, gh makes everything easy</span>
+
+        <span class=c1># Now it will exist locally, so just recurse</span>
+        checkout <span class=nv>$1</span>
+    <span class=k>else</span>
+        <span class=c1># No project?</span>
+        <span class=c1># Let&#39;s make one</span>
+        mkdir <span class=nv>$1</span>
+        touch <span class=nv>$1</span>/README.md <span class=c1># You can make whatever files you want here</span>
+        checkout <span class=nv>$1</span>
+    <span class=k>fi</span>
+<span class=o>}</span>
+</code></pre></div><p>What we want to do is after creating the virtual environment, automatically make VSCode use it. To that end&mldr;</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>
+<span class=k>function</span> code_set_venv<span class=o>()</span> <span class=o>{</span>
+
+    <span class=k>if</span> <span class=o>[[</span> -f .vscode/settings.json <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Ensuring VSCode is using the correct virtualenv...&#34;</span>
+        <span class=c1># Current set value for pythonPath. &#39;null&#39; if empty or doesn&#39;t exist</span>
+        <span class=nv>ppath</span><span class=o>=</span><span class=s2>&#34;</span><span class=k>$(</span>cat .vscode/settings.json <span class=p>|</span> jq <span class=s1>&#39;.&#34;python.pythonPath&#34;&#39;</span><span class=k>)</span><span class=s2>&#34;</span>
+
+        <span class=k>if</span> <span class=o>[[</span> <span class=nv>$ppath</span> !<span class=o>=</span> null <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+            <span class=c1># pythonPath is already set</span>
+            <span class=nb>echo</span> <span class=s2>&#34;python.pythonPath already set in workspace settings. Not overwriting.&#34;</span>
+        <span class=k>else</span>
+            <span class=nv>ppath_set</span><span class=o>=</span><span class=s2>&#34;</span><span class=k>$(</span>jq <span class=s1>&#39;.&#34;python.pythonPath&#34; = &#34;.venv/bin/python&#34;&#39;</span> .vscode/settings.json<span class=k>)</span><span class=s2>&#34;</span>
+
+            <span class=nb>echo</span> <span class=nv>$ppath_set</span> &gt;.vscode/settings.json
+
+        <span class=k>fi</span>
+    
+    <span class=k>else</span>
+        <span class=c1># No vscode settings currently</span>
+        <span class=c1># Make the settings.json and make recursive call to end up in first if branch</span>
+        mkdir -p .vscode
+        <span class=c1># Create empty JSON for jq to work</span>
+        <span class=nb>echo</span> <span class=s2>&#34;{}&#34;</span> &gt;.vscode/settings.json
+        <span class=c1># Recursive call</span>
+        code_set_venv
+    <span class=k>fi</span>
+<span class=o>}</span>
+</code></pre></div><p>This one:</p><ul><li><p>First asks if there are already VSCode workspace settings: <code>if [[ -f .vscode/settings.json ]]</code></p></li><li><p>If there are it looks at what is currently set for <code>python.pythonPath</code>. The assumption being that if someone already set it explicitly, we should probably leave it alone.</p></li><li><p>If it&rsquo;s empty or not set at all (represented in JSON by <code>null</code>) then we can do what we like! i.e. set it to our virtualenv&rsquo;s python. This bit is done by the <code>ppath_set</code> line.</p></li><li><p>If there is no workspace settings file yet, we create one, dump a placeholder set of brackets (needed so <code>jq</code> knows it&rsquo;s valid JSON) and then just call the function again! Now the settings exist, it will traverse the top branch.</p></li></ul><p>Now we just need to weave this into our main <code>checkout</code> function in the right place:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Where you keep your projects</span>
+<span class=nv>PROJECTS_DIR</span> <span class=o>=</span> <span class=nv>$HOME</span>/Development
+
+<span class=c1># As in &#34;check out&#34; a project</span>
+<span class=c1># Not to be confused with git checkout</span>
+<span class=k>function</span> checkout<span class=o>()</span> <span class=o>{</span>
+    
+    <span class=c1># Now we are in PROJECTS_DIR and can find anything we want</span>
+    <span class=nb>cd</span> PROJECTS_DIR
+
+    <span class=k>if</span> <span class=o>[[</span> -d <span class=nv>$1</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found locally&#34;</span> <span class=c1># Helpful to say whats going on</span>
+        <span class=nb>cd</span> <span class=nv>$1</span>
+        venv
+        code_set_venv <span class=c1># Here is a good place</span>
+        code . 
+    
+    <span class=c1># Now, instead of just giving up we will search GitHub</span>
+    <span class=k>elif</span> gh repo list <span class=p>|</span> grep -qFe <span class=nv>$1</span><span class=p>;</span> <span class=k>then</span>
+
+        <span class=nb>echo</span> <span class=s2>&#34;Project: &#39;</span><span class=nv>$1</span><span class=s2>&#39; found on GitHub. Cloning...&#34;</span>
+        gh repo clone <span class=nv>$1</span> <span class=c1># See, gh makes everything easy</span>
+
+        <span class=c1># Now it will exist locally, so just recurse</span>
+        checkout <span class=nv>$1</span>
+    <span class=k>else</span>
+        <span class=c1># No project?</span>
+        <span class=c1># Let&#39;s make one</span>
+        mkdir <span class=nv>$1</span>
+        touch <span class=nv>$1</span>/README.md <span class=c1># You can make whatever files you want here</span>
+        checkout <span class=nv>$1</span>
+    <span class=k>fi</span>
+<span class=o>}</span>
+</code></pre></div><p>And that&rsquo;s it! Now when we call <code>checkout</code>, we&rsquo;ll end up with VSCode open in the root of our project, whether or not we had it on our computer in the first place, and VSCode will be set up to use the right environment!</p><p>You can even inject stuff like installing from <code>requirements.txt</code> or whatever you want so you can just get to codingTM 😁</p></div><div class=post-footer><div class=info><span class=separator><a class=category href=/categories/tips-tricks/>tips & tricks</a></span>
+<span class=separator><a class=tag href=/tags/python/>python</a><a class=tag href=/tags/virtual-environments/>virtual environments</a><a class=tag href=/tags/automation/>automation</a></span></div></div></div></div></div></div><script type=text/javascript src=https://followtheprocess.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ=" crossorigin=anonymous></script><script type=text/javascript src=https://followtheprocess.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2+LqU=" crossorigin=anonymous></script><script type=text/javascript src=https://followtheprocess.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w=" crossorigin=anonymous></script><script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}},window.addEventListener('load',a=>{document.querySelectorAll("mjx-container").forEach(function(a){a.parentElement.classList+='has-jax'})})</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></body></html>
