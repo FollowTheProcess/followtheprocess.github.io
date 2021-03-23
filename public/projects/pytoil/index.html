@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Tom Fleet | python </title>
+    <title> Tom Fleet | pytoil </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,10 +29,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://followtheprocess.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://followtheprocess.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://followtheprocess.github.io/tags/python/">
+    <link rel="canonical" href="https://followtheprocess.github.io/projects/pytoil/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://followtheprocess.github.io/tags/python/index.xml" title="Tom Fleet Profile" />
     
     
     
@@ -51,8 +50,8 @@
                 crossorigin="anonymous"></script>
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python"/>
-<meta name="twitter:description" content="Materials Science, Engineering, Python, Data Analysis, Machine Learning."/>
+<meta name="twitter:title" content="pytoil"/>
+<meta name="twitter:description" content="Handy CLI to manage local and remote development projects."/>
 
 </head>
 <body><div class="sidebar animated fadeInDown ">
@@ -137,80 +136,65 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2021</div>
+            <div class="post-title">
+                <h3>pytoil</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/projects/pytoil/" title="pytoil">pytoil</a>
-                                <div class="post-time"><span class="date"> Mar 12 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+            </div>
+
+            <p><img src="/images/projects/pytoil/logo.png" alt="logo"></p>
+<p><a href="https://github.com/FollowTheProcess/pytoil"><img src="https://img.shields.io/github/license/FollowTheProcess/pytoil" alt="License"></a>
+<a href="https://pypi.python.org/pypi/pytoil"><img src="https://img.shields.io/pypi/v/pytoil.svg" alt="PyPI"></a>
+<a href="https://github.com/FollowTheProcess/pytoil"><img src="https://img.shields.io/badge/code%20style-black-black" alt="Code Style"></a>
+<a href="https://github.com/FollowTheProcess/pytoil/actions?query=workflow%3ACI"><img src="https://github.com/FollowTheProcess/pytoil/workflows/CI/badge.svg" alt="CI"></a>
+<a href="https://github.com/FollowTheProcess/pytoil"><img src="/images/projects/pytoil/coverage.svg" alt="Coverage"></a></p>
+<p><em>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!</em></p>
+<ul>
+<li>
+<p><strong>Source Code</strong>: <a href="https://github.com/FollowTheProcess/pytoil">https://github.com/FollowTheProcess/pytoil</a></p>
+</li>
+<li>
+<p><strong>Documentation</strong>: <a href="https://FollowTheProcess.github.io/pytoil/">https://FollowTheProcess.github.io/pytoil/</a></p>
+</li>
+</ul>
+<h2 id="what-is-it">What is it?</h2>
+<p><code>pytoil</code> is a handy tool that helps you stay on top of all your projects, remote or local. It&rsquo;s primarily aimed at python developers but you could easily use it to manage any project!</p>
+<p>pytoil is:</p>
+<ul>
+<li>Easy to use ✅</li>
+<li>Easy to configure ✅</li>
+<li>Safe (it won&rsquo;t edit your repos at all) ✅</li>
+<li>Useful! (I hope 😃)</li>
+</ul>
+<p>Say goodbye to janky bash scripts 👋</p>
+<h2 id="background">Background</h2>
+<p>Like many developers I suspect, I quickly became bored of typing repeated commands to manage my projects, create virtual environments, install packages, fire off <code>cURL</code> snippets to check if I had a certain repo etc.</p>
+<p>So I wrote some shell functions to do some of this for me&hellip;</p>
+<p>And these shell functions grew and grew and grew.</p>
+<p>Until one day I saw that the file I kept these functions in was over 1000 lines of bash (a lot of <code>printf</code>&rsquo;s so it wasn&rsquo;t all logic but still). And 1000 lines of bash is <em>waaaay</em> too much!</p>
+<p>And because I&rsquo;d basically hacked it all together, it was <strong>very</strong> fragile. If a part of a function failed, it would just carry on and wreak havoc! I&rsquo;d have to do <code>rm -rf all_my_projects</code>&hellip; I mean careful forensic investigation to fix it.</p>
+<p>So I decided to make a robust CLI with the proper error handling and testability of python, and here it is! 🎉</p>
+<h2 id="tech-notes">Tech Notes</h2>
+<p>pytoil uses <a href="https://typer.tiangolo.com">Typer</a> under the hood for the moment. I&rsquo;m debating changing it to <a href="https://cleo.readthedocs.io/en/latest/">cleo</a> as each Typer command must live under a decorated function which leads to long difficult to maintain functions. With cleo, each command is a class to which you can add helper methods.</p>
+<p>I wanted to make sure that pytoil was robust and well tested/documented. Currently, pytoil has 100% test coverage and I&rsquo;ve tried to be smart with the tests so I&rsquo;m not just reaching for maximum coverage but the tests actually represent real world situations.</p>
+<p>I got quite good at mocking with pytest during this project as most pytoil functions make system calls (to things like <code>git</code> and <code>conda</code>) so these all have to be mocked out.</p>
+<p>The hardest part I found was actually dealing with the parsing of the config file and passing that info around the rest of the program, I rewrote the <code>config.py</code> module from scratch about 3 or 4 times!</p>
+<p>The part I&rsquo;m probably most happy with is the way pytoil handles virtual environments internally. I defined an abstract base class in <code>environments/abstract.py</code> which the two <code>VirtualEnv</code> and <code>CondaEnv</code> classes inherited from meaning there was method consistency (like <code>.install()</code>, <code>.create()</code> etc.) meaning I could easily handle them whichever implementation was actually running.</p>
+<p>This showed up best when I was refactoring the <code>.create()</code> method to optionally include a list of packages specified in the config file. Because the CLI function dealing with this didn&rsquo;t concern itself with which environment it was dealing with, this was about a 10 line change in the two classes and some tweaks to some unit tests and that was it! Very easy!</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/posts/auto_venv/" title="Automate your Virtual Environments... and everything else.">Automate your Virtual Environments... and everything else.</a>
-                                <div class="post-time"><span class="date"> Mar 1 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/posts/require_venv/" title="Prevent Global Pip Installs">Prevent Global Pip Installs</a>
-                                <div class="post-time"><span class="date"> Feb 23 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/posts/pyenv/" title="Pyenv is Awesome!">Pyenv is Awesome!</a>
-                                <div class="post-time"><span class="date"> Feb 19 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/projects/pymechtest/" title="pymechtest">pymechtest</a>
-                                <div class="post-time"><span class="date"> Feb 17 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/posts/buggy_accelerate/" title="Buggy Accelerate Backend">Buggy Accelerate Backend</a>
-                                <div class="post-time"><span class="date"> Feb 16 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-                <div class="listing-title">2020</div>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="https://followtheprocess.github.io/projects/fatigue/" title="Fatigue Damage Prediction">Fatigue Damage Prediction</a>
-                                <div class="post-time"><span class="date"> Sep 28 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-        </ul>
+                <span class="separator"><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/automation/">automation</a><a class="tag" href="/tags/oss/">OSS</a></span>
+
+            </div>
+        </div>
+
+        
     </div>
+
 
         </div>
     </div>

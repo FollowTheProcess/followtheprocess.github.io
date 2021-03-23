@@ -6,7 +6,16 @@
     <description>Recent content in python on Tom Fleet Profile</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Mar 2021 17:27:07 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pytoil</title>
+      <link>https://followtheprocess.github.io/projects/pytoil/</link>
+      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
+      <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!</description>
+    </item>
+    
     <item>
       <title>Automate your Virtual Environments... and everything else.</title>
       <link>https://followtheprocess.github.io/posts/auto_venv/</link>
