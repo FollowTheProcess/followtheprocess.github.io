@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Tom Fleet | Home </title>
+    <title> Tom Fleet | goignore </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -29,10 +29,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://followtheprocess.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://followtheprocess.github.io/favicons/favicon-16x16.png">
 
-    <link rel="canonical" href="https://followtheprocess.github.io/">
+    <link rel="canonical" href="https://followtheprocess.github.io/projects/goignore/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="https://followtheprocess.github.io/index.xml" title="Tom Fleet Profile" />
     
     
     
@@ -51,8 +50,8 @@
                 crossorigin="anonymous"></script>
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Home"/>
-<meta name="twitter:description" content="Home"/>
+<meta name="twitter:title" content="goignore"/>
+<meta name="twitter:description" content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file."/>
 
 </head>
 <body><div class="sidebar animated fadeInDown ">
@@ -101,7 +100,7 @@
         
         
             
-            <li><a class="current"
+            <li><a 
                    href="/"
                         
                    title="">Home</a></li>
@@ -137,149 +136,117 @@
 
     <div class="autopagerize_page_element">
         <div class="content">
-
     <div class="post  animated fadeInDown ">
-        
-        <h2 id="about">About</h2>
-<p>Hi!</p>
-<p><em>You&rsquo;ve somehow stumbled on my page! I&rsquo;m treating this as a step further than the profile README and a bit less rubbish than linkedin</em> 🤭. <em>Here you&rsquo;ll find some of my projects and interesting thoughts or useful tips and tricks to do with programming/data.</em></p>
-<p>I&rsquo;m Tom, my background is in aerospace engineering and materials science but I&rsquo;m learning how to get the computer to do all the work one step at a time by:</p>
-<ul>
-<li>automating everything in sight</li>
-<li>doing fancy statistics</li>
-<li>making tasty graphs</li>
-<li>analysing data that would make excel explode</li>
-<li>machine learning</li>
-<li>APIs</li>
-</ul>
-<p>And just generally levelling up my overall nerd score.</p>
-<p>I&rsquo;ve spent the past year or so teaching myself computer science, python, bash, SQL, Go, API&rsquo;s, Docker, CI/CD, TDD and a host of other stuff (not javascript though 🤢).</p>
-<h2 id="projects">Projects</h2>
-<p>Below you&rsquo;ll find a list of some of the projects I&rsquo;ve built.</p>
-<p>There is a mix of:</p>
-<ul>
-<li>OSS packages</li>
-<li>Data Analysis/Visualisation</li>
-<li>Automation</li>
-<li>ML</li>
-</ul>
-<p>🤓</p>
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>goignore</h3>
+                
+            </div>
 
+            <p><a href="https://github.com/FollowTheProcess/goignore"><img src="https://img.shields.io/github/license/FollowTheProcess/goignore" alt="License"></a>
+<a href="https://goreportcard.com/report/github.com/FollowTheProcess/goignore"><img src="https://goreportcard.com/badge/github.com/FollowTheProcess/goignore" alt="Go Report Card"></a>
+<a href="https://github.com/FollowTheProcess/goignore/actions?query=workflow%3ACI"><img src="https://github.com/FollowTheProcess/goignore/workflows/CI/badge.svg" alt="CI"></a></p>
+<p>An extremely simple go CLI to hit the <a href="https://www.toptal.com/developers/gitignore">gitignore API</a> with whatever you pass as command line arguments. The list of things you can pass here are documented on <a href="https://www.toptal.com/developers/gitignore">gitignore.io</a>.</p>
+<p>You&rsquo;ll get back a .gitignore file saved to <code>$CWD/.gitignore</code> with the contents generated from the API.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">go get -u github.com/FollowTheProcess/goignore
+</code></pre></div><h2 id="usage">Usage</h2>
+<p>Inside the folder you want the <code>.gitignore</code> to live in, run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">goignore macos vscode go
+</code></pre></div><p>This will get you a <code>.gitignore</code> file that looks like&hellip;</p>
+<div class="highlight"><pre class="chroma"><code class="language-plaintext" data-lang="plaintext"># Created by https://www.toptal.com/developers/gitignore/api/macos,vscode,go
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,vscode,go
+
+### Go ###
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+### Go Patch ###
+/vendor/
+/Godeps/
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# End of https://www.toptal.com/developers/gitignore/api/macos,vscode,go
+</code></pre></div><h2 id="list-options">List Options</h2>
+<p>If you&rsquo;re not sure what you can type in, run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">goignore list
+</code></pre></div><p>And you&rsquo;ll see something like&hellip;</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">1c,1c-bitrix,a-frame,actionscript,ada
+adobe,advancedinstaller,adventuregamestudio,agda,al
+alteraquartusii,altium,amplify,android,androidstudio
+angular,anjuta,ansible,apachecordova,apachehadoop
+appbuilder,appceleratortitanium,appcode,appcode+all,appcode+iml
+
+<span class="c1"># etc.</span>
+</code></pre></div><p>If you have a particular thing in mind:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">goignore list <span class="p">|</span> grep vscode
+
+vscode,vue,vuejs,vvvv,waf
+</code></pre></div><h2 id="tech-notes">Tech Notes</h2>
+<p>I&rsquo;ve been learning Go and working through <a href="https://quii.gitbook.io/learn-go-with-tests/">Learn Go with Tests</a> and I really like it! This is the first thing I&rsquo;ve ever written in Go, its pretty simple as programs go but it was tricky stitching this together in a new language. Although go actually makes this sort of thing super easy, the go standard library is really incredible.</p>
+<p>The best part coming from python though is no worrying about versions, virtual environments or anything like that. Just run <code>go install</code> and you have a binary application ready to run in your <code>$PATH</code> just like that!</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                <span class="separator"><a class="tag" href="/tags/go/">go</a><a class="tag" href="/tags/automation/">automation</a><a class="tag" href="/tags/cli/">cli</a></span>
+
+            </div>
+        </div>
+
+        
     </div>
 
-    
-    
-
-        <div class="post  animated fadeInDown ">
-            
-            <div class="post-title">
-                <h3><a href="/projects/goignore/">goignore</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part"><p>An extremely simple go CLI to hit the gitignore API with whatever you pass as command line arguments.</p></div>
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Tue, Mar 23, 2021 
-                                             </span>
-                        
-                        <a class="tag"
-                                   href="/tags/go/">go</a><a class="tag"
-                                   href="/tags/automation/">automation</a><a class="tag"
-                                   href="/tags/cli/">cli</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="post  animated fadeInDown ">
-            
-            <div class="post-title">
-                <h3><a href="/projects/pytoil/">pytoil</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part"><p>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!</p></div>
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Fri, Mar 12, 2021 
-                                             </span>
-                        
-                        <a class="tag"
-                                   href="/tags/python/">python</a><a class="tag"
-                                   href="/tags/automation/">automation</a><a class="tag"
-                                   href="/tags/oss/">OSS</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="post  animated fadeInDown ">
-            
-            <div class="post-title">
-                <h3><a href="/projects/pymechtest/">pymechtest</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part"><p>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data.</p></div>
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Wed, Feb 17, 2021 
-                                             </span>
-                        
-                        <a class="tag"
-                                   href="/tags/python/">python</a><a class="tag"
-                                   href="/tags/automation/">automation</a><a class="tag"
-                                   href="/tags/engineering/">engineering</a><a class="tag"
-                                   href="/tags/oss/">OSS</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <div class="post  animated fadeInDown ">
-            
-            <div class="post-title">
-                <h3><a href="/projects/fatigue/">Fatigue Damage Prediction</a>
-                </h3>
-            </div>
-            <div class="post-content">
-                <div class="p_part"><p>Using machine learning to predict fatigue crack growth under complex thermomechanical loads.</p></div>
-            </div>
-            <div class="post-footer">
-                <div class="meta">
-                    <div class="info">
-                        <em class="fas fa-calendar-day"></em>
-                            <span class="date"> Mon, Sep 28, 2020 
-                                             </span>
-                        
-                        <a class="tag"
-                                   href="/tags/python/">python</a><a class="tag"
-                                   href="/tags/material-science/">material science</a><a class="tag"
-                                   href="/tags/engineering/">engineering</a><a class="tag"
-                                   href="/tags/machine-learning/">machine learning</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    <div class="pagination">
-        
-
-
-    </div>
 
         </div>
     </div>
