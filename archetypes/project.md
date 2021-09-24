@@ -1,11 +1,10 @@
 ---
-author: "Tom Fleet"
 title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-description: "Description"
-tags: 
-- "tag1"
-- "tag2"
-math: true
 type: page
 ---
+
+*description*
+
+* **Source Code**: [https://github.com/FollowTheProcess/project](https://github.com/FollowTheProcess/project/)
+
+* **Documentation**: [https://FollowTheProcess.github.io/project/](https://FollowTheProcess.github.io/project/)

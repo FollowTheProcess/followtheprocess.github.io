@@ -4,9 +4,9 @@ title: "Buggy Accelerate Backend"
 date: "2021-02-16"
 description: "Ever run into this weird error using NumPy on macOS?"
 tags:
-- "python"
-- "numpy"
-- "installation"
+- python
+- numpy
+- installation
 draft: false
 type: post
 ---
