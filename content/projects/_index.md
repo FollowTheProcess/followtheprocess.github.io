@@ -9,6 +9,7 @@ type: page
 Below you'll find some of the stuff I've been working on 🤓
 
 1. [pytoil](/projects/pytoil/)
-2. [pymechtest](/projects/pymechtest/)
-3. [fatigue damage prediction](/projects/fatigue/)
-4. [goignore](/projects/goignore/)
+2. [msg](/projects/msg/)
+3. [pymechtest](/projects/pymechtest/)
+4. [fatigue damage prediction](/projects/fatigue/)
+5. [goignore](/projects/goignore/)
