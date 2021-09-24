@@ -1,225 +1,193 @@
 <!DOCTYPE html>
-<html lang="en" data-theme=""><head>
-    <title> Tom Fleet | Prevent Global Pip Installs </title>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
-    <meta charset="utf-8"><meta name="generator" content="Hugo 0.82.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="Materials Science, Engineering, Python, Data Analysis, Machine Learning.">
-    
-    <link rel="stylesheet"
-          href="https://followtheprocess.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css"
-          integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI&#43;eFeRAZQ="
-          crossorigin="anonymous"
-          type="text/css">
-    
-    <link rel="stylesheet"
-        href="https://followtheprocess.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
-        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
-        crossorigin="anonymous"
-        type="text/css">
-    
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
-    crossorigin="anonymous" />
-
-    
-    <link rel="shortcut icon" href="https://followtheprocess.github.io/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://followtheprocess.github.io/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://followtheprocess.github.io/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://followtheprocess.github.io/favicons/favicon-16x16.png">
-
-    <link rel="canonical" href="https://followtheprocess.github.io/posts/require_venv/">
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
 
     
     
     
     
-    <script type="text/javascript"
-            src="https://followtheprocess.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js"
-            integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ="
-            crossorigin="anonymous"></script>
-
+    
+    
 
     
-        
-        
-        <script type="text/javascript"
-                src="https://followtheprocess.github.io/js/anatole-theme-switcher.min.8ef71e0fd43f21a303733dbbecae5438b791d2b826c68a9883bd7aa459a076d2.js"
-                integrity="sha256-jvceD9Q/IaMDcz277K5UOLeR0rgmxoqYg716pFmgdtI="
-                crossorigin="anonymous"></script>
-    
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Prevent Global Pip Installs"/>
-<meta name="twitter:description" content="Cool trick to prevent you screwing up your system python."/>
+    <title>Prevent Global Pip Installs</title>
+    <meta name="description" content="Cool trick to prevent you screwing up your system python.">
+    <meta name="keywords" content='python, virtual environments, pip'>
 
+    <meta property="og:url" content="https://followtheproecess.github.io/posts/require_venv/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Prevent Global Pip Installs">
+    <meta property="og:description" content="Cool trick to prevent you screwing up your system python.">
+    <meta property="og:image" content="/images/profile.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prevent Global Pip Installs">
+    <meta name="twitter:description" content="Cool trick to prevent you screwing up your system python.">
+    <meta property="twitter:domain" content="https://followtheproecess.github.io/posts/require_venv/">
+    <meta property="twitter:url" content="https://followtheproecess.github.io/posts/require_venv/">
+    <meta name="twitter:image" content="/images/profile.jpg">
+
+    
+    <link rel="canonical" href="https://followtheproecess.github.io/posts/require_venv/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body,);"></script>
+  
+    
 </head>
-<body><div class="sidebar animated fadeInDown ">
-    <div class="logo-title">
-        <div class="title">
-            <img src="https://followtheprocess.github.io/images/profile.jpg" alt="profile picture">
-            <h3 title=""><a href="/">Tom Fleet</a></h3>
-            <div class="description">
-                <p>Materials Science, Engineering, Python, Data Analysis, Machine Learning.</p>
-            </div>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://followtheproecess.github.io">
+                <img src="/images/profile.jpg" alt="avatar" />
+            </a>
         </div>
-    </div>
-    <ul class="social-links">
         
-            <li>
-                <a href="https://github.com/FollowTheProcess/" rel="me" aria-label="GitHub">
-                    <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="https://www.linkedin.com/in/tom-fleet-03b03280/" rel="me" aria-label="Linkedin">
-                    <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-                </a>
-            </li>
-        
-            <li>
-                <a href="mailto:tomfleet2018@gmail.com" rel="me" aria-label="e-mail">
-                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
-                </a>
-            </li>
-        
-    </ul>
-    <div class="footer">
-        <div class="by_farbox">&copy; Tom Fleet  2021 </div>
-    </div>
-</div>
-<div class="main">
-    <div class="page-top  animated fadeInDown ">
-    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-    </a>
-    <ul class="nav" id="navMenu">
-        
-        
-            
-            <li><a 
-                   href="/"
-                        
-                   title="">Home</a></li>
-        
-            
-            <li><a 
-                   href="/posts/"
-                        
-                   title="">Posts</a></li>
-        
-            
-            <li><a 
-                   href="/projects/"
-                        
-                   title="">Projects</a></li>
-        
-            
-            <li><a 
-                   href="/contact/"
-                        
-                   title="">Contact</a></li>
-        
-        
-        
-            <li class="theme-switch-item">
-                <a class="theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-                </a>
-            </li>
-        
-    </ul>
-</div>
 
-    <div class="autopagerize_page_element">
-        <div class="content">
-    <div class="post  animated fadeInDown ">
-        <div class="post-content">
+        <div class="nav-title">
+            <a class="nav-brand" href="https://followtheproecess.github.io">@FollowTheProcess</a>
+        </div>
+
+        <div class="nav-links">
             
-            <div class="post-title">
-                <h3>Prevent Global Pip Installs</h3>
-                
+            <div class="nav-link">
+                <a href="/"> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/projects/"> Projects </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
             </div>
 
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/"> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/projects/"> Projects </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Prevent Global Pip Installs</h1>
+        <small role="doc-subtitle">Cool trick to prevent you screwing up your system python.</small>
+        <p class="post-date">
+            February 23, 2021
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/python">python</a></li>
+        
+            <li class="post-tag"><a href="/tags/virtual-environments">virtual environments</a></li>
+        
+            <li class="post-tag"><a href="/tags/pip">pip</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
             <p>This is going to be a short one, about something I discovered in the <a href="https://pip.pypa.io/en/stable/">pip</a> documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!</p>
 <h2 id="problem">Problem</h2>
 <p>We all know the dangers of breaking your system python installation with package conflicts.</p>
 <p>Virtual environments are probably the most common way of avoiding nasty package conflicts. A virtual environment is effectively (but not exactly) a self contained version of python you can install packages into without touching your system python.</p>
 <p>Tools like <a href="https://docs.python.org/3/library/venv.html">venv</a> and <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a> are the standard for this case. Tools like <a href="https://docs.conda.io/en/latest/">conda</a> and <a href="https://python-poetry.org">poetry</a> go even further by basically managing the entire project&rsquo;s dependencies <em>as well as</em> the virtual environment.</p>
-<p>Another solution is to use <a href="https://github.com/pyenv/pyenv">pyenv</a> which installs a completely separate version of python on top of your system python. If you go down this route, I&rsquo;d recommend treating the pyenv installation basically as if it was your system (read my <a href="https://followtheprocess.github.io/posts/pyenv/">post</a> about this if you want more info.)</p>
+<p>Another solution is to use <a href="https://github.com/pyenv/pyenv">pyenv</a> which installs a completely separate version of python on top of your system python. If you go down this route, I&rsquo;d recommend treating the pyenv installation basically as if it was your system (read my <a href="https://followtheproecess.github.io/posts/pyenv/">post</a> about this if you want more info.)</p>
 <p>But sometimes, no matter how careful you are, you can slip up and <code>pip install {something}</code> into your global python. By itself this isn&rsquo;t too bad, but if you slip up like this enough, you could easily end up with nasty package conflicts.</p>
 <h2 id="solution">Solution</h2>
 <p>However, like most other things you could worry about, the python developers have got you covered.</p>
 <p>It turns out that there is an environment variable <code>PIP_REQUIRE_VIRTUALENV</code> that pip will check for before doing anything that might alter your system/environment.</p>
 <p>If you set this environment variable to <code>true</code> like this&hellip;</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Inside ~/.zshrc or ~/.bashrc or whatever your shells init file is</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Inside ~/.zshrc or ~/.bashrc or whatever your shells init file is</span>
 
-<span class="nb">export</span> <span class="nv">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="nb">true</span>
+export PIP_REQUIRE_VIRTUALENV<span style="color:#f92672">=</span>true
 </code></pre></div><p>Then pip literally won&rsquo;t let you do anything stupid until you&rsquo;re in an activate virtual environment!</p>
 <p>See&hellip;</p>
 <p><img src="/images/posts/pip_no_venv.png" alt="pip without a virtual environment"></p>
 <p>But if I create a virtual environment and repeat (notice the <code>.venv</code> in my shell prompt)&hellip;</p>
 <p><img src="/images/posts/pip_venv.png" alt="pip with a virtual environment"></p>
 <p>Easy 😁</p>
-</div>
-        <div class="post-footer">
-            <div class="info">
-                <span class="separator"><a class="category" href="/categories/tips-tricks/">tips &amp; tricks</a></span>
 
-                <span class="separator"><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/virtual-environments/">virtual environments</a><a class="tag" href="/tags/pip/">pip</a></span>
-
-            </div>
-        </div>
-
-        
-    </div>
-
-
-        </div>
+        </p>
     </div>
 </div>
 
-<script type="text/javascript"
-        src="https://followtheprocess.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js"
-        integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ="
-        crossorigin="anonymous"></script>
 
 
+    
 
-
-<script type="text/javascript"
-        src="https://followtheprocess.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js"
-        integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2&#43;LqU="
-        crossorigin="anonymous"></script>
-
-<script type="text/javascript"
-        src="https://followtheprocess.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js"
-        integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w="
-        crossorigin="anonymous"></script>
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
-
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-        x.parentElement.classList += 'has-jax'})
-    });
-
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></body>
-
+        </main><footer class="footer">
+    <span>&copy; 2021 Tom Fleet</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
 </html>

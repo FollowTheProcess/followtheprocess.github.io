@@ -1,135 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Tom Fleet Profile</title>
-    <link>https://followtheprocess.github.io/tags/</link>
-    <description>Recent content in Tags on Tom Fleet Profile</description>
+    <title>Tags on @FollowTheProcess</title>
+    <link>https://followtheproecess.github.io/tags/</link>
+    <description>Recent content in Tags on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheproecess.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>automation</title>
-      <link>https://followtheprocess.github.io/tags/automation/</link>
+      <link>https://followtheproecess.github.io/tags/automation/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/automation/</guid>
+      <guid>https://followtheproecess.github.io/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>https://followtheprocess.github.io/tags/cli/</link>
+      <link>https://followtheproecess.github.io/tags/cli/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/cli/</guid>
+      <guid>https://followtheproecess.github.io/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>https://followtheprocess.github.io/tags/go/</link>
+      <link>https://followtheproecess.github.io/tags/go/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/go/</guid>
+      <guid>https://followtheproecess.github.io/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OSS</title>
-      <link>https://followtheprocess.github.io/tags/oss/</link>
+      <link>https://followtheproecess.github.io/tags/oss/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/oss/</guid>
+      <guid>https://followtheproecess.github.io/tags/oss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>https://followtheprocess.github.io/tags/python/</link>
+      <link>https://followtheproecess.github.io/tags/python/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/python/</guid>
+      <guid>https://followtheproecess.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtual environments</title>
-      <link>https://followtheprocess.github.io/tags/virtual-environments/</link>
+      <link>https://followtheproecess.github.io/tags/virtual-environments/</link>
       <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/virtual-environments/</guid>
+      <guid>https://followtheproecess.github.io/tags/virtual-environments/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pip</title>
-      <link>https://followtheprocess.github.io/tags/pip/</link>
+      <link>https://followtheproecess.github.io/tags/pip/</link>
       <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/pip/</guid>
+      <guid>https://followtheproecess.github.io/tags/pip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>installation</title>
-      <link>https://followtheprocess.github.io/tags/installation/</link>
+      <link>https://followtheproecess.github.io/tags/installation/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/installation/</guid>
+      <guid>https://followtheproecess.github.io/tags/installation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>engineering</title>
-      <link>https://followtheprocess.github.io/tags/engineering/</link>
+      <link>https://followtheproecess.github.io/tags/engineering/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>macos</title>
-      <link>https://followtheprocess.github.io/tags/macos/</link>
-      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/macos/</guid>
+      <guid>https://followtheproecess.github.io/tags/engineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>numpy</title>
-      <link>https://followtheprocess.github.io/tags/numpy/</link>
+      <link>https://followtheproecess.github.io/tags/numpy/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/numpy/</guid>
+      <guid>https://followtheproecess.github.io/tags/numpy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>machine learning</title>
-      <link>https://followtheprocess.github.io/tags/machine-learning/</link>
+      <link>https://followtheproecess.github.io/tags/machine-learning/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/machine-learning/</guid>
+      <guid>https://followtheproecess.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>material science</title>
-      <link>https://followtheprocess.github.io/tags/material-science/</link>
+      <link>https://followtheproecess.github.io/tags/material-science/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheprocess.github.io/tags/material-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>index</title>
-      <link>https://followtheprocess.github.io/tags/index/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/tags/index/</guid>
+      <guid>https://followtheproecess.github.io/tags/material-science/</guid>
       <description></description>
     </item>
     

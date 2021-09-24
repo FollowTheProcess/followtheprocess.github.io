@@ -73,14 +73,11 @@ Now in that file, we're going to make a function that you can call from any term
 function venv() {
     # First check if there already is a venv
     # If so just activate it
-
     if [[ -d .venv ]]; then
-
         echo "Activating venv..."
         source .venv/bin/activate
     else
         # Make a new one
-
         echo "Creating new venv..."
         python3 -m venv .venv
         # Clever recursive call so it now traverses the top branch
@@ -139,12 +136,10 @@ PROJECTS_DIR = $HOME/Development
 # As in "check out" a project
 # Not to be confused with git checkout
 function checkout() {
-    
     # Now we are in PROJECTS_DIR and can find anything we want
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-
         echo "Project: '$1' found locally" # Helpful to say whats going on
         cd $1 # Go there
         venv # Call your venv function from before
@@ -195,12 +190,11 @@ function checkout() {
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-
         echo "Project: '$1' found locally" # Helpful to say whats going on
         cd $1 # Go there
         venv # Call your venv function from before
         code . # Open the project in VSCode
-    
+
     # Now, instead of just giving up we will search GitHub
     elif gh repo list | grep -qFe $1; then
 
@@ -269,9 +263,9 @@ And they live here: `.vscode/settings.json` inside your project.
 
 The setting I'm interested in here is:
 
-`python.pythonPath`: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically
+`python.defaultInterpreterPath`: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically
 
-#### Setting python.pythonPath
+#### Setting python.defaultInterpreterPath
 
 Okay so now we know where these settings are kept, what to do? :thinking:
 
@@ -289,7 +283,6 @@ function checkout() {
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-
         echo "Project: '$1' found locally" # Helpful to say whats going on
         cd $1 # Go there
         venv # Call your venv function from before
@@ -297,7 +290,6 @@ function checkout() {
     
     # Now, instead of just giving up we will search GitHub
     elif gh repo list | grep -qFe $1; then
-
         echo "Project: '$1' found on GitHub. Cloning..."
         gh repo clone $1 # See, gh makes everything easy
 
@@ -320,19 +312,16 @@ What we want to do is after creating the virtual environment, automatically make
 function code_set_venv() {
 
     if [[ -f .vscode/settings.json ]]; then
-
         echo "Ensuring VSCode is using the correct virtualenv..."
-        # Current set value for pythonPath. 'null' if empty or doesn't exist
-        ppath="$(cat .vscode/settings.json | jq '."python.pythonPath"')"
+        # Current set value for defaultInterpreterPath. 'null' if empty or doesn't exist
+        ppath="$(cat .vscode/settings.json | jq '."python.defaultInterpreterPath"')"
 
         if [[ $ppath != null ]]; then
-            # pythonPath is already set
-            echo "python.pythonPath already set in workspace settings. Not overwriting."
+            # defaultInterpreterPath is already set
+            echo "python.defaultInterpreterPath already set in workspace settings. Not overwriting."
         else
-            ppath_set="$(jq '."python.pythonPath" = ".venv/bin/python"' .vscode/settings.json)"
-
+            ppath_set="$(jq '."python.defaultInterpreterPath" = ".venv/bin/python"' .vscode/settings.json)"
             echo $ppath_set >.vscode/settings.json
-
         fi
     
     else
@@ -351,7 +340,7 @@ This one:
 
 * First asks if there are already VSCode workspace settings: `if [[ -f .vscode/settings.json ]]`
   
-* If there are it looks at what is currently set for `python.pythonPath`. The assumption being that if someone already set it explicitly, we should probably leave it alone.
+* If there are it looks at what is currently set for `python.defaultInterpreterPath`. The assumption being that if someone already set it explicitly, we should probably leave it alone.
   
 * If it's empty or not set at all (represented in JSON by `null`) then we can do what we like! i.e. set it to our virtualenv's python. This bit is done by the `ppath_set` line.
 
@@ -366,12 +355,10 @@ PROJECTS_DIR = $HOME/Development
 # As in "check out" a project
 # Not to be confused with git checkout
 function checkout() {
-    
     # Now we are in PROJECTS_DIR and can find anything we want
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-
         echo "Project: '$1' found locally" # Helpful to say whats going on
         cd $1
         venv
@@ -380,10 +367,8 @@ function checkout() {
     
     # Now, instead of just giving up we will search GitHub
     elif gh repo list | grep -qFe $1; then
-
         echo "Project: '$1' found on GitHub. Cloning..."
         gh repo clone $1 # See, gh makes everything easy
-
         # Now it will exist locally, so just recurse
         checkout $1
     else

@@ -8,6 +8,7 @@ build:
 
 # Build and serve locally
 serve:
+    open "http://localhost:1313/"
     hugo server --disableFastRender -D
 
 # Create a new post

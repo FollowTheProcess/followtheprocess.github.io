@@ -11,7 +11,7 @@ pygmentsStyle = "monokai"
 [params]
   footer = "Tom Fleet"
   description = """
-    Ex materials engineer turned python developer.
+    Ex materials engineer turned software developer.
     Python | Go | ML
   """
   avatarURL = "/images/profile.jpg"
