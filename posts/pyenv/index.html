@@ -1,48 +1,214 @@
-<!doctype html><html lang=en data-theme><head><title>Tom Fleet | Pyenv is Awesome!</title><meta charset=utf-8><meta name=generator content="Hugo 0.82.0"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Materials Science, Engineering, Python, Data Analysis, Machine Learning."><link rel=stylesheet href=https://followtheprocess.github.io/css/style.min.0c643de4008adca329f7a2d616ce308cca99d4ef45e4cca307323e7857910194.css integrity="sha256-DGQ95ACK3KMp96LWFs4wjMqZ1O9F5MyjBzI+eFeRAZQ=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://followtheprocess.github.io/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS+yuWSR4=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous><link rel="shortcut icon" href=https://followtheprocess.github.io/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=https://followtheprocess.github.io/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://followtheprocess.github.io/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://followtheprocess.github.io/favicons/favicon-16x16.png><link rel=canonical href=https://followtheprocess.github.io/posts/pyenv/><script type=text/javascript src=https://followtheprocess.github.io/js/anatole-header.min.0c05c0a90d28c968a1cad4fb31abd0b8e1264e788ccefed022ae1d3b6f627514.js integrity="sha256-DAXAqQ0oyWihytT7MavQuOEmTniMzv7QIq4dO29idRQ=" crossorigin=anonymous></script><script type=text/javascript src=https://followtheprocess.github.io/js/anatole-theme-switcher.min.8ef71e0fd43f21a303733dbbecae5438b791d2b826c68a9883bd7aa459a076d2.js integrity="sha256-jvceD9Q/IaMDcz277K5UOLeR0rgmxoqYg716pFmgdtI=" crossorigin=anonymous></script><meta name=twitter:card content="summary"><meta name=twitter:title content="Pyenv is Awesome!"><meta name=twitter:description content="Pyenv solves the entire python installation/virtual environment situation."></head><body><div class="sidebar animated fadeInDown"><div class=logo-title><div class=title><img src=https://followtheprocess.github.io/images/profile.jpg alt="profile picture"><h3 title><a href=/>Tom Fleet</a></h3><div class=description><p>Materials Science, Engineering, Python, Data Analysis, Machine Learning.</p></div></div></div><ul class=social-links><li><a href=https://github.com/FollowTheProcess/ rel=me aria-label=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li><a href=https://www.linkedin.com/in/tom-fleet-03b03280/ rel=me aria-label=Linkedin><i class="fab fa-linkedin fa-2x" aria-hidden=true></i></a></li><li><a href=mailto:tomfleet2018@gmail.com rel=me aria-label=e-mail><i class="fas fa-envelope fa-2x" aria-hidden=true></i></a></li></ul><div class=footer><div class=by_farbox>&copy; Tom Fleet 2021</div></div></div><div class=main><div class="page-top animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a><ul class=nav id=navMenu><li><a href=/ title>Home</a></li><li><a href=/posts/ title>Posts</a></li><li><a href=/projects/ title>Projects</a></li><li><a href=/contact/ title>Contact</a></li><li class=theme-switch-item><a class=theme-switch title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></li></ul></div><div class=autopagerize_page_element><div class=content><div class="post animated fadeInDown"><div class=post-content><div class=post-title><h3>Pyenv is Awesome!</h3></div><p>I think everyone who has touched python at some point has seen this picture&mldr;</p><p><img src=/images/posts/python_environment.png alt="environment hell"></p><p>It&rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&rsquo;re not careful but is often misinterpreted as throwing shade on how python works.</p><p><a href=https://snarky.ca/deconstructing-xkcd-com-1987/>Brett Cannon&rsquo;s Blog Post</a> has an excellent deconstruction of what this xkcd means and how to avoid it.</p><p>There&rsquo;s lots you can do to avoid this happening to you. My favourite method is <a href=https://github.com/pyenv/pyenv>pyenv</a>.</p><h2 id=what>What?</h2><p>Unlike other ways of installing python, or using your system installation (which you should <strong>NEVER</strong> do), <a href=https://github.com/pyenv/pyenv>pyenv</a> actually compiles a version of python direct from source and stores it in it&rsquo;s own special directory far far away from your system python.</p><p>So far so good 👍.</p><p>Once it&rsquo;s finished making this <strong>completely separate</strong> python for you. You can set <em>that</em> version of python to be your global one. Meaning that even if you open up a terminal and do something like&mldr;</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>python
-</code></pre></div><p>And instead of your system&rsquo;s <code>python3</code> (or worse it&rsquo;s <code>python</code> - meaning python2.7), it will fire up your new, pyenv-managed, python version you just installed.</p><p>This all means that if you follow this guide, your installation will <strong>NEVER</strong> end up like the one in the now infamous xkcd above. Your system python (both 3 and 2) will remain a completely hidden layer below where you work and you will never need to touch it.</p><p>That&rsquo;s one less thing to worry about whilst you&rsquo;re trying to figure out how to actually do programming™️.</p><h2 id=installation>Installation</h2><p>Now installing it on my mac was pretty straightforward but it can throw errors if you get a step wrong so I&rsquo;ll share the script I used incase its useful to anyone else.</p><p>For this to work though, we&rsquo;re going to need to install some compilation dependencies. If you have <a href=https://brew.sh>homebrew</a> this is what you&rsquo;ll need to do&mldr;</p><p>And if you haven&rsquo;t got homebrew&mldr; get homebrew. You can thank me later.</p><h3 id=install-xcode-command-line-developer-tools>Install xcode command line developer tools</h3><p>These provide C compilers and other handy things we&rsquo;ll need later.</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>xcode-select --install
-</code></pre></div><h3 id=install-compiler-dependencies-from-homebrew>Install compiler dependencies from Homebrew</h3><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell><span class=c1># Python build dependencies</span>
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>:root{--accent-color:#FF4D4D}</style>
+<title>Pyenv is Awesome!</title>
+<meta name=description content="Pyenv solves the entire python installation/virtual environment situation.">
+<meta name=keywords content="python,virtual environments,installation">
+<meta property="og:url" content="https://followtheproecess.github.io/posts/pyenv/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pyenv is Awesome!">
+<meta property="og:description" content="Pyenv solves the entire python installation/virtual environment situation.">
+<meta property="og:image" content="/images/profile.jpg">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:title content="Pyenv is Awesome!">
+<meta name=twitter:description content="Pyenv solves the entire python installation/virtual environment situation.">
+<meta property="twitter:domain" content="https://followtheproecess.github.io/posts/pyenv/">
+<meta property="twitter:url" content="https://followtheproecess.github.io/posts/pyenv/">
+<meta name=twitter:image content="/images/profile.jpg">
+<link rel=canonical href=https://followtheproecess.github.io/posts/pyenv/>
+<link rel=stylesheet type=text/css href=/css/normalize.min.css media=print onload="this.media='all'">
+<link rel=stylesheet type=text/css href=/css/main.css>
+<link disabled id=dark-theme rel=stylesheet href=/css/dark.css>
+<script src=/js/svg-injector.min.js></script>
+<script src=/js/feather-icons.min.js></script>
+<script src=/js/main.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+</head>
+<body>
+<script type=text/javascript>setThemeByUserPref()</script><header class=header>
+<nav class=header-nav>
+<div class=avatar>
+<a href=https://followtheproecess.github.io>
+<img src=/images/profile.jpg alt=avatar>
+</a>
+</div>
+<div class=nav-title>
+<a class=nav-brand href=https://followtheproecess.github.io>@FollowTheProcess</a>
+</div>
+<div class=nav-links>
+<div class=nav-link>
+<a href=/> Home </a>
+</div>
+<div class=nav-link>
+<a href=/posts/> Posts </a>
+</div>
+<div class=nav-link>
+<a href=/projects/> Projects </a>
+</div>
+<span class=nav-icons-divider></span>
+<div class="nav-link dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</div>
+<div class=nav-link id=hamburger-menu-toggle>
+<a>
+<span data-feather=menu></span>
+</a>
+</div>
+<ul class="nav-hamburger-list visibility-hidden">
+<li class=nav-item>
+<a href=/> Home </a>
+</li>
+<li class=nav-item>
+<a href=/posts/> Posts </a>
+</li>
+<li class=nav-item>
+<a href=/projects/> Projects </a>
+</li>
+<li class="nav-item dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<main id=content>
+<div class="post container">
+<div class=post-header-section>
+<h1>Pyenv is Awesome!</h1>
+<small role=doc-subtitle>Pyenv solves the entire python installation/virtual environment situation.</small>
+<p class=post-date>
+February 19, 2021
+</p>
+<ul class=post-tags>
+<li class=post-tag><a href=/tags/python>python</a></li>
+<li class=post-tag><a href=/tags/virtual-environments>virtual environments</a></li>
+<li class=post-tag><a href=/tags/installation>installation</a></li>
+</ul>
+</div>
+<div class=post-content>
+<p>
+<p>I think everyone who has touched python at some point has seen this picture&mldr;</p>
+<p><img src=/images/posts/python_environment.png alt="environment hell"></p>
+<p>It&rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&rsquo;re not careful but is often misinterpreted as throwing shade on how python works.</p>
+<p><a href=https://snarky.ca/deconstructing-xkcd-com-1987/>Brett Cannon&rsquo;s Blog Post</a> has an excellent deconstruction of what this xkcd means and how to avoid it.</p>
+<p>There&rsquo;s lots you can do to avoid this happening to you. My favourite method is <a href=https://github.com/pyenv/pyenv>pyenv</a>.</p>
+<h2 id=what>What?</h2>
+<p>Unlike other ways of installing python, or using your system installation (which you should <strong>NEVER</strong> do), <a href=https://github.com/pyenv/pyenv>pyenv</a> actually compiles a version of python direct from source and stores it in it&rsquo;s own special directory far far away from your system python.</p>
+<p>So far so good 👍.</p>
+<p>Once it&rsquo;s finished making this <strong>completely separate</strong> python for you. You can set <em>that</em> version of python to be your global one. Meaning that even if you open up a terminal and do something like&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>python
+</code></pre></div><p>And instead of your system&rsquo;s <code>python3</code> (or worse it&rsquo;s <code>python</code> - meaning python2.7), it will fire up your new, pyenv-managed, python version you just installed.</p>
+<p>This all means that if you follow this guide, your installation will <strong>NEVER</strong> end up like the one in the now infamous xkcd above. Your system python (both 3 and 2) will remain a completely hidden layer below where you work and you will never need to touch it.</p>
+<p>That&rsquo;s one less thing to worry about whilst you&rsquo;re trying to figure out how to actually do programming™️.</p>
+<h2 id=installation>Installation</h2>
+<p>Now installing it on my mac was pretty straightforward but it can throw errors if you get a step wrong so I&rsquo;ll share the script I used incase its useful to anyone else.</p>
+<p>For this to work though, we&rsquo;re going to need to install some compilation dependencies. If you have <a href=https://brew.sh>homebrew</a> this is what you&rsquo;ll need to do&mldr;</p>
+<p>And if you haven&rsquo;t got homebrew&mldr; get homebrew. You can thank me later.</p>
+<h3 id=install-xcode-command-line-developer-tools>Install xcode command line developer tools</h3>
+<p>These provide C compilers and other handy things we&rsquo;ll need later.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>xcode-select --install
+</code></pre></div><h3 id=install-compiler-dependencies-from-homebrew>Install compiler dependencies from Homebrew</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Python build dependencies</span>
 brew install zlib
 brew install xz
 brew install openssl
 brew install readline
 brew install sqlite3
 brew install openblas
-</code></pre></div><p><em>Side note: <code>openblas</code> isn&rsquo;t strictly required, but it comes in handy if you later want to install python-C libraries like <a href=https://pandas.pydata.org>pandas</a> or <a href=https://numpy.org>numpy</a>.</em></p><h3 id=build-a-python-from-scratch>Build a Python from Scratch</h3><p>Now we have pyenv installed, we need to use it to create a python version for us. It does this by literally compiling the python source code to the special pyenv folder rather than any predistributed binaries or wheels etc.</p><p>However, the compilers don&rsquo;t necessarily always find the correct dependencies that we just installed so we have to manually point them to the right tools using compiler flags.</p><p>This is the step that was tricky, every time I tried a simple <code>pyenv install 3.9.1</code> it would only get so far and not compile. It turns out it&rsquo;s best to specify exactly where all the tools are to the compilers.</p><p>I found the easiest way to do this was to put it in a small bash script that I called <code>pyenv_install.sh</code>, shown in the snippet below. I would just recommend copying and pasting this, this is the exact script that works for me (macOS Big Sur, Intel chip).</p><p>Feel free to replace the <code>3.9.1</code> with whatever version of python you want (you should probably pick one of the currently supported ones though: 3.6, 3.7, 3.8 and 3.9 at time of writing). You can also run <code>pyenv install --list</code> to see all the many different versions of python you could install this way.</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/usr/bin/env bash
-</span><span class=cp></span>
-<span class=c1># Pointing pyenv to the correct compilers</span>
-<span class=nb>export</span> <span class=nv>LDFLAGS</span><span class=o>=</span><span class=s2>&#34;-L</span><span class=k>$(</span>brew --prefix zlib<span class=k>)</span><span class=s2>/lib -L</span><span class=k>$(</span>brew --prefix bzip2<span class=k>)</span><span class=s2>/lib -L</span><span class=k>$(</span>brew --prefix openssl<span class=k>)</span><span class=s2>/lib -L</span><span class=k>$(</span>brew --prefix readline<span class=k>)</span><span class=s2>/lib&#34;</span>
-<span class=nb>export</span> <span class=nv>CPPFLAGS</span><span class=o>=</span><span class=s2>&#34;-I</span><span class=k>$(</span>brew --prefix zlib<span class=k>)</span><span class=s2>/include -I</span><span class=k>$(</span>brew --prefix bzip2<span class=k>)</span><span class=s2>/include&#34;</span>
-<span class=nb>export</span> <span class=nv>CFLAGS</span><span class=o>=</span><span class=s2>&#34;-I</span><span class=k>$(</span>brew --prefix openssl<span class=k>)</span><span class=s2>/include -I</span><span class=k>$(</span>brew --prefix bzip2<span class=k>)</span><span class=s2>/include -I</span><span class=k>$(</span>brew --prefix readline<span class=k>)</span><span class=s2>/include -I</span><span class=k>$(</span>xcrun --show-sdk-path<span class=k>)</span><span class=s2>/usr/include&#34;</span>
-pyenv install 3.9.1 <span class=c1># Or your version</span>
+</code></pre></div><p><em>Side note: <code>openblas</code> isn&rsquo;t strictly required, but it comes in handy if you later want to install python-C libraries like <a href=https://pandas.pydata.org>pandas</a> or <a href=https://numpy.org>numpy</a>.</em></p>
+<h3 id=build-a-python-from-scratch>Build a Python from Scratch</h3>
+<p>Now we have pyenv installed, we need to use it to create a python version for us. It does this by literally compiling the python source code to the special pyenv folder rather than any predistributed binaries or wheels etc.</p>
+<p>However, the compilers don&rsquo;t necessarily always find the correct dependencies that we just installed so we have to manually point them to the right tools using compiler flags.</p>
+<p>This is the step that was tricky, every time I tried a simple <code>pyenv install 3.9.1</code> it would only get so far and not compile. It turns out it&rsquo;s best to specify exactly where all the tools are to the compilers.</p>
+<p>I found the easiest way to do this was to put it in a small bash script that I called <code>pyenv_install.sh</code>, shown in the snippet below. I would just recommend copying and pasting this, this is the exact script that works for me (macOS Big Sur, Intel chip).</p>
+<p>Feel free to replace the <code>3.9.1</code> with whatever version of python you want (you should probably pick one of the currently supported ones though: 3.6, 3.7, 3.8 and 3.9 at time of writing). You can also run <code>pyenv install --list</code> to see all the many different versions of python you could install this way.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/usr/bin/env bash
+</span><span style=color:#75715e></span>
+<span style=color:#75715e># Pointing pyenv to the correct compilers</span>
+export LDFLAGS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-L</span><span style=color:#66d9ef>$(</span>brew --prefix zlib<span style=color:#66d9ef>)</span><span style=color:#e6db74>/lib -L</span><span style=color:#66d9ef>$(</span>brew --prefix bzip2<span style=color:#66d9ef>)</span><span style=color:#e6db74>/lib -L</span><span style=color:#66d9ef>$(</span>brew --prefix openssl<span style=color:#66d9ef>)</span><span style=color:#e6db74>/lib -L</span><span style=color:#66d9ef>$(</span>brew --prefix readline<span style=color:#66d9ef>)</span><span style=color:#e6db74>/lib&#34;</span>
+export CPPFLAGS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-I</span><span style=color:#66d9ef>$(</span>brew --prefix zlib<span style=color:#66d9ef>)</span><span style=color:#e6db74>/include -I</span><span style=color:#66d9ef>$(</span>brew --prefix bzip2<span style=color:#66d9ef>)</span><span style=color:#e6db74>/include&#34;</span>
+export CFLAGS<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;-I</span><span style=color:#66d9ef>$(</span>brew --prefix openssl<span style=color:#66d9ef>)</span><span style=color:#e6db74>/include -I</span><span style=color:#66d9ef>$(</span>brew --prefix bzip2<span style=color:#66d9ef>)</span><span style=color:#e6db74>/include -I</span><span style=color:#66d9ef>$(</span>brew --prefix readline<span style=color:#66d9ef>)</span><span style=color:#e6db74>/include -I</span><span style=color:#66d9ef>$(</span>xcrun --show-sdk-path<span style=color:#66d9ef>)</span><span style=color:#e6db74>/usr/include&#34;</span>
+pyenv install 3.9.1 <span style=color:#75715e># Or your version</span>
 
-<span class=nb>echo</span> <span class=s2>&#34;Don&#39;t forget to make this the global python using pyenv global x.x.x&#34;</span>
-</code></pre></div><p>Pyenv will now build that version of python from source. Once it&rsquo;s finished, restart your terminal then run&mldr;</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>pyenv global 3.9.1  <span class=c1># Or whatever version you installed</span>
-</code></pre></div><p>And that&rsquo;s it! You know have a python installation <strong>completely</strong> separate from your system python(s)! 🎉</p><h3 id=how-to-use-it>How to use it</h3><p>I treat mine almost as if its the system installation, except with comfort in the knowledge that it&rsquo;s not and if all hell breaks loose I can always just <code>pyenv uninstall 3.9.1</code> and build it from scratch again.</p><p>The only thing I do with my global pyenv installation is install linting stuff and ensure things like <code>pip</code> and <code>setuptools</code> are always kept up to date. I actually do this with another bash function (keep scrolling&mldr;).</p><h3 id=virtual-environments>Virtual Environments</h3><p>I still recommend using virtual environments for basically everything:</p><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell><span class=nb>cd</span> my_project
+echo <span style=color:#e6db74>&#34;Don&#39;t forget to make this the global python using pyenv global x.x.x&#34;</span>
+</code></pre></div><p>Pyenv will now build that version of python from source. Once it&rsquo;s finished, restart your terminal then run&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>pyenv global 3.9.1  <span style=color:#75715e># Or whatever version you installed</span>
+</code></pre></div><p>And that&rsquo;s it! You know have a python installation <strong>completely</strong> separate from your system python(s)! 🎉</p>
+<h3 id=how-to-use-it>How to use it</h3>
+<p>I treat mine almost as if its the system installation, except with comfort in the knowledge that it&rsquo;s not and if all hell breaks loose I can always just <code>pyenv uninstall 3.9.1</code> and build it from scratch again.</p>
+<p>The only thing I do with my global pyenv installation is install linting stuff and ensure things like <code>pip</code> and <code>setuptools</code> are always kept up to date. I actually do this with another bash function (keep scrolling&mldr;).</p>
+<h3 id=virtual-environments>Virtual Environments</h3>
+<p>I still recommend using virtual environments for basically everything:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cd my_project
 
 python -m venv .venv
-<span class=c1># This now uses our magic pyenv version! we dont have to worry about saying python3.</span>
-</code></pre></div><p>So my pyenv global python acts as if it were my system one (but far safer) and all my projects have their own virtual environments. If you do this too, it is virtually impossible for you to mess up your python installation and you&rsquo;ll never end up understanding the xkcd comic, and thats a good thing! 👍.</p><hr><h4 id=side-note-bash-functions>Side Note: Bash Functions</h4><p>By the way if you don&rsquo;t know the trick with bash functions:</p><ul><li><p>Create a file called <code>~/.my_commands.sh</code> (or whatever you want to call it actually, it doesn&rsquo;t matter) in your home directory.</p></li><li><p>Add the following line in your <code>~/.zshrc</code> file:</p></li></ul><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=nb>source</span> ~/.my_commands.sh <span class=c1># Or whatever you called it</span>
-</code></pre></div><ul><li>Inside <code>.my_commands.sh</code> (or whatever you called it) write the functions you want in bash (e.g. my <code>maintenance</code> function below).</li></ul><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Inside ~/.my_commands.sh</span>
-<span class=c1>#!/usr/bin/env bash</span>
+<span style=color:#75715e># This now uses our magic pyenv version! we dont have to worry about saying python3.</span>
+</code></pre></div><p>So my pyenv global python acts as if it were my system one (but far safer) and all my projects have their own virtual environments. If you do this too, it is virtually impossible for you to mess up your python installation and you&rsquo;ll never end up understanding the xkcd comic, and thats a good thing! 👍.</p>
+<hr>
+<h4 id=side-note-bash-functions>Side Note: Bash Functions</h4>
+<p>By the way if you don&rsquo;t know the trick with bash functions:</p>
+<ul>
+<li>
+<p>Create a file called <code>~/.my_commands.sh</code> (or whatever you want to call it actually, it doesn&rsquo;t matter) in your home directory.</p>
+</li>
+<li>
+<p>Add the following line in your <code>~/.zshrc</code> file:</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>source ~/.my_commands.sh <span style=color:#75715e># Or whatever you called it</span>
+</code></pre></div><ul>
+<li>Inside <code>.my_commands.sh</code> (or whatever you called it) write the functions you want in bash (e.g. my <code>maintenance</code> function below).</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Inside ~/.my_commands.sh</span>
+<span style=color:#75715e>#!/usr/bin/env bash</span>
 
 
-<span class=c1># Colours for nice terminal output</span>
-<span class=nv>GREEN</span><span class=o>=</span><span class=s1>&#39;\033[0;32m&#39;</span>
-<span class=nv>NC</span><span class=o>=</span><span class=s1>&#39;\033[0m&#39;</span>
-<span class=nv>LBLUE</span><span class=o>=</span><span class=s1>&#39;\033[1;34m&#39;</span>
+<span style=color:#75715e># Colours for nice terminal output</span>
+GREEN<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\033[0;32m&#39;</span>
+NC<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\033[0m&#39;</span>
+LBLUE<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\033[1;34m&#39;</span>
 
-<span class=c1># Update all the things!</span>
-<span class=k>function</span> maintenance<span class=o>()</span> <span class=o>{</span>
-    <span class=nb>echo</span> -e <span class=s2>&#34;</span><span class=si>${</span><span class=nv>LBLUE</span><span class=si>}</span><span class=s2>Updating and cleaning homebrew packages...\n</span><span class=si>${</span><span class=nv>NC</span><span class=si>}</span><span class=s2>&#34;</span>
+<span style=color:#75715e># Update all the things!</span>
+<span style=color:#66d9ef>function</span> maintenance<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    echo -e <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>LBLUE<span style=color:#e6db74>}</span><span style=color:#e6db74>Updating and cleaning homebrew packages...\n</span><span style=color:#e6db74>${</span>NC<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
     brew update
     brew upgrade
     brew cleanup -s
-    <span class=nb>echo</span> -e <span class=s2>&#34;</span><span class=si>${</span><span class=nv>LBLUE</span><span class=si>}</span><span class=s2>Updating Global python3 core dependencies...\n</span><span class=si>${</span><span class=nv>NC</span><span class=si>}</span><span class=s2>&#34;</span>
+    echo -e <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>LBLUE<span style=color:#e6db74>}</span><span style=color:#e6db74>Updating Global python3 core dependencies...\n</span><span style=color:#e6db74>${</span>NC<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
     python -m pip install --quiet --upgrade pip setuptools wheel black mypy isort flake8
-    <span class=nb>echo</span> -e <span class=s2>&#34;</span><span class=si>${</span><span class=nv>GREEN</span><span class=si>}</span><span class=s2>All done :)\n</span><span class=si>${</span><span class=nv>NC</span><span class=si>}</span><span class=s2>&#34;</span>
-<span class=o>}</span>
-</code></pre></div><ul><li><p>Restart your terminal.</p></li><li><p>And now boom 💥 you have a <code>maintenance</code> function you can just call like any other CLI tool from your terminal.</p></li></ul><div class=highlight><pre class=chroma><code class=language-shell data-lang=shell>maintenance
+    echo -e <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>GREEN<span style=color:#e6db74>}</span><span style=color:#e6db74>All done :)\n</span><span style=color:#e6db74>${</span>NC<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
+<span style=color:#f92672>}</span>
+</code></pre></div><ul>
+<li>
+<p>Restart your terminal.</p>
+</li>
+<li>
+<p>And now boom 💥 you have a <code>maintenance</code> function you can just call like any other CLI tool from your terminal.</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>maintenance
 
-<span class=c1># Proceeds to do maintenance things...</span>
-</code></pre></div><p>You can write bash functions like this to do all sorts of cool stuff for you automatically!</p><blockquote><p><strong>Automation is power!</strong></p><p>— <em>Someone smart&mldr; probably</em></p></blockquote></div><div class=post-footer><div class=info><span class=separator><a class=category href=/categories/useful-tools/>useful tools</a></span>
-<span class=separator><a class=tag href=/tags/python/>python</a><a class=tag href=/tags/virtual-environments/>virtual environments</a><a class=tag href=/tags/installation/>installation</a></span></div></div></div></div></div></div><script type=text/javascript src=https://followtheprocess.github.io/js/jquery.min.64d0083866906099f942140bc1c5cba4b1bf65783c52e4a63c5c46bf9dbc41f4.js integrity="sha256-ZNAIOGaQYJn5QhQLwcXLpLG/ZXg8UuSmPFxGv528QfQ=" crossorigin=anonymous></script><script type=text/javascript src=https://followtheprocess.github.io/js/bundle.min.45159b0e20ba3878972e064b7edc464c31a9e35a0d0a6a71e3fec84efdbe2ea5.js integrity="sha256-RRWbDiC6OHiXLgZLftxGTDGp41oNCmpx4/7ITv2+LqU=" crossorigin=anonymous></script><script type=text/javascript src=https://followtheprocess.github.io/js/medium-zoom.min.2d6fd0be87fa98f0c9b4dc2536b312bbca48757f584f6ea1f394abc9bcc38fbc.js integrity="sha256-LW/Qvof6mPDJtNwlNrMSu8pIdX9YT26h85SrybzDj7w=" crossorigin=anonymous></script><script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}},window.addEventListener('load',a=>{document.querySelectorAll("mjx-container").forEach(function(a){a.parentElement.classList+='has-jax'})})</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script></body></html>
+<span style=color:#75715e># Proceeds to do maintenance things...</span>
+</code></pre></div><p>You can write bash functions like this to do all sorts of cool stuff for you automatically!</p>
+<blockquote>
+<p><strong>Automation is power!</strong></p>
+<p>— <em>Someone smart&mldr; probably</em></p>
+</blockquote>
+</p>
+</div>
+</div>
+</main><footer class=footer>
+<span>&copy; 2021 Tom Fleet</span>
+<span>
+Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a>
+</span>
+</footer>
+</body>
+</html>
