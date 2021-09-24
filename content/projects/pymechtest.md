@@ -9,6 +9,7 @@ tags = [
     "engineering",
     "OSS"
 ]
+type = "page"
 +++
 
 ![logo](/images/projects/pymechtest/logo.png)

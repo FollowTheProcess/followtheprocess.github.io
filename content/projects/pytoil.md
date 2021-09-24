@@ -9,6 +9,7 @@ tags = [
     "OSS"
 ]
 draft = false
+type = "page"
 +++
 
 ![logo](/images/projects/pytoil/logo.png)

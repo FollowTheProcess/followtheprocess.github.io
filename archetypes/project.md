@@ -3,10 +3,9 @@ author: "Tom Fleet"
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: "Description"
-tags:
+tags: 
 - "tag1"
 - "tag2"
-categories:
-- "category"
-draft: true
+math: true
+type: page
 ---

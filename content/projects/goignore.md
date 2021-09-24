@@ -9,6 +9,7 @@ tags = [
     "cli"
 ]
 draft = false
+type = "page"
 +++
 
 [![License](https://img.shields.io/github/license/FollowTheProcess/goignore)](https://github.com/FollowTheProcess/goignore)

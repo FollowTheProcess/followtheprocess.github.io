@@ -10,6 +10,7 @@ tags = [
     "machine learning"
 ]
 math = true
+type = "page"
 +++
 
 *Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.*

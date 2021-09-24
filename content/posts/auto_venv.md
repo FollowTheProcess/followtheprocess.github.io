@@ -2,13 +2,14 @@
 author: "Tom Fleet"
 title: "Automate your Virtual Environments... and everything else."
 date: 2021-03-01T17:27:07Z
-description: "Description"
+description: "Because why not?"
 tags:
 - "python"
 - "virtual environments"
 - "automation"
 categories:
 - "tips & tricks"
+type: post
 draft: false
 ---
 
