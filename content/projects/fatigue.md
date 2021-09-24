@@ -9,7 +9,8 @@ tags = [
     "engineering",
     "machine learning"
 ]
-math = true
+katex = true
+type = "page"
 +++
 
 *Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.*
@@ -22,9 +23,7 @@ Repeated cyclic loading of a material will eventually lead to a phenomenon calle
 
 Ever since the [comet disasters](https://en.wikipedia.org/wiki/De_Havilland_Comet#Accidents_and_incidents) in the 1950's, understanding exactly how this process works and predicting how long (or more accurately: how many cycles) components can survive for has been a crucial part of the design process. This is done with the so-called Paris Law (although in reality, it's a lot more complicated than this theoretical abstraction).
 
-$$
-da/dN = C(\Delta K)^m
-$$
+$$da/dN = C(\Delta K)^m$$
 
 Where $da$ is the increment in crack length, $dN$ is the increment in number of cycles, $C$ and $m$ are material-specific constants and $\Delta K$ is the increment in stress intensity factor (effectively a way of accounting for the increased stress around a defect such as a crack).
 

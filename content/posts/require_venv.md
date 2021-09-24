@@ -7,9 +7,8 @@ tags:
 - "python"
 - "virtual environments"
 - "pip"
-categories:
-- "tips & tricks"
 draft: false
+type: post
 ---
 
 This is going to be a short one, about something I discovered in the [pip] documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!

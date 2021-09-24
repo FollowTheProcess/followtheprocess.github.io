@@ -9,15 +9,10 @@ tags = [
     "OSS"
 ]
 draft = false
+type = "page"
 +++
 
 ![logo](/images/projects/pytoil/logo.png)
-
-[![License](https://img.shields.io/github/license/FollowTheProcess/pytoil)](https://github.com/FollowTheProcess/pytoil)
-[![PyPI](https://img.shields.io/pypi/v/pytoil.svg)](https://pypi.python.org/pypi/pytoil)
-[![Code Style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/FollowTheProcess/pytoil)
-[![CI](https://github.com/FollowTheProcess/pytoil/workflows/CI/badge.svg)](https://github.com/FollowTheProcess/pytoil/actions?query=workflow%3ACI)
-[![Coverage](/images/projects/pytoil/coverage.svg)](https://github.com/FollowTheProcess/pytoil)
 
 *pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!*
 
@@ -54,9 +49,7 @@ So I decided to make a robust CLI with the proper error handling and testability
 
 ## Tech Notes
 
-pytoil uses [Typer] under the hood for the moment. I'm debating changing it to [cleo] as each Typer command must live under a decorated function which leads to long difficult to maintain functions. With cleo, each command is a class to which you can add helper methods.
-
-I wanted to make sure that pytoil was robust and well tested/documented. Currently, pytoil has 100% test coverage and I've tried to be smart with the tests so I'm not just reaching for maximum coverage but the tests actually represent real world situations.
+pytoil uses [Typer] under the hood. I wanted to make sure that pytoil was robust and well tested/documented. Currently, pytoil has 100% test coverage and I've tried to be smart with the tests so I'm not just reaching for maximum coverage but the tests actually represent real world situations.
 
 I got quite good at mocking with pytest during this project as most pytoil functions make system calls (to things like `git` and `conda`) so these all have to be mocked out.
 
@@ -67,4 +60,3 @@ The part I'm probably most happy with is the way pytoil handles virtual environm
 This showed up best when I was refactoring the `.create()` method to optionally include a list of packages specified in the config file. Because the CLI function dealing with this didn't concern itself with which environment it was dealing with, this was about a 10 line change in the two classes and some tweaks to some unit tests and that was it! Very easy!
 
 [Typer]: https://typer.tiangolo.com
-[cleo]: https://cleo.readthedocs.io/en/latest/

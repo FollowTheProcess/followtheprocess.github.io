@@ -1,20 +1,15 @@
-+++
-author = "Tom Fleet"
-title = "Buggy Accelerate Backend"
-date = "2021-02-16"
-description = "Ever run into this weird error using NumPy on macOS?"
-tags = [
-    "python",
-    "numpy",
-    "installation",
-    "macos"
-]
-categories = [
-    "tips & tricks",
-]
-series = ["Tips & Tricks"]
-draft = false
-+++
+---
+author: "Tom Fleet"
+title: "Buggy Accelerate Backend"
+date: "2021-02-16"
+description: "Ever run into this weird error using NumPy on macOS?"
+tags:
+- python
+- numpy
+- installation
+draft: false
+type: post
+---
 
 If you work on macOS and use [numpy], chances are at some point you may have had some very confusing error message appear about "buggy accelerate backend... something something... polyfit sanity check."
 

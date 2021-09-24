@@ -1,97 +1,49 @@
-baseURL = "https://followtheprocess.github.io"
-languageCode = "en"
-DefaultContentLanguage = "en"
-title = "Tom Fleet Profile"
-theme = "anatole"
-summarylength = 10
+baseURL = 'https://followtheproecess.github.io'
+languageCode = 'en'
+defaultContentLanguage = "en"
+title = '@FollowTheProcess'
+theme = "gokarna"
 enableEmoji = true
 enableRobotsTXT = true
 
-# Enable Disqus
-#disqusShortname = ""
-
-# Google Analytics
-#googleAnalytics = "UA-123-45"
-
-# Syntax highlighting
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
+pygmentsStyle = "monokai"
 
 [params]
-title = "Tom Fleet"
-author = "Tom Fleet"
-#copyright = "2020-2021"
-description = "Materials Science, Engineering, Python, Data Analysis, Machine Learning."
-profilePicture = "/images/profile.jpg"
-keywords = ""
-favicon = "/favicons/"
-# example ["css/custom.css"]
-customCss = []
-# example ["js/custom.js"]
-customJs = [] 
-mainSections = ["projects"]
-images = []
-doNotLoadAnimations = false
-# Form Spree Contact Form
-#contactFormAction = "https://formspree.io/f/your-form-hash-here"
-# Google Site Verify
-#googleSiteVerify = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-# indexDateFormat = "Mon, Jan 2, 2006"
-# listDateFormat = "Jan 2"
-# singleDateFormat = "Mon, Jan 2, 2006"
+  footer = "Tom Fleet"
+  description = """
+    Ex materials engineer turned python developer.
+    Python | Go | ML
+  """
+  avatarURL = "/images/profile.jpg"
+  avatarSize = "size-m"
+  socialIcons = [
+    {name = "linkedin", url = "https://www.linkedin.com/in/tom-fleet-03b03280/"},
+    {name = "github", url = "https://github.com/FollowTheProcess/"},
+  ]
+  customHeadHTML = """
+    <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 
-[params.simpleAnalytics]
-# enable = true
-# customurl = "https://analytics.example.com"
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 
-## Math settings
-[params.math]
-enable = false  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
-use = "mathjax"  # options: "katex", "mathjax". default is "katex".
-
-## Social links
-# use 'fab' when brand icons, use 'fas' when standard solid icons.
-
-[[params.socialIcons]]
-icon = "fab fa-github"
-title = "GitHub"
-url = "https://github.com/FollowTheProcess/"
-
-[[params.socialIcons]]
-icon = "fab fa-linkedin"
-title = "Linkedin"
-url = "https://www.linkedin.com/in/tom-fleet-03b03280/"
-
-[[params.socialIcons]]
-icon = "fas fa-envelope"
-title = "e-mail"
-url = "mailto:tomfleet2018@gmail.com"
-
-## Menu items
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+        onload="renderMathInElement(document.body,);"></script>
+  """
 
 [menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
 
   [[menu.main]]
-  name = "Home"
-  identifier = "home"
-  weight = 100
-  url = "/"
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
 
   [[menu.main]]
-  name = "Posts"
-  weight = 200
-  identifier = "posts"
-  url = "/posts/"
-
-  [[menu.main]]
-  name = "Projects"
-  weight = 300
-  identifier = "projects"
-  url = "/projects/"
-
-  [[menu.main]]
-  name = "Contact"
-  weight = 400
-  identifier = "contact"
-  url = "/contact/"
+    name = "Projects"
+    url = "/projects/"
+    weight = 3

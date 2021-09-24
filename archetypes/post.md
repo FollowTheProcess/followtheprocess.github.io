@@ -6,7 +6,6 @@ description: "Description"
 tags:
 - "tag1"
 - "tag2"
-categories:
-- "category"
 draft: true
+type: post
 ---

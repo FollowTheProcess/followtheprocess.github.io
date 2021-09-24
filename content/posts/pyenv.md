@@ -8,11 +8,8 @@ tags = [
     "virtual environments",
     "installation",
 ]
-categories = [
-    "useful tools",
-]
-series = ["Useful Tools"]
 draft = false
+type = "post"
 +++
 
 I think everyone who has touched python at some point has seen this picture...
