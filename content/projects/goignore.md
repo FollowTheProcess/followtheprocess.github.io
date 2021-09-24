@@ -14,14 +14,14 @@ type = "page"
 
 *An extremely simple go CLI to hit the [gitignore API] with whatever you pass as command line arguments. The list of things you can pass here are documented on [gitignore.io].*
 
-* **Source Code**: [https://github.com/FollowTheProcess/gotoil](https://github.com/FollowTheProcess/gotoil/)
+* **Source Code**: [https://github.com/FollowTheProcess/goignore](https://github.com/FollowTheProcess/goignore/)
 
 You'll get back a .gitignore file saved to `$CWD/.gitignore` with the contents generated from the API.
 
 ## Installation
 
 ```shell
-go get -u github.com/FollowTheProcess/goignore
+go install github.com/FollowTheProcess/goignore@latest
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ go get -u github.com/FollowTheProcess/goignore
 Inside the folder you want the `.gitignore` to live in, run:
 
 ```shell
-goignore macos vscode go
+goignore macos visualstudiocode go
 ```
 
 This will get you a `.gitignore` file that looks like...
@@ -104,7 +104,7 @@ Temporary Items
 If you're not sure what you can type in, run:
 
 ```shell
-goignore list
+goignore --list
 ```
 
 And you'll see something like...
@@ -122,9 +122,9 @@ appbuilder,appceleratortitanium,appcode,appcode+all,appcode+iml
 If you have a particular thing in mind:
 
 ```shell
-goignore list | grep vscode
+goignore --list list | grep visualstudiocode
 
-vscode,vue,vuejs,vvvv,waf
+virtuoso,visualstudio,visualstudiocode,vivado,vlab
 ```
 
 ## Tech Notes
