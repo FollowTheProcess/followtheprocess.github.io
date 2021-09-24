@@ -138,14 +138,11 @@ code ~/.my_commands.sh
 <span style=color:#66d9ef>function</span> venv<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
     <span style=color:#75715e># First check if there already is a venv</span>
     <span style=color:#75715e># If so just activate it</span>
-
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d .venv <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Activating venv...&#34;</span>
         source .venv/bin/activate
     <span style=color:#66d9ef>else</span>
         <span style=color:#75715e># Make a new one</span>
-
         echo <span style=color:#e6db74>&#34;Creating new venv...&#34;</span>
         python3 -m venv .venv
         <span style=color:#75715e># Clever recursive call so it now traverses the top branch</span>
@@ -181,12 +178,10 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 <span style=color:#75715e># As in &#34;check out&#34; a project</span>
 <span style=color:#75715e># Not to be confused with git checkout</span>
 <span style=color:#66d9ef>function</span> checkout<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-    
     <span style=color:#75715e># Now we are in PROJECTS_DIR and can find anything we want</span>
     cd PROJECTS_DIR
 
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
         cd $1 <span style=color:#75715e># Go there</span>
         venv <span style=color:#75715e># Call your venv function from before</span>
@@ -224,12 +219,11 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
     cd PROJECTS_DIR
 
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
         cd $1 <span style=color:#75715e># Go there</span>
         venv <span style=color:#75715e># Call your venv function from before</span>
         code . <span style=color:#75715e># Open the project in VSCode</span>
-    
+
     <span style=color:#75715e># Now, instead of just giving up we will search GitHub</span>
     <span style=color:#66d9ef>elif</span> gh repo list | grep -qFe $1; <span style=color:#66d9ef>then</span>
 
@@ -289,8 +283,8 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 <p><img src=/images/posts/vscode_settings_json.png alt="VSCode Settings"></p>
 <p>And they live here: <code>.vscode/settings.json</code> inside your project.</p>
 <p>The setting I&rsquo;m interested in here is:</p>
-<p><code>python.pythonPath</code>: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically</p>
-<h4 id=setting-pythonpythonpath>Setting python.pythonPath</h4>
+<p><code>python.defaultInterpreterPath</code>: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically</p>
+<h4 id=setting-pythondefaultinterpreterpath>Setting python.defaultInterpreterPath</h4>
 <p>Okay so now we know where these settings are kept, what to do? 🤔</p>
 <p>This is our function so far:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Where you keep your projects</span>
@@ -304,7 +298,6 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
     cd PROJECTS_DIR
 
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
         cd $1 <span style=color:#75715e># Go there</span>
         venv <span style=color:#75715e># Call your venv function from before</span>
@@ -312,7 +305,6 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
     
     <span style=color:#75715e># Now, instead of just giving up we will search GitHub</span>
     <span style=color:#66d9ef>elif</span> gh repo list | grep -qFe $1; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found on GitHub. Cloning...&#34;</span>
         gh repo clone $1 <span style=color:#75715e># See, gh makes everything easy</span>
 
@@ -331,19 +323,16 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 <span style=color:#66d9ef>function</span> code_set_venv<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
 
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -f .vscode/settings.json <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Ensuring VSCode is using the correct virtualenv...&#34;</span>
-        <span style=color:#75715e># Current set value for pythonPath. &#39;null&#39; if empty or doesn&#39;t exist</span>
-        ppath<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>cat .vscode/settings.json | jq <span style=color:#e6db74>&#39;.&#34;python.pythonPath&#34;&#39;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+        <span style=color:#75715e># Current set value for defaultInterpreterPath. &#39;null&#39; if empty or doesn&#39;t exist</span>
+        ppath<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>cat .vscode/settings.json | jq <span style=color:#e6db74>&#39;.&#34;python.defaultInterpreterPath&#34;&#39;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 
         <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> $ppath !<span style=color:#f92672>=</span> null <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-            <span style=color:#75715e># pythonPath is already set</span>
-            echo <span style=color:#e6db74>&#34;python.pythonPath already set in workspace settings. Not overwriting.&#34;</span>
+            <span style=color:#75715e># defaultInterpreterPath is already set</span>
+            echo <span style=color:#e6db74>&#34;python.defaultInterpreterPath already set in workspace settings. Not overwriting.&#34;</span>
         <span style=color:#66d9ef>else</span>
-            ppath_set<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>jq <span style=color:#e6db74>&#39;.&#34;python.pythonPath&#34; = &#34;.venv/bin/python&#34;&#39;</span> .vscode/settings.json<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
-
+            ppath_set<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>jq <span style=color:#e6db74>&#39;.&#34;python.defaultInterpreterPath&#34; = &#34;.venv/bin/python&#34;&#39;</span> .vscode/settings.json<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
             echo $ppath_set &gt;.vscode/settings.json
-
         <span style=color:#66d9ef>fi</span>
     
     <span style=color:#66d9ef>else</span>
@@ -362,7 +351,7 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 <p>First asks if there are already VSCode workspace settings: <code>if [[ -f .vscode/settings.json ]]</code></p>
 </li>
 <li>
-<p>If there are it looks at what is currently set for <code>python.pythonPath</code>. The assumption being that if someone already set it explicitly, we should probably leave it alone.</p>
+<p>If there are it looks at what is currently set for <code>python.defaultInterpreterPath</code>. The assumption being that if someone already set it explicitly, we should probably leave it alone.</p>
 </li>
 <li>
 <p>If it&rsquo;s empty or not set at all (represented in JSON by <code>null</code>) then we can do what we like! i.e. set it to our virtualenv&rsquo;s python. This bit is done by the <code>ppath_set</code> line.</p>
@@ -378,12 +367,10 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 <span style=color:#75715e># As in &#34;check out&#34; a project</span>
 <span style=color:#75715e># Not to be confused with git checkout</span>
 <span style=color:#66d9ef>function</span> checkout<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-    
     <span style=color:#75715e># Now we are in PROJECTS_DIR and can find anything we want</span>
     cd PROJECTS_DIR
 
     <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
         cd $1
         venv
@@ -392,10 +379,8 @@ PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
     
     <span style=color:#75715e># Now, instead of just giving up we will search GitHub</span>
     <span style=color:#66d9ef>elif</span> gh repo list | grep -qFe $1; <span style=color:#66d9ef>then</span>
-
         echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found on GitHub. Cloning...&#34;</span>
         gh repo clone $1 <span style=color:#75715e># See, gh makes everything easy</span>
-
         <span style=color:#75715e># Now it will exist locally, so just recurse</span>
         checkout $1
     <span style=color:#66d9ef>else</span>
