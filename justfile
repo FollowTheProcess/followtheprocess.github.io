@@ -9,3 +9,11 @@ build:
 # Build and serve locally
 serve:
     hugo server --disableFastRender -D
+
+# Create a new post
+post title:
+    hugo new -k post content/posts/{{ title }}.md
+
+# Create a new project
+project title:
+    hugo new -k project content/projects/{{ title }}.md
