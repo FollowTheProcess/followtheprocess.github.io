@@ -92,6 +92,10 @@
                 <a href="/projects/"> Projects </a>
             </div>
             
+            <div class="nav-link">
+                <a href="https://github.com/FollowTheProcess/"><span data-feather='github'></span>  </a>
+            </div>
+            
 
             <span class="nav-icons-divider"></span>
             <div class="nav-link dark-theme-toggle">
@@ -121,6 +125,10 @@
                     <a href="/projects/"> Projects </a>
                 </li>
                 
+                <li class="nav-item">
+                    <a href="https://github.com/FollowTheProcess/"><span data-feather='github'></span>  </a>
+                </li>
+                
                 <li class="nav-item dark-theme-toggle">
                     <a>
                         <span id="theme-toggle-icon" data-feather="moon"></span>
@@ -144,16 +152,16 @@
         <p>
             <p><em>An extremely simple go CLI to hit the <a href="https://www.toptal.com/developers/gitignore">gitignore API</a> with whatever you pass as command line arguments. The list of things you can pass here are documented on <a href="https://www.toptal.com/developers/gitignore">gitignore.io</a>.</em></p>
 <ul>
-<li><strong>Source Code</strong>: <a href="https://github.com/FollowTheProcess/gotoil/">https://github.com/FollowTheProcess/gotoil</a></li>
+<li><strong>Source Code</strong>: <a href="https://github.com/FollowTheProcess/goignore/">https://github.com/FollowTheProcess/goignore</a></li>
 </ul>
 <p>You&rsquo;ll get back a .gitignore file saved to <code>$CWD/.gitignore</code> with the contents generated from the API.</p>
 <h2 id="installation">Installation</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go get -u github.com/FollowTheProcess/goignore
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go install github.com/FollowTheProcess/goignore@latest
 </code></pre></div><h2 id="usage">Usage</h2>
 <p>Inside the folder you want the <code>.gitignore</code> to live in, run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goignore macos vscode go
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goignore macos visualstudiocode go
 </code></pre></div><p>This will get you a <code>.gitignore</code> file that looks like&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext"># Created by https://www.toptal.com/developers/gitignore/api/macos,vscode,go
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext"># Created by https://www.toptal.com/developers/gitignore/api/macos,vscode,go
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,vscode,go
 
 ### Go ###
@@ -217,19 +225,19 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos,vscode,go
 </code></pre></div><h2 id="list-options">List Options</h2>
 <p>If you&rsquo;re not sure what you can type in, run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goignore list
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goignore --list
 </code></pre></div><p>And you&rsquo;ll see something like&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">1c,1c-bitrix,a-frame,actionscript,ada
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">1c,1c-bitrix,a-frame,actionscript,ada
 adobe,advancedinstaller,adventuregamestudio,agda,al
 alteraquartusii,altium,amplify,android,androidstudio
 angular,anjuta,ansible,apachecordova,apachehadoop
 appbuilder,appceleratortitanium,appcode,appcode+all,appcode+iml
 
-<span style="color:#75715e"># etc.</span>
+<span style="color:#6272a4"># etc.</span>
 </code></pre></div><p>If you have a particular thing in mind:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goignore list | grep vscode
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">goignore --list list | grep visualstudiocode
 
-vscode,vue,vuejs,vvvv,waf
+virtuoso,visualstudio,visualstudiocode,vivado,vlab
 </code></pre></div><h2 id="tech-notes">Tech Notes</h2>
 <p>I&rsquo;ve been learning Go and working through <a href="https://quii.gitbook.io/learn-go-with-tests/">Learn Go with Tests</a> and I really like it! This is the first thing I&rsquo;ve ever written in Go, its pretty simple as programs go but it was tricky stitching this together in a new language. Although go actually makes this sort of thing super easy, the go standard library is really incredible.</p>
 <p>The best part coming from python though is no worrying about versions, virtual environments or anything like that. Just run <code>go install</code> and you have a binary application ready to run in your <code>$PATH</code> just like that!</p>

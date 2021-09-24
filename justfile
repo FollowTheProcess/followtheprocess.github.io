@@ -4,7 +4,7 @@ _default:
 
 # Build the site
 build:
-    hugo
+    hugo -D
 
 # Build and serve locally
 serve:

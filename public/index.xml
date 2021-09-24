@@ -14,9 +14,9 @@
       
       <guid>https://followtheproecess.github.io/projects/goignore/</guid>
       <description>An extremely simple go CLI to hit the gitignore API with whatever you pass as command line arguments. The list of things you can pass here are documented on gitignore.io.
- Source Code: https://github.com/FollowTheProcess/gotoil  You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
-Installation go get -u github.com/FollowTheProcess/goignore Usage Inside the folder you want the .gitignore to live in, run:
-goignore macos vscode go This will get you a .</description>
+ Source Code: https://github.com/FollowTheProcess/goignore  You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
+Installation go install github.com/FollowTheProcess/goignore@latest Usage Inside the folder you want the .gitignore to live in, run:
+goignore macos visualstudiocode go This will get you a .</description>
     </item>
     
     <item>
