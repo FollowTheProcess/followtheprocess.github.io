@@ -57,6 +57,16 @@ Background Repeated cyclic loading of a material will eventually lead to a pheno
     </item>
     
     <item>
+      <title>Cookie Pypackage</title>
+      <link>https://followtheproecess.github.io/projects/cookie_pypackage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://followtheproecess.github.io/projects/cookie_pypackage/</guid>
+      <description>A modern python package template, inspired by the original but with some updates bringing it to the forefront of modern python!
+ Source Code: https://github.com/FollowTheProcess/cookie_pypackage  Changes from the Original  Changed from tox to nox for flexible python test automation Drop support for unittest in favour of pytest Change CI provider from Travis to GitHub actions Change docs from Sphinx to MkDocs Built in support for static type hinting with mypy Made compliant with PEP 517/518  Features GitHub Actions The project template comes with a ready to go GitHub Actions configuration file which automates all your code quality checks:</description>
+    </item>
+    
+    <item>
       <title>msg</title>
       <link>https://followtheproecess.github.io/projects/msg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
