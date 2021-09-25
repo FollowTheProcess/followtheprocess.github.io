@@ -7,7 +7,7 @@ build:
     hugo -D
 
 # Build and serve locally
-serve:
+serve: build
     open "http://localhost:1313/"
     hugo server --disableFastRender -D
 
