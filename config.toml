@@ -55,3 +55,8 @@ pygmentsStyle = "dracula"
   weight = 4
   # Using feather-icons
   pre = "<span data-feather='github'></span>"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
