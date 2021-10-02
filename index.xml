@@ -25,4 +25,8 @@ Source Code: https://github.com/FollowTheProcess/msg
 Free software: MIT License
 Project Description Who else is bored with boring grey text in CLIs? 🙋‍♀️
 We all have fancy terminals, utf-8 is everywhere, no one is still using the stock windows command prompt any more&amp;hellip; are they? 🤨
-When writing pytoil I discovered ines/wasabi for this exact purpose and absolutely loved it immediately:</description></item></channel></rss>
+When writing pytoil I discovered ines/wasabi for this exact purpose and absolutely loved it immediately:</description></item><item><title>Tag</title><link>https://followtheproecess.github.io/projects/tag/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheproecess.github.io/projects/tag/</guid><description>Interact with semver git tags with ease! 🏷
+Source Code: https://github.com/FollowTheProcess/tag
+Free software: Apache Software License 2.0
+Project Description Releasing new versions of software can be hard! Most projects have CI/CD pipelines set up to help with this and these pipelines are typically triggered on push of a new semver tag e.g. v1.2.4.
+I made tag because I can never remember the commands to correctly issue and push a tag:</description></item></channel></rss>
