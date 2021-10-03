@@ -7,9 +7,9 @@ type: page
 
 Interact with semver git tags with ease! 🏷
 
-* **Source Code**: [https://github.com/FollowTheProcess/tag](https://github.com/FollowTheProcess/tag/)
-
 * Free software: Apache Software License 2.0
+
+![demo](https://github.com/FollowTheProcess/tag/raw/main/img/demo.gif)
 
 ## Project Description
 
@@ -46,33 +46,33 @@ brew install FollowTheProcess/homebrew-tap/tag
 
 ### List all Tags
 
-`tag list` will list all the current tags for the repo, sorted with the most recent at the top.
+`tag list` will list all the current tags for the repo, sorted with the most recent at the top:
 
-![list](https://github.com/FollowTheProcess/tag/raw/main/img/list.gif)
+![list](https://github.com/FollowTheProcess/tag/raw/main/img/list.png)
 
 ### Get Latest Tag
 
 If you just want the latest tag...
 
-![latest](https://github.com/FollowTheProcess/tag/raw/main/img/latest.gif)
+![latest](https://github.com/FollowTheProcess/tag/raw/main/img/latest.png)
 
 ### Bump a Version
 
 Using one of the `major`, `minor` or `patch` commands will look at the latest [semver] tag and bump the appropriate version...
 
-![bump](https://github.com/FollowTheProcess/tag/raw/main/img/bump.gif)
+![bump](https://github.com/FollowTheProcess/tag/raw/main/img/bump.png)
 
 ### Push a Tag
 
 If you want to bump a version and push it to GitHub at the same time...
 
-![push](https://github.com/FollowTheProcess/tag/raw/main/img/push.gif)
+![push](https://github.com/FollowTheProcess/tag/raw/main/img/push.png)
 
 ### Delete a Tag
 
 You can also delete a tag...
 
-![delete](https://github.com/FollowTheProcess/tag/raw/main/img/delete.gif)
+![delete](https://github.com/FollowTheProcess/tag/raw/main/img/delete.png)
 
 ## Contributing
 
