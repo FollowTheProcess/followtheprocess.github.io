@@ -67,6 +67,17 @@ Background Repeated cyclic loading of a material will eventually lead to a pheno
     </item>
     
     <item>
+      <title>Gotoil</title>
+      <link>https://followtheproecess.github.io/projects/gotoil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://followtheproecess.github.io/projects/gotoil/</guid>
+      <description>Handy CLI to automate the development workflow 🤖
+ Free software: Apache Software License 2.0  Project Description gotoil is a handly CLI tool that helps you stay on top of all your development projects, whether they&amp;rsquo;re on your local machine or on GitHub! It&amp;rsquo;s based on it&amp;rsquo;s sister project pytoil but (as you&amp;rsquo;ve probably guessed by the name) it&amp;rsquo;s written in Go, not python!
+pytoil is aimed primarily at python developers, it has some python specific features such as automatically creating and managing virtual environments.</description>
+    </item>
+    
+    <item>
       <title>msg</title>
       <link>https://followtheproecess.github.io/projects/msg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
