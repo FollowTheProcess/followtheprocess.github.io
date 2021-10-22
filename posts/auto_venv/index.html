@@ -101,16 +101,16 @@ March 1, 2021
 <div class=post-content>
 <p>
 <p>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&mldr;</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#998;font-style:italic># Make it</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Make it</span>
 python -m venv .venv
 
-<span style=color:#998;font-style:italic># Activate it</span>
-<span style=color:#0086b3>source</span> .venv/bin/activate
+<span style=color:#75715e># Activate it</span>
+source .venv/bin/activate
 
-<span style=color:#998;font-style:italic># Install/upgrade seeds</span>
+<span style=color:#75715e># Install/upgrade seeds</span>
 python -m pip install --upgrade pip setuptools wheel
 
-<span style=color:#998;font-style:italic># Install what you actually wanted</span>
+<span style=color:#75715e># Install what you actually wanted</span>
 python -m pip install things i actually wanted
 
 python -m pip install this needs to be automated
@@ -126,12 +126,12 @@ python -m pip install this needs to be automated
 <p>Like most things, 80% of the results can be achieved with 20% of the effort 👍</p>
 <h3 id=step-1-create-a-file-to-hold-all-your-custom-stuff>Step 1: Create a file to hold all your custom stuff</h3>
 <p>You don&rsquo;t want to clutter up your <code>~/.zshrc</code> too much so it&rsquo;s best to keep this sort of thing separate. I used <code>.my_commands.sh</code> for mine but the name is up to you.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#998;font-style:italic># Go home if you&#39;re not there already</span>
-<span style=color:#0086b3>cd</span> <span style=color:teal>$HOME</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Go home if you&#39;re not there already</span>
+cd $HOME
 
 touch .my_commands.sh
 
-<span style=color:#998;font-style:italic># I use VSCode but any editor will do</span>
+<span style=color:#75715e># I use VSCode but any editor will do</span>
 code ~/.my_commands.sh
 </code></pre></div><h3 id=step-2-write-your-function>Step 2: Write your function</h3>
 <p>Now in that file, we&rsquo;re going to make a function that you can call from any terminal session. This function will:</p>
@@ -139,28 +139,28 @@ code ~/.my_commands.sh
 <li>Create a new virtual environment (if there isnt one already in the current directory)</li>
 <li>If there is one, it&rsquo;ll activate it for us</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#999;font-weight:700;font-style:italic>#!/usr/bin/env bash
-</span><span style=color:#999;font-weight:700;font-style:italic></span>
-<span style=color:#000;font-weight:700>function</span> venv<span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
-    <span style=color:#998;font-style:italic># First check if there already is a venv</span>
-    <span style=color:#998;font-style:italic># If so just activate it</span>
-    <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> -d .venv <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Activating venv...&#34;</span>
-        <span style=color:#0086b3>source</span> .venv/bin/activate
-    <span style=color:#000;font-weight:700>else</span>
-        <span style=color:#998;font-style:italic># Make a new one</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Creating new venv...&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/usr/bin/env bash
+</span><span style=color:#75715e></span>
+<span style=color:#66d9ef>function</span> venv<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    <span style=color:#75715e># First check if there already is a venv</span>
+    <span style=color:#75715e># If so just activate it</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d .venv <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Activating venv...&#34;</span>
+        source .venv/bin/activate
+    <span style=color:#66d9ef>else</span>
+        <span style=color:#75715e># Make a new one</span>
+        echo <span style=color:#e6db74>&#34;Creating new venv...&#34;</span>
         python3 -m venv .venv
-        <span style=color:#998;font-style:italic># Clever recursive call so it now traverses the top branch</span>
+        <span style=color:#75715e># Clever recursive call so it now traverses the top branch</span>
         venv
-    <span style=color:#000;font-weight:700>fi</span>
-<span style=color:#000;font-weight:700>}</span>
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
 </code></pre></div><h3 id=step-3-source-it-in-each-shell>Step 3: Source it in each shell</h3>
 <p>That&rsquo;s your function done, now we just need to do one more thing to make this available to every terminal session.</p>
 <p>Open your <code>~/.zshrc</code> (or <code>~/.bashrc</code>, the syntax is the same) and type the following:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#998;font-style:italic># ~/.zshrc</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># ~/.zshrc</span>
 
-<span style=color:#0086b3>source</span> ~/.my_commands.sh <span style=color:#998;font-style:italic># Or whatever you named it</span>
+source ~/.my_commands.sh <span style=color:#75715e># Or whatever you named it</span>
 </code></pre></div><p>Save and close and you&rsquo;re done! That was easy wasn&rsquo;t it! 😁</p>
 <p>Now this <code>venv</code> command is available in every terminal session because your shell runs <code>~/.zshrc</code> every time it starts up. This is very handy and infinitely better than typing it out yourself.</p>
 <p>This is fine, but it&rsquo;s a bit&mldr; plain. We can do better 😏</p>
@@ -176,26 +176,26 @@ code ~/.my_commands.sh
 <p>I&rsquo;m assuming here that you keep all your development projects in one place.</p>
 <p>The function we&rsquo;re going to write is going to be called <code>checkout</code> will take a single argument: the name of a project.</p>
 <p>You&rsquo;ll use it like this:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>checkout my_project
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>checkout my_project
 </code></pre></div><p>Now to the writing&mldr;</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#998;font-style:italic># Where you keep your projects</span>
-<span style=color:teal>PROJECTS_DIR</span> <span style=color:#000;font-weight:700>=</span> <span style=color:teal>$HOME</span>/Development
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Where you keep your projects</span>
+PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 
-<span style=color:#998;font-style:italic># As in &#34;check out&#34; a project</span>
-<span style=color:#998;font-style:italic># Not to be confused with git checkout</span>
-<span style=color:#000;font-weight:700>function</span> checkout<span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
-    <span style=color:#998;font-style:italic># Now we are in PROJECTS_DIR and can find anything we want</span>
-    <span style=color:#0086b3>cd</span> PROJECTS_DIR
+<span style=color:#75715e># As in &#34;check out&#34; a project</span>
+<span style=color:#75715e># Not to be confused with git checkout</span>
+<span style=color:#66d9ef>function</span> checkout<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    <span style=color:#75715e># Now we are in PROJECTS_DIR and can find anything we want</span>
+    cd PROJECTS_DIR
 
-    <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> -d <span style=color:teal>$1</span> <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found locally&#34;</span> <span style=color:#998;font-style:italic># Helpful to say whats going on</span>
-        <span style=color:#0086b3>cd</span> <span style=color:teal>$1</span> <span style=color:#998;font-style:italic># Go there</span>
-        venv <span style=color:#998;font-style:italic># Call your venv function from before</span>
-        code . <span style=color:#998;font-style:italic># Open the project in VSCode</span>
-    <span style=color:#000;font-weight:700>else</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Uh oh, couldn&#39;t find &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39;&#34;</span>
-    <span style=color:#000;font-weight:700>fi</span>
-<span style=color:#000;font-weight:700>}</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
+        cd $1 <span style=color:#75715e># Go there</span>
+        venv <span style=color:#75715e># Call your venv function from before</span>
+        code . <span style=color:#75715e># Open the project in VSCode</span>
+    <span style=color:#66d9ef>else</span>
+        echo <span style=color:#e6db74>&#34;Uh oh, couldn&#39;t find &#39;</span>$1<span style=color:#e6db74>&#39;&#34;</span>
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
 </code></pre></div><p>This is already much better! You can call <code>checkout my_project</code> from anywhere in a terminal and it will find the right project, activate a virtual environment, then open up the project in VSCode, all from one command!</p>
 <h3 id=what-if-the-project-is-on-github>What if the project is on GitHub?</h3>
 <p>Now we&rsquo;re cooking! Who wants to use their browser to go to the GitHub repo they want, copy the clone link, go back to the terminal, clone it&mldr; blah blah blah when you could just automate it!</p>
@@ -204,7 +204,7 @@ code ~/.my_commands.sh
 <li><a href=https://cli.github.com>gh</a> - The official GitHub CLI. Get version >=1.7.0.</li>
 </ul>
 <p>This can be installed with <a href=https://brew.sh>homebrew</a>.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew install gh
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew install gh
 </code></pre></div><p>Full disclosure: you don&rsquo;t actually <em>need</em> the GitHub CLI you could do this with <code>jq</code> and <code>cURL</code>, <code>gh</code> just makes it so easy, and I use it all the time anyway now it really is great!</p>
 <p>What we&rsquo;re going to do with these new tools is:</p>
 <ol>
@@ -214,38 +214,38 @@ code ~/.my_commands.sh
 </ol>
 <p>First you&rsquo;ll need to set up the GitHub CLI and authorise it but they&rsquo;ve made this ridiculously easy I think you just fire it up for the first time and it guides you through the auth flow.</p>
 <p>Now we can get automating&mldr;</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#998;font-style:italic># Where you keep your projects</span>
-<span style=color:teal>PROJECTS_DIR</span> <span style=color:#000;font-weight:700>=</span> <span style=color:teal>$HOME</span>/Development
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Where you keep your projects</span>
+PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 
-<span style=color:#998;font-style:italic># As in &#34;check out&#34; a project</span>
-<span style=color:#998;font-style:italic># Not to be confused with git checkout</span>
-<span style=color:#000;font-weight:700>function</span> checkout<span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
+<span style=color:#75715e># As in &#34;check out&#34; a project</span>
+<span style=color:#75715e># Not to be confused with git checkout</span>
+<span style=color:#66d9ef>function</span> checkout<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
     
-    <span style=color:#998;font-style:italic># Now we are in PROJECTS_DIR and can find anything we want</span>
-    <span style=color:#0086b3>cd</span> PROJECTS_DIR
+    <span style=color:#75715e># Now we are in PROJECTS_DIR and can find anything we want</span>
+    cd PROJECTS_DIR
 
-    <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> -d <span style=color:teal>$1</span> <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found locally&#34;</span> <span style=color:#998;font-style:italic># Helpful to say whats going on</span>
-        <span style=color:#0086b3>cd</span> <span style=color:teal>$1</span> <span style=color:#998;font-style:italic># Go there</span>
-        venv <span style=color:#998;font-style:italic># Call your venv function from before</span>
-        code . <span style=color:#998;font-style:italic># Open the project in VSCode</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
+        cd $1 <span style=color:#75715e># Go there</span>
+        venv <span style=color:#75715e># Call your venv function from before</span>
+        code . <span style=color:#75715e># Open the project in VSCode</span>
 
-    <span style=color:#998;font-style:italic># Now, instead of just giving up we will search GitHub</span>
-    <span style=color:#000;font-weight:700>elif</span> gh repo list | grep -qFe <span style=color:teal>$1</span>; <span style=color:#000;font-weight:700>then</span>
+    <span style=color:#75715e># Now, instead of just giving up we will search GitHub</span>
+    <span style=color:#66d9ef>elif</span> gh repo list | grep -qFe $1; <span style=color:#66d9ef>then</span>
 
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found on GitHub. Cloning...&#34;</span>
-        gh repo clone <span style=color:teal>$1</span> <span style=color:#998;font-style:italic># See, gh makes everything easy</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found on GitHub. Cloning...&#34;</span>
+        gh repo clone $1 <span style=color:#75715e># See, gh makes everything easy</span>
 
-        <span style=color:#998;font-style:italic># Now it will exist locally, so just recurse</span>
-        checkout <span style=color:teal>$1</span>
-    <span style=color:#000;font-weight:700>else</span>
-        <span style=color:#998;font-style:italic># No project?</span>
-        <span style=color:#998;font-style:italic># Let&#39;s make one</span>
-        mkdir <span style=color:teal>$1</span>
-        touch <span style=color:teal>$1</span>/README.md <span style=color:#998;font-style:italic># You can make whatever files you want here</span>
-        checkout <span style=color:teal>$1</span>
-    <span style=color:#000;font-weight:700>fi</span>
-<span style=color:#000;font-weight:700>}</span>
+        <span style=color:#75715e># Now it will exist locally, so just recurse</span>
+        checkout $1
+    <span style=color:#66d9ef>else</span>
+        <span style=color:#75715e># No project?</span>
+        <span style=color:#75715e># Let&#39;s make one</span>
+        mkdir $1
+        touch $1/README.md <span style=color:#75715e># You can make whatever files you want here</span>
+        checkout $1
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
 </code></pre></div><p>This is a bit more complicated so I&rsquo;ll walk through what&rsquo;s happening in our new <code>elif</code> block:</p>
 <ol>
 <li>
@@ -277,13 +277,13 @@ code ~/.my_commands.sh
 </ul>
 <p>Both of these settings are stored under the hood as JSON files, which means we can access and manipulate them just like any normal text file! This is where <a href=https://stedolan.github.io/jq/>jq</a> comes in.</p>
 <p><a href=https://stedolan.github.io/jq/>jq</a> lets you pipe json through a query-like language filter. So for instance if we had a JSON file like this:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-    <span style=color:navy>&#34;name&#34;</span>: <span style=color:#d14>&#34;you&#34;</span>,
-    <span style=color:navy>&#34;age&#34;</span>: <span style=color:#099>207</span>,
-    <span style=color:navy>&#34;occupation&#34;</span>: <span style=color:#d14>&#34;Door handle polisher&#34;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;you&#34;</span>,
+    <span style=color:#f92672>&#34;age&#34;</span>: <span style=color:#ae81ff>207</span>,
+    <span style=color:#f92672>&#34;occupation&#34;</span>: <span style=color:#e6db74>&#34;Door handle polisher&#34;</span>
 }
 </code></pre></div><p>You could do something like this to find your name&mldr;</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cat that_file.json | jq <span style=color:#d14>&#39;.&#34;name&#34;&#39;</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cat that_file.json | jq <span style=color:#e6db74>&#39;.&#34;name&#34;&#39;</span>
 </code></pre></div><p>See how that works? <a href=https://stedolan.github.io/jq/>jq</a> actually has really great <a href=https://stedolan.github.io/jq/>docs</a> and interactive sandbox to play with.</p>
 <p>I think most people use the JSON view for the settings, but incase you&rsquo;ve never seen them they look like this:</p>
 <p><img src=/images/posts/vscode_settings_json.png alt="VSCode Settings"></p>
@@ -293,64 +293,64 @@ code ~/.my_commands.sh
 <h4 id=setting-pythondefaultinterpreterpath>Setting python.defaultInterpreterPath</h4>
 <p>Okay so now we know where these settings are kept, what to do? 🤔</p>
 <p>This is our function so far:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#998;font-style:italic># Where you keep your projects</span>
-<span style=color:teal>PROJECTS_DIR</span> <span style=color:#000;font-weight:700>=</span> <span style=color:teal>$HOME</span>/Development
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Where you keep your projects</span>
+PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 
-<span style=color:#998;font-style:italic># As in &#34;check out&#34; a project</span>
-<span style=color:#998;font-style:italic># Not to be confused with git checkout</span>
-<span style=color:#000;font-weight:700>function</span> checkout<span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
+<span style=color:#75715e># As in &#34;check out&#34; a project</span>
+<span style=color:#75715e># Not to be confused with git checkout</span>
+<span style=color:#66d9ef>function</span> checkout<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
     
-    <span style=color:#998;font-style:italic># Now we are in PROJECTS_DIR and can find anything we want</span>
-    <span style=color:#0086b3>cd</span> PROJECTS_DIR
+    <span style=color:#75715e># Now we are in PROJECTS_DIR and can find anything we want</span>
+    cd PROJECTS_DIR
 
-    <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> -d <span style=color:teal>$1</span> <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found locally&#34;</span> <span style=color:#998;font-style:italic># Helpful to say whats going on</span>
-        <span style=color:#0086b3>cd</span> <span style=color:teal>$1</span> <span style=color:#998;font-style:italic># Go there</span>
-        venv <span style=color:#998;font-style:italic># Call your venv function from before</span>
-        code . <span style=color:#998;font-style:italic># Open the project in VSCode</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
+        cd $1 <span style=color:#75715e># Go there</span>
+        venv <span style=color:#75715e># Call your venv function from before</span>
+        code . <span style=color:#75715e># Open the project in VSCode</span>
     
-    <span style=color:#998;font-style:italic># Now, instead of just giving up we will search GitHub</span>
-    <span style=color:#000;font-weight:700>elif</span> gh repo list | grep -qFe <span style=color:teal>$1</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found on GitHub. Cloning...&#34;</span>
-        gh repo clone <span style=color:teal>$1</span> <span style=color:#998;font-style:italic># See, gh makes everything easy</span>
+    <span style=color:#75715e># Now, instead of just giving up we will search GitHub</span>
+    <span style=color:#66d9ef>elif</span> gh repo list | grep -qFe $1; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found on GitHub. Cloning...&#34;</span>
+        gh repo clone $1 <span style=color:#75715e># See, gh makes everything easy</span>
 
-        <span style=color:#998;font-style:italic># Now it will exist locally, so just recurse</span>
-        checkout <span style=color:teal>$1</span>
-    <span style=color:#000;font-weight:700>else</span>
-        <span style=color:#998;font-style:italic># No project?</span>
-        <span style=color:#998;font-style:italic># Let&#39;s make one</span>
-        mkdir <span style=color:teal>$1</span>
-        touch <span style=color:teal>$1</span>/README.md <span style=color:#998;font-style:italic># You can make whatever files you want here</span>
-        checkout <span style=color:teal>$1</span>
-    <span style=color:#000;font-weight:700>fi</span>
-<span style=color:#000;font-weight:700>}</span>
+        <span style=color:#75715e># Now it will exist locally, so just recurse</span>
+        checkout $1
+    <span style=color:#66d9ef>else</span>
+        <span style=color:#75715e># No project?</span>
+        <span style=color:#75715e># Let&#39;s make one</span>
+        mkdir $1
+        touch $1/README.md <span style=color:#75715e># You can make whatever files you want here</span>
+        checkout $1
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
 </code></pre></div><p>What we want to do is after creating the virtual environment, automatically make VSCode use it. To that end&mldr;</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>
-<span style=color:#000;font-weight:700>function</span> code_set_venv<span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>
+<span style=color:#66d9ef>function</span> code_set_venv<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
 
-    <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> -f .vscode/settings.json <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Ensuring VSCode is using the correct virtualenv...&#34;</span>
-        <span style=color:#998;font-style:italic># Current set value for defaultInterpreterPath. &#39;null&#39; if empty or doesn&#39;t exist</span>
-        <span style=color:teal>ppath</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>&#34;</span><span style=color:#000;font-weight:700>$(</span>cat .vscode/settings.json | jq <span style=color:#d14>&#39;.&#34;python.defaultInterpreterPath&#34;&#39;</span><span style=color:#000;font-weight:700>)</span><span style=color:#d14>&#34;</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -f .vscode/settings.json <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Ensuring VSCode is using the correct virtualenv...&#34;</span>
+        <span style=color:#75715e># Current set value for defaultInterpreterPath. &#39;null&#39; if empty or doesn&#39;t exist</span>
+        ppath<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>cat .vscode/settings.json | jq <span style=color:#e6db74>&#39;.&#34;python.defaultInterpreterPath&#34;&#39;</span><span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
 
-        <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> <span style=color:teal>$ppath</span> !<span style=color:#000;font-weight:700>=</span> null <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-            <span style=color:#998;font-style:italic># defaultInterpreterPath is already set</span>
-            <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;python.defaultInterpreterPath already set in workspace settings. Not overwriting.&#34;</span>
-        <span style=color:#000;font-weight:700>else</span>
-            <span style=color:teal>ppath_set</span><span style=color:#000;font-weight:700>=</span><span style=color:#d14>&#34;</span><span style=color:#000;font-weight:700>$(</span>jq <span style=color:#d14>&#39;.&#34;python.defaultInterpreterPath&#34; = &#34;.venv/bin/python&#34;&#39;</span> .vscode/settings.json<span style=color:#000;font-weight:700>)</span><span style=color:#d14>&#34;</span>
-            <span style=color:#0086b3>echo</span> <span style=color:teal>$ppath_set</span> &gt;.vscode/settings.json
-        <span style=color:#000;font-weight:700>fi</span>
+        <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> $ppath !<span style=color:#f92672>=</span> null <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+            <span style=color:#75715e># defaultInterpreterPath is already set</span>
+            echo <span style=color:#e6db74>&#34;python.defaultInterpreterPath already set in workspace settings. Not overwriting.&#34;</span>
+        <span style=color:#66d9ef>else</span>
+            ppath_set<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>jq <span style=color:#e6db74>&#39;.&#34;python.defaultInterpreterPath&#34; = &#34;.venv/bin/python&#34;&#39;</span> .vscode/settings.json<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+            echo $ppath_set &gt;.vscode/settings.json
+        <span style=color:#66d9ef>fi</span>
     
-    <span style=color:#000;font-weight:700>else</span>
-        <span style=color:#998;font-style:italic># No vscode settings currently</span>
-        <span style=color:#998;font-style:italic># Make the settings.json and make recursive call to end up in first if branch</span>
+    <span style=color:#66d9ef>else</span>
+        <span style=color:#75715e># No vscode settings currently</span>
+        <span style=color:#75715e># Make the settings.json and make recursive call to end up in first if branch</span>
         mkdir -p .vscode
-        <span style=color:#998;font-style:italic># Create empty JSON for jq to work</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;{}&#34;</span> &gt;.vscode/settings.json
-        <span style=color:#998;font-style:italic># Recursive call</span>
+        <span style=color:#75715e># Create empty JSON for jq to work</span>
+        echo <span style=color:#e6db74>&#34;{}&#34;</span> &gt;.vscode/settings.json
+        <span style=color:#75715e># Recursive call</span>
         code_set_venv
-    <span style=color:#000;font-weight:700>fi</span>
-<span style=color:#000;font-weight:700>}</span>
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
 </code></pre></div><p>This one:</p>
 <ul>
 <li>
@@ -367,36 +367,36 @@ code ~/.my_commands.sh
 </li>
 </ul>
 <p>Now we just need to weave this into our main <code>checkout</code> function in the right place:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#998;font-style:italic># Where you keep your projects</span>
-<span style=color:teal>PROJECTS_DIR</span> <span style=color:#000;font-weight:700>=</span> <span style=color:teal>$HOME</span>/Development
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Where you keep your projects</span>
+PROJECTS_DIR <span style=color:#f92672>=</span> $HOME/Development
 
-<span style=color:#998;font-style:italic># As in &#34;check out&#34; a project</span>
-<span style=color:#998;font-style:italic># Not to be confused with git checkout</span>
-<span style=color:#000;font-weight:700>function</span> checkout<span style=color:#000;font-weight:700>()</span> <span style=color:#000;font-weight:700>{</span>
-    <span style=color:#998;font-style:italic># Now we are in PROJECTS_DIR and can find anything we want</span>
-    <span style=color:#0086b3>cd</span> PROJECTS_DIR
+<span style=color:#75715e># As in &#34;check out&#34; a project</span>
+<span style=color:#75715e># Not to be confused with git checkout</span>
+<span style=color:#66d9ef>function</span> checkout<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+    <span style=color:#75715e># Now we are in PROJECTS_DIR and can find anything we want</span>
+    cd PROJECTS_DIR
 
-    <span style=color:#000;font-weight:700>if</span> <span style=color:#000;font-weight:700>[[</span> -d <span style=color:teal>$1</span> <span style=color:#000;font-weight:700>]]</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found locally&#34;</span> <span style=color:#998;font-style:italic># Helpful to say whats going on</span>
-        <span style=color:#0086b3>cd</span> <span style=color:teal>$1</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -d $1 <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found locally&#34;</span> <span style=color:#75715e># Helpful to say whats going on</span>
+        cd $1
         venv
-        code_set_venv <span style=color:#998;font-style:italic># Here is a good place</span>
+        code_set_venv <span style=color:#75715e># Here is a good place</span>
         code . 
     
-    <span style=color:#998;font-style:italic># Now, instead of just giving up we will search GitHub</span>
-    <span style=color:#000;font-weight:700>elif</span> gh repo list | grep -qFe <span style=color:teal>$1</span>; <span style=color:#000;font-weight:700>then</span>
-        <span style=color:#0086b3>echo</span> <span style=color:#d14>&#34;Project: &#39;</span><span style=color:teal>$1</span><span style=color:#d14>&#39; found on GitHub. Cloning...&#34;</span>
-        gh repo clone <span style=color:teal>$1</span> <span style=color:#998;font-style:italic># See, gh makes everything easy</span>
-        <span style=color:#998;font-style:italic># Now it will exist locally, so just recurse</span>
-        checkout <span style=color:teal>$1</span>
-    <span style=color:#000;font-weight:700>else</span>
-        <span style=color:#998;font-style:italic># No project?</span>
-        <span style=color:#998;font-style:italic># Let&#39;s make one</span>
-        mkdir <span style=color:teal>$1</span>
-        touch <span style=color:teal>$1</span>/README.md <span style=color:#998;font-style:italic># You can make whatever files you want here</span>
-        checkout <span style=color:teal>$1</span>
-    <span style=color:#000;font-weight:700>fi</span>
-<span style=color:#000;font-weight:700>}</span>
+    <span style=color:#75715e># Now, instead of just giving up we will search GitHub</span>
+    <span style=color:#66d9ef>elif</span> gh repo list | grep -qFe $1; <span style=color:#66d9ef>then</span>
+        echo <span style=color:#e6db74>&#34;Project: &#39;</span>$1<span style=color:#e6db74>&#39; found on GitHub. Cloning...&#34;</span>
+        gh repo clone $1 <span style=color:#75715e># See, gh makes everything easy</span>
+        <span style=color:#75715e># Now it will exist locally, so just recurse</span>
+        checkout $1
+    <span style=color:#66d9ef>else</span>
+        <span style=color:#75715e># No project?</span>
+        <span style=color:#75715e># Let&#39;s make one</span>
+        mkdir $1
+        touch $1/README.md <span style=color:#75715e># You can make whatever files you want here</span>
+        checkout $1
+    <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
 </code></pre></div><p>And that&rsquo;s it! Now when we call <code>checkout</code>, we&rsquo;ll end up with VSCode open in the root of our project, whether or not we had it on our computer in the first place, and VSCode will be set up to use the right environment!</p>
 <p>You can even inject stuff like installing from <code>requirements.txt</code> or whatever you want so you can just get to codingTM 😁</p>
 </p>
