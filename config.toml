@@ -6,12 +6,12 @@ theme = "gokarna"
 enableEmoji = true
 enableRobotsTXT = true
 
-pygmentsStyle = "dracula"
+pygmentsStyle = "github"
 
 [params]
   footer = "Tom Fleet"
   description = """
-    Ex materials engineer turned software developer.
+    Software/Backend Developer.
     Python | Go | ML
   """
   avatarURL = "/images/profile.jpg"
@@ -31,7 +31,7 @@ pygmentsStyle = "dracula"
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
         onload="renderMathInElement(document.body,);"></script>
   """
-  # showPostsOnHomePage = "recent"
+  showPostsOnHomePage = "recent"
 
 [menu]
   [[menu.main]]

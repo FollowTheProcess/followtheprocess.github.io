@@ -3,6 +3,8 @@ title: "msg"
 type: page
 ---
 
+<img src="/images/projects/msg/logo.png" alt="logo" class="img-responsive" width=50% height=50%>
+
 *:rocket: A lightweight console printing toolkit for Go CLIs.*
 
 * **Source Code**: [https://github.com/FollowTheProcess/msg](https://github.com/FollowTheProcess/msg/)

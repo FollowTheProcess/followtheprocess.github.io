@@ -170,13 +170,13 @@
 <p><strong>No more!</strong> 💥</p>
 <p>pymechtest has a very simple goal: to reduce the amount of time engineers spend munging data after a batch of mechanical testing.</p>
 <p>Here is a quick taste of how easy it is to go from raw data to a gorgeous stress-strain plot:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> pymechtest <span style="color:#ff79c6">import</span> Tensile
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">from</span> <span style="color:#555">pymechtest</span> <span style="color:#000;font-weight:bold">import</span> Tensile
 
-<span style="color:#6272a4"># header and id_row are related to the structure of your csv files</span>
-tens <span style="color:#ff79c6">=</span> Tensile(folder <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;path/to/raw/data&#34;</span>, header <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8</span>, id_row <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>)
+<span style="color:#998;font-style:italic"># header and id_row are related to the structure of your csv files</span>
+tens <span style="color:#000;font-weight:bold">=</span> Tensile(folder <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;path/to/raw/data&#34;</span>, header <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">8</span>, id_row <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">3</span>)
 
-<span style="color:#6272a4"># Plot a really nice stress-strain curve with Altair</span>
-tens<span style="color:#ff79c6">.</span>plot_curves()
+<span style="color:#998;font-style:italic"># Plot a really nice stress-strain curve with Altair</span>
+tens<span style="color:#000;font-weight:bold">.</span>plot_curves()
 </code></pre></div><p><img src="/images/projects/pymechtest/plot_curves.png" alt="plot_curves"></p>
 <p>The key features are:</p>
 <ul>

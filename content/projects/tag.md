@@ -3,7 +3,7 @@ title: "Tag"
 type: page
 ---
 
-<img src="https://github.com/FollowTheProcess/tag/raw/main/img/logo.png" alt="logo" class="img-responsive" width=50% height=50%>
+<img src="/images/projects/tag/logo.png" alt="logo" class="img-responsive" width=50% height=50%>
 
 Interact with semver git tags with ease! 🏷
 
