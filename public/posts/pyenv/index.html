@@ -171,7 +171,7 @@
 <p>Unlike other ways of installing python, or using your system installation (which you should <strong>NEVER</strong> do), <a href="https://github.com/pyenv/pyenv">pyenv</a> actually compiles a version of python direct from source and stores it in it&rsquo;s own special directory far far away from your system python.</p>
 <p>So far so good 👍.</p>
 <p>Once it&rsquo;s finished making this <strong>completely separate</strong> python for you. You can set <em>that</em> version of python to be your global one. Meaning that even if you open up a terminal and do something like&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">python
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">python
 </code></pre></div><p>And instead of your system&rsquo;s <code>python3</code> (or worse it&rsquo;s <code>python</code> - meaning python2.7), it will fire up your new, pyenv-managed, python version you just installed.</p>
 <p>This all means that if you follow this guide, your installation will <strong>NEVER</strong> end up like the one in the now infamous xkcd above. Your system python (both 3 and 2) will remain a completely hidden layer below where you work and you will never need to touch it.</p>
 <p>That&rsquo;s one less thing to worry about whilst you&rsquo;re trying to figure out how to actually do programming™️.</p>
@@ -181,9 +181,9 @@
 <p>And if you haven&rsquo;t got homebrew&hellip; get homebrew. You can thank me later.</p>
 <h3 id="install-xcode-command-line-developer-tools">Install xcode command line developer tools</h3>
 <p>These provide C compilers and other handy things we&rsquo;ll need later.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">xcode-select --install
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">xcode-select --install
 </code></pre></div><h3 id="install-compiler-dependencies-from-homebrew">Install compiler dependencies from Homebrew</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#998;font-style:italic"># Python build dependencies</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Python build dependencies</span>
 brew install zlib
 brew install xz
 brew install openssl
@@ -197,27 +197,27 @@ brew install openblas
 <p>This is the step that was tricky, every time I tried a simple <code>pyenv install 3.9.1</code> it would only get so far and not compile. It turns out it&rsquo;s best to specify exactly where all the tools are to the compilers.</p>
 <p>I found the easiest way to do this was to put it in a small bash script that I called <code>pyenv_install.sh</code>, shown in the snippet below. I would just recommend copying and pasting this, this is the exact script that works for me (macOS Big Sur, Intel chip).</p>
 <p>Feel free to replace the <code>3.9.1</code> with whatever version of python you want (you should probably pick one of the currently supported ones though: 3.6, 3.7, 3.8 and 3.9 at time of writing). You can also run <code>pyenv install --list</code> to see all the many different versions of python you could install this way.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#999;font-weight:bold;font-style:italic">#!/usr/bin/env bash
-</span><span style="color:#999;font-weight:bold;font-style:italic"></span>
-<span style="color:#998;font-style:italic"># Pointing pyenv to the correct compilers</span>
-<span style="color:#0086b3">export</span> <span style="color:#008080">LDFLAGS</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;-L</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix zlib<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/lib -L</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix bzip2<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/lib -L</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix openssl<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/lib -L</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix readline<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/lib&#34;</span>
-<span style="color:#0086b3">export</span> <span style="color:#008080">CPPFLAGS</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;-I</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix zlib<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/include -I</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix bzip2<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/include&#34;</span>
-<span style="color:#0086b3">export</span> <span style="color:#008080">CFLAGS</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;-I</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix openssl<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/include -I</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix bzip2<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/include -I</span><span style="color:#000;font-weight:bold">$(</span>brew --prefix readline<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/include -I</span><span style="color:#000;font-weight:bold">$(</span>xcrun --show-sdk-path<span style="color:#000;font-weight:bold">)</span><span style="color:#d14">/usr/include&#34;</span>
-pyenv install 3.9.1 <span style="color:#998;font-style:italic"># Or your version</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Pointing pyenv to the correct compilers</span>
+export LDFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-L</span><span style="color:#66d9ef">$(</span>brew --prefix zlib<span style="color:#66d9ef">)</span><span style="color:#e6db74">/lib -L</span><span style="color:#66d9ef">$(</span>brew --prefix bzip2<span style="color:#66d9ef">)</span><span style="color:#e6db74">/lib -L</span><span style="color:#66d9ef">$(</span>brew --prefix openssl<span style="color:#66d9ef">)</span><span style="color:#e6db74">/lib -L</span><span style="color:#66d9ef">$(</span>brew --prefix readline<span style="color:#66d9ef">)</span><span style="color:#e6db74">/lib&#34;</span>
+export CPPFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-I</span><span style="color:#66d9ef">$(</span>brew --prefix zlib<span style="color:#66d9ef">)</span><span style="color:#e6db74">/include -I</span><span style="color:#66d9ef">$(</span>brew --prefix bzip2<span style="color:#66d9ef">)</span><span style="color:#e6db74">/include&#34;</span>
+export CFLAGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-I</span><span style="color:#66d9ef">$(</span>brew --prefix openssl<span style="color:#66d9ef">)</span><span style="color:#e6db74">/include -I</span><span style="color:#66d9ef">$(</span>brew --prefix bzip2<span style="color:#66d9ef">)</span><span style="color:#e6db74">/include -I</span><span style="color:#66d9ef">$(</span>brew --prefix readline<span style="color:#66d9ef">)</span><span style="color:#e6db74">/include -I</span><span style="color:#66d9ef">$(</span>xcrun --show-sdk-path<span style="color:#66d9ef">)</span><span style="color:#e6db74">/usr/include&#34;</span>
+pyenv install 3.9.1 <span style="color:#75715e"># Or your version</span>
 
-<span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;Don&#39;t forget to make this the global python using pyenv global x.x.x&#34;</span>
+echo <span style="color:#e6db74">&#34;Don&#39;t forget to make this the global python using pyenv global x.x.x&#34;</span>
 </code></pre></div><p>Pyenv will now build that version of python from source. Once it&rsquo;s finished, restart your terminal then run&hellip;</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pyenv global 3.9.1  <span style="color:#998;font-style:italic"># Or whatever version you installed</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pyenv global 3.9.1  <span style="color:#75715e"># Or whatever version you installed</span>
 </code></pre></div><p>And that&rsquo;s it! You know have a python installation <strong>completely</strong> separate from your system python(s)! 🎉</p>
 <h3 id="how-to-use-it">How to use it</h3>
 <p>I treat mine almost as if its the system installation, except with comfort in the knowledge that it&rsquo;s not and if all hell breaks loose I can always just <code>pyenv uninstall 3.9.1</code> and build it from scratch again.</p>
 <p>The only thing I do with my global pyenv installation is install linting stuff and ensure things like <code>pip</code> and <code>setuptools</code> are always kept up to date. I actually do this with another bash function (keep scrolling&hellip;).</p>
 <h3 id="virtual-environments">Virtual Environments</h3>
 <p>I still recommend using virtual environments for basically everything:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">cd</span> my_project
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd my_project
 
 python -m venv .venv
-<span style="color:#998;font-style:italic"># This now uses our magic pyenv version! we dont have to worry about saying python3.</span>
+<span style="color:#75715e"># This now uses our magic pyenv version! we dont have to worry about saying python3.</span>
 </code></pre></div><p>So my pyenv global python acts as if it were my system one (but far safer) and all my projects have their own virtual environments. If you do this too, it is virtually impossible for you to mess up your python installation and you&rsquo;ll never end up understanding the xkcd comic, and thats a good thing! 👍.</p>
 <hr>
 <h4 id="side-note-bash-functions">Side Note: Bash Functions</h4>
@@ -230,29 +230,29 @@ python -m venv .venv
 <p>Add the following line in your <code>~/.zshrc</code> file:</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0086b3">source</span> ~/.my_commands.sh <span style="color:#998;font-style:italic"># Or whatever you called it</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source ~/.my_commands.sh <span style="color:#75715e"># Or whatever you called it</span>
 </code></pre></div><ul>
 <li>Inside <code>.my_commands.sh</code> (or whatever you called it) write the functions you want in bash (e.g. my <code>maintenance</code> function below).</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#998;font-style:italic"># Inside ~/.my_commands.sh</span>
-<span style="color:#998;font-style:italic">#!/usr/bin/env bash</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Inside ~/.my_commands.sh</span>
+<span style="color:#75715e">#!/usr/bin/env bash</span>
 
 
-<span style="color:#998;font-style:italic"># Colours for nice terminal output</span>
-<span style="color:#008080">GREEN</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;\033[0;32m&#39;</span>
-<span style="color:#008080">NC</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;\033[0m&#39;</span>
-<span style="color:#008080">LBLUE</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;\033[1;34m&#39;</span>
+<span style="color:#75715e"># Colours for nice terminal output</span>
+GREEN<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0;32m&#39;</span>
+NC<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[0m&#39;</span>
+LBLUE<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\033[1;34m&#39;</span>
 
-<span style="color:#998;font-style:italic"># Update all the things!</span>
-<span style="color:#000;font-weight:bold">function</span> maintenance<span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#0086b3">echo</span> -e <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">LBLUE</span><span style="color:#d14">}</span><span style="color:#d14">Updating and cleaning homebrew packages...\n</span><span style="color:#d14">${</span><span style="color:#008080">NC</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span>
+<span style="color:#75715e"># Update all the things!</span>
+<span style="color:#66d9ef">function</span> maintenance<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LBLUE<span style="color:#e6db74">}</span><span style="color:#e6db74">Updating and cleaning homebrew packages...\n</span><span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
     brew update
     brew upgrade
     brew cleanup -s
-    <span style="color:#0086b3">echo</span> -e <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">LBLUE</span><span style="color:#d14">}</span><span style="color:#d14">Updating Global python3 core dependencies...\n</span><span style="color:#d14">${</span><span style="color:#008080">NC</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span>
+    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LBLUE<span style="color:#e6db74">}</span><span style="color:#e6db74">Updating Global python3 core dependencies...\n</span><span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
     python -m pip install --quiet --upgrade pip setuptools wheel black mypy isort flake8
-    <span style="color:#0086b3">echo</span> -e <span style="color:#d14">&#34;</span><span style="color:#d14">${</span><span style="color:#008080">GREEN</span><span style="color:#d14">}</span><span style="color:#d14">All done :)\n</span><span style="color:#d14">${</span><span style="color:#008080">NC</span><span style="color:#d14">}</span><span style="color:#d14">&#34;</span>
-<span style="color:#000;font-weight:bold">}</span>
+    echo -e <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>GREEN<span style="color:#e6db74">}</span><span style="color:#e6db74">All done :)\n</span><span style="color:#e6db74">${</span>NC<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">}</span>
 </code></pre></div><ul>
 <li>
 <p>Restart your terminal.</p>
@@ -261,9 +261,9 @@ python -m venv .venv
 <p>And now boom 💥 you have a <code>maintenance</code> function you can just call like any other CLI tool from your terminal.</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">maintenance
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">maintenance
 
-<span style="color:#998;font-style:italic"># Proceeds to do maintenance things...</span>
+<span style="color:#75715e"># Proceeds to do maintenance things...</span>
 </code></pre></div><p>You can write bash functions like this to do all sorts of cool stuff for you automatically!</p>
 <blockquote>
 <p><strong>Automation is power!</strong></p>

@@ -6,7 +6,18 @@
     <description>Recent content in Posts on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Mar 2021 17:27:07 +0000</lastBuildDate><atom:link href="https://followtheproecess.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Oct 2021 20:34:50 +0100</lastBuildDate><atom:link href="https://followtheproecess.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using FieldsFunc in Go</title>
+      <link>https://followtheproecess.github.io/posts/fieldsfunc/</link>
+      <pubDate>Fri, 22 Oct 2021 20:34:50 +0100</pubDate>
+      
+      <guid>https://followtheproecess.github.io/posts/fieldsfunc/</guid>
+      <description>I&amp;rsquo;ve been playing with Go a lot recently, and one thing it lends itself really well to is CLIs (Command Line Interfaces):
+ Runs very fast, feels snappy to use Standalone, statically linked binary - easy to distribute Easy cross-compilation for multiple platforms, OS&amp;rsquo;s and processor architectures Excellent libraries for creating CLIs e.g. cobra  The excellent GitHub CLI is written in Go 👏🏻
+So needless to say, I&amp;rsquo;ve been writing more than a few CLIs: gotoil, tag, goignore etc&amp;hellip;</description>
+    </item>
+    
     <item>
       <title>Automate your Virtual Environments... and everything else.</title>
       <link>https://followtheproecess.github.io/posts/auto_venv/</link>

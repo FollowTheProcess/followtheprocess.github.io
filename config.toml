@@ -6,7 +6,7 @@ theme = "gokarna"
 enableEmoji = true
 enableRobotsTXT = true
 
-pygmentsStyle = "github"
+pygmentsStyle = "monokai"
 
 [params]
   footer = "Tom Fleet"

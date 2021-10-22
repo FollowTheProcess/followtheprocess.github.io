@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://followtheproecess.github.io/</loc>
-    <lastmod>2021-03-23T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-22T20:34:50+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/tags/go/</loc>
+    <lastmod>2021-10-22T20:34:50+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/posts/</loc>
+    <lastmod>2021-10-22T20:34:50+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/tags/</loc>
+    <lastmod>2021-10-22T20:34:50+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/tags/tips/</loc>
+    <lastmod>2021-10-22T20:34:50+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/posts/fieldsfunc/</loc>
+    <lastmod>2021-10-22T20:34:50+01:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/tags/automation/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
@@ -11,16 +26,10 @@
     <loc>https://followtheproecess.github.io/tags/cli/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheproecess.github.io/tags/go/</loc>
-    <lastmod>2021-03-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://followtheproecess.github.io/projects/goignore/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/projects/</loc>
-    <lastmod>2021-03-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://followtheproecess.github.io/tags/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/tags/oss/</loc>
@@ -36,9 +45,6 @@
     <lastmod>2021-03-01T17:27:07+00:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/categories/</loc>
-    <lastmod>2021-03-01T17:27:07+00:00</lastmod>
-  </url><url>
-    <loc>https://followtheproecess.github.io/posts/</loc>
     <lastmod>2021-03-01T17:27:07+00:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/categories/tips-tricks/</loc>
