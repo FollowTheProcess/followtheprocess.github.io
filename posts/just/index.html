@@ -124,7 +124,9 @@ October 24, 2021
 <p>For these types of simple tasks where you don&rsquo;t need the incremental build nature of make, I recommend using <a href=https://github.com/casey/just>just</a> instead!</p>
 <h2 id=just>Just</h2>
 <p>Just is like make but more focussed on being a command runner rather than a fully fledged build system. It let&rsquo;s you do a few cool things that are either impossible or tricky to do in make!</p>
-<p>Just is configured using a <code>justfile</code> (like make&rsquo;s <code>makefile</code>). The equivalent <code>justfile</code> to our makefile above would look like this:</p>
+<p>Just is available in all sorts of ways, if you&rsquo;re on macOS you can get it with <a href=https://brew.sh>homebrew</a>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew install just
+</code></pre></div><p>Just is configured using a <code>justfile</code> (like make&rsquo;s <code>makefile</code>). The equivalent <code>justfile</code> to our makefile above would look like this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-makefile data-lang=makefile><span style=color:#a6e22e>_default</span><span style=color:#f92672>:</span>
     @just --list
 
