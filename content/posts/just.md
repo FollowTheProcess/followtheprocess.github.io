@@ -45,6 +45,12 @@ For these types of simple tasks where you don't need the incremental build natur
 
 Just is like make but more focussed on being a command runner rather than a fully fledged build system. It let's you do a few cool things that are either impossible or tricky to do in make!
 
+Just is available in all sorts of ways, if you're on macOS you can get it with [homebrew]:
+
+```shell
+brew install just
+```
+
 Just is configured using a `justfile` (like make's `makefile`). The equivalent `justfile` to our makefile above would look like this:
 
 ```makefile
@@ -278,3 +284,4 @@ Just can do **loads** more cool stuff than I've listed here, these were just a f
 [docs]: https://github.com/casey/just/blob/master/README.adoc
 [tag]: https://github.com/FollowTheProcess/tag
 [casey]: https://github.com/casey
+[homebrew]: https://brew.sh
