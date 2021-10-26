@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://followtheproecess.github.io/</loc>
-    <lastmod>2021-10-25T19:04:46+01:00</lastmod>
+    <lastmod>2021-10-26T22:05:11+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/tags/automation/</loc>
+    <lastmod>2021-10-26T22:05:11+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/posts/</loc>
+    <lastmod>2021-10-26T22:05:11+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/posts/makefile/</loc>
+    <lastmod>2021-10-26T22:05:11+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/tags/</loc>
+    <lastmod>2021-10-26T22:05:11+01:00</lastmod>
+  </url><url>
+    <loc>https://followtheproecess.github.io/tags/tips/</loc>
+    <lastmod>2021-10-26T22:05:11+01:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/tags/go/</loc>
     <lastmod>2021-10-25T19:04:46+01:00</lastmod>
@@ -11,13 +26,7 @@
     <loc>https://followtheproecess.github.io/tags/http/</loc>
     <lastmod>2021-10-25T19:04:46+01:00</lastmod>
   </url><url>
-    <loc>https://followtheproecess.github.io/posts/</loc>
-    <lastmod>2021-10-25T19:04:46+01:00</lastmod>
-  </url><url>
     <loc>https://followtheproecess.github.io/posts/graceful_shutdown/</loc>
-    <lastmod>2021-10-25T19:04:46+01:00</lastmod>
-  </url><url>
-    <loc>https://followtheproecess.github.io/tags/</loc>
     <lastmod>2021-10-25T19:04:46+01:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/tags/command-line/</loc>
@@ -26,17 +35,11 @@
     <loc>https://followtheproecess.github.io/posts/just/</loc>
     <lastmod>2021-10-24T10:22:23+01:00</lastmod>
   </url><url>
-    <loc>https://followtheproecess.github.io/tags/tips/</loc>
-    <lastmod>2021-10-24T10:22:23+01:00</lastmod>
-  </url><url>
     <loc>https://followtheproecess.github.io/tags/utilities/</loc>
     <lastmod>2021-10-24T10:22:23+01:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/posts/fieldsfunc/</loc>
     <lastmod>2021-10-22T20:34:50+01:00</lastmod>
-  </url><url>
-    <loc>https://followtheproecess.github.io/tags/automation/</loc>
-    <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://followtheproecess.github.io/tags/cli/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>

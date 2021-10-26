@@ -6,7 +6,18 @@
     <description>Recent content in automation on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheproecess.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Oct 2021 22:05:11 +0100</lastBuildDate><atom:link href="https://followtheproecess.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self Documenting Makefile</title>
+      <link>https://followtheproecess.github.io/posts/makefile/</link>
+      <pubDate>Tue, 26 Oct 2021 22:05:11 +0100</pubDate>
+      
+      <guid>https://followtheproecess.github.io/posts/makefile/</guid>
+      <description>If you aren&amp;rsquo;t familiar with make, it&amp;rsquo;s a command runner and build system capable of quite complicated stuff. It&amp;rsquo;s syntax can get complicated for non-trivial workflows and it has lots of weird quirks (like .PHONY).
+However, it&amp;rsquo;s ubiquitous on nearly all systems and pretty easy to get going with so it&amp;rsquo;s very widely used in all sorts of projects in just about every language.
+In fact, a filename global search on GitHub yields an astonishing 112 million results!</description>
+    </item>
+    
     <item>
       <title>goignore</title>
       <link>https://followtheproecess.github.io/projects/goignore/</link>
