@@ -1,4 +1,4 @@
-baseURL = 'https://followtheproecess.github.io'
+baseURL = 'https://followtheprocess.github.io'
 languageCode = 'en'
 defaultContentLanguage = "en"
 title = '@FollowTheProcess'

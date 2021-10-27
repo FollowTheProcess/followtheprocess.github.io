@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on @FollowTheProcess</title>
-    <link>https://followtheproecess.github.io/posts/</link>
+    <link>https://followtheprocess.github.io/posts/</link>
     <description>Recent content in Posts on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Oct 2021 22:05:11 +0100</lastBuildDate><atom:link href="https://followtheproecess.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Oct 2021 22:05:11 +0100</lastBuildDate><atom:link href="https://followtheprocess.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self Documenting Makefile</title>
-      <link>https://followtheproecess.github.io/posts/makefile/</link>
+      <link>https://followtheprocess.github.io/posts/makefile/</link>
       <pubDate>Tue, 26 Oct 2021 22:05:11 +0100</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/makefile/</guid>
+      <guid>https://followtheprocess.github.io/posts/makefile/</guid>
       <description>If you aren&amp;rsquo;t familiar with make, it&amp;rsquo;s a command runner and build system capable of quite complicated stuff. It&amp;rsquo;s syntax can get complicated for non-trivial workflows and it has lots of weird quirks (like .PHONY).
 However, it&amp;rsquo;s ubiquitous on nearly all systems and pretty easy to get going with so it&amp;rsquo;s very widely used in all sorts of projects in just about every language.
 In fact, a filename global search on GitHub yields an astonishing 112 million results!</description>
@@ -20,10 +20,10 @@ In fact, a filename global search on GitHub yields an astonishing 112 million re
     
     <item>
       <title>Shut Down a Go HTTP Server Gracefully</title>
-      <link>https://followtheproecess.github.io/posts/graceful_shutdown/</link>
+      <link>https://followtheprocess.github.io/posts/graceful_shutdown/</link>
       <pubDate>Mon, 25 Oct 2021 19:04:46 +0100</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/graceful_shutdown/</guid>
+      <guid>https://followtheprocess.github.io/posts/graceful_shutdown/</guid>
       <description>When developing HTTP services in Go, you will start and stop your server hundreds of times, think of the whole go run main.go ctrl + c loop!
 When you hit ctrl + c, (on UNIX systems) your program is passed the SIGINT Unix signal. The go runtime handles this and will stop your program relatively safely, but it&amp;rsquo;s not great practice!
 What if you have database connection pools open or forgot to close a file etc.</description>
@@ -31,10 +31,10 @@ What if you have database connection pools open or forgot to close a file etc.</
     
     <item>
       <title>Just &gt; Make</title>
-      <link>https://followtheproecess.github.io/posts/just/</link>
+      <link>https://followtheprocess.github.io/posts/just/</link>
       <pubDate>Sun, 24 Oct 2021 10:22:23 +0100</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/just/</guid>
+      <guid>https://followtheprocess.github.io/posts/just/</guid>
       <description>Makefiles (GNU Make) are ubiquitous in software development and they are a fantastically useful tool! But for all but the simplest tasks, the syntax can get very unreadable and messy.
 Some programs like complex C or C++ projects will use Makefiles as the full build system it was designed to be, however most people tend to use Makefiles as simple task runners.
 Consider the following example for a simple Go project:</description>
@@ -42,10 +42,10 @@ Consider the following example for a simple Go project:</description>
     
     <item>
       <title>Using FieldsFunc in Go</title>
-      <link>https://followtheproecess.github.io/posts/fieldsfunc/</link>
+      <link>https://followtheprocess.github.io/posts/fieldsfunc/</link>
       <pubDate>Fri, 22 Oct 2021 20:34:50 +0100</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/fieldsfunc/</guid>
+      <guid>https://followtheprocess.github.io/posts/fieldsfunc/</guid>
       <description>I&amp;rsquo;ve been playing with Go a lot recently, and one thing it lends itself really well to is CLIs (Command Line Interfaces):
  Runs very fast, feels snappy to use Standalone, statically linked binary - easy to distribute Easy cross-compilation for multiple platforms, OS&amp;rsquo;s and processor architectures Excellent libraries for creating CLIs e.g. cobra  The excellent GitHub CLI is written in Go 👏🏻
 So needless to say, I&amp;rsquo;ve been writing more than a few CLIs: gotoil, tag, goignore etc&amp;hellip;</description>
@@ -53,20 +53,20 @@ So needless to say, I&amp;rsquo;ve been writing more than a few CLIs: gotoil, ta
     
     <item>
       <title>Automate your Virtual Environments... and everything else.</title>
-      <link>https://followtheproecess.github.io/posts/auto_venv/</link>
+      <link>https://followtheprocess.github.io/posts/auto_venv/</link>
       <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/auto_venv/</guid>
+      <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
       <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
 # Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
     </item>
     
     <item>
       <title>Prevent Global Pip Installs</title>
-      <link>https://followtheproecess.github.io/posts/require_venv/</link>
+      <link>https://followtheprocess.github.io/posts/require_venv/</link>
       <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/require_venv/</guid>
+      <guid>https://followtheprocess.github.io/posts/require_venv/</guid>
       <description>This is going to be a short one, about something I discovered in the pip documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!
 Problem We all know the dangers of breaking your system python installation with package conflicts.
 Virtual environments are probably the most common way of avoiding nasty package conflicts.</description>
@@ -74,10 +74,10 @@ Virtual environments are probably the most common way of avoiding nasty package 
     
     <item>
       <title>Pyenv is Awesome!</title>
-      <link>https://followtheproecess.github.io/posts/pyenv/</link>
+      <link>https://followtheprocess.github.io/posts/pyenv/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/pyenv/</guid>
+      <guid>https://followtheprocess.github.io/posts/pyenv/</guid>
       <description>I think everyone who has touched python at some point has seen this picture&amp;hellip;
 It&amp;rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&amp;rsquo;re not careful but is often misinterpreted as throwing shade on how python works.
 Brett Cannon&amp;rsquo;s Blog Post has an excellent deconstruction of what this xkcd means and how to avoid it.
@@ -86,10 +86,10 @@ There&amp;rsquo;s lots you can do to avoid this happening to you.</description>
     
     <item>
       <title>Buggy Accelerate Backend</title>
-      <link>https://followtheproecess.github.io/posts/buggy_accelerate/</link>
+      <link>https://followtheprocess.github.io/posts/buggy_accelerate/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/posts/buggy_accelerate/</guid>
+      <guid>https://followtheprocess.github.io/posts/buggy_accelerate/</guid>
       <description>If you work on macOS and use numpy, chances are at some point you may have had some very confusing error message appear about &amp;ldquo;buggy accelerate backend&amp;hellip; something something&amp;hellip; polyfit sanity check.&amp;rdquo;
 If you&amp;rsquo;ve not had the joy of running into this particular error: https://github.com/numpy/numpy/issues/15947 I don&amp;rsquo;t envy you.
 There&amp;rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me!</description>

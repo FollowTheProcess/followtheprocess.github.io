@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on @FollowTheProcess</title>
-    <link>https://followtheproecess.github.io/categories/</link>
+    <link>https://followtheprocess.github.io/categories/</link>
     <description>Recent content in Categories on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Mar 2021 17:27:07 +0000</lastBuildDate><atom:link href="https://followtheproecess.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 17:27:07 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tips &amp; tricks</title>
-      <link>https://followtheproecess.github.io/categories/tips-tricks/</link>
+      <link>https://followtheprocess.github.io/categories/tips-tricks/</link>
       <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/categories/tips-tricks/</guid>
+      <guid>https://followtheprocess.github.io/categories/tips-tricks/</guid>
       <description></description>
     </item>
     

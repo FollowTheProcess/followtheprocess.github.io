@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OSS on @FollowTheProcess</title>
-    <link>https://followtheproecess.github.io/tags/oss/</link>
+    <link>https://followtheprocess.github.io/tags/oss/</link>
     <description>Recent content in OSS on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheproecess.github.io/tags/oss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/oss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pytoil</title>
-      <link>https://followtheproecess.github.io/projects/pytoil/</link>
+      <link>https://followtheprocess.github.io/projects/pytoil/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/projects/pytoil/</guid>
+      <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
       <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
   Source Code: https://github.com/FollowTheProcess/pytoil
   Documentation: https://FollowTheProcess.github.io/pytoil/
@@ -23,10 +23,10 @@ pytoil is:
     
     <item>
       <title>pymechtest</title>
-      <link>https://followtheproecess.github.io/projects/pymechtest/</link>
+      <link>https://followtheprocess.github.io/projects/pymechtest/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://followtheproecess.github.io/projects/pymechtest/</guid>
+      <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
       <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
   Source Code: https://github.com/FollowTheProcess/pymechtest
   Documentation: https://FollowTheProcess.github.io/pymechtest/
