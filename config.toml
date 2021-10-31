@@ -50,9 +50,14 @@ pygmentsStyle = "monokai"
     weight = 3
 
   [[menu.main]]
+  name = "CV"
+  url = "https://registry.jsonresume.org/FollowTheProcess"
+  weight = 4
+
+  [[menu.main]]
   identifier = "github"
   url = "https://github.com/FollowTheProcess/"
-  weight = 4
+  weight = 5
   # Using feather-icons
   pre = "<span data-feather='github'></span>"
 
