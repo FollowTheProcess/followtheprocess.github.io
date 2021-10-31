@@ -50,8 +50,9 @@ pygmentsStyle = "monokai"
     weight = 3
 
   [[menu.main]]
+  # Serve my CV from the FollowTheProcess/cv repo
   name = "CV"
-  url = "https://registry.jsonresume.org/FollowTheProcess"
+  url = "https://followtheprocess.github.io/cv/"
   weight = 4
 
   [[menu.main]]
