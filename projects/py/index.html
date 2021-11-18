@@ -1,0 +1,207 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>:root{--accent-color:#FF4D4D}</style>
+<title>Py</title>
+<meta name=description content="    Software/Backend Developer.
+    Python | Go | ML
+  ">
+<meta name=keywords content>
+<meta property="og:url" content="https://followtheprocess.github.io/projects/py/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Py">
+<meta property="og:description" content="    Software/Backend Developer.
+    Python | Go | ML
+  ">
+<meta property="og:image" content="/images/profile.jpg">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:title content="Py">
+<meta name=twitter:description content="    Software/Backend Developer.
+    Python | Go | ML
+  ">
+<meta property="twitter:domain" content="https://followtheprocess.github.io/projects/py/">
+<meta property="twitter:url" content="https://followtheprocess.github.io/projects/py/">
+<meta name=twitter:image content="/images/profile.jpg">
+<link rel=canonical href=https://followtheprocess.github.io/projects/py/>
+<link rel=stylesheet type=text/css href=/css/normalize.min.css media=print onload="this.media='all'">
+<link rel=stylesheet type=text/css href=/css/main.css>
+<link disabled id=dark-theme rel=stylesheet href=/css/dark.css>
+<script src=/js/svg-injector.min.js></script>
+<script src=/js/feather-icons.min.js></script>
+<script src=/js/main.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+</head>
+<body>
+<script type=text/javascript>setThemeByUserPref()</script><header class=header>
+<nav class=header-nav>
+<div class=avatar>
+<a href=https://followtheprocess.github.io>
+<img src=/images/profile.jpg alt=avatar>
+</a>
+</div>
+<div class=nav-title>
+<a class=nav-brand href=https://followtheprocess.github.io>@FollowTheProcess</a>
+</div>
+<div class=nav-links>
+<div class=nav-link>
+<a href=/> Home </a>
+</div>
+<div class=nav-link>
+<a href=/posts/> Posts </a>
+</div>
+<div class=nav-link>
+<a href=/projects/> Projects </a>
+</div>
+<div class=nav-link>
+<a href=https://followtheprocess.github.io/cv/> CV </a>
+</div>
+<div class=nav-link>
+<a href=https://github.com/FollowTheProcess/><span data-feather=github></span> </a>
+</div>
+<span class=nav-icons-divider></span>
+<div class="nav-link dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</div>
+<div class=nav-link id=hamburger-menu-toggle>
+<a>
+<span data-feather=menu></span>
+</a>
+</div>
+<ul class="nav-hamburger-list visibility-hidden">
+<li class=nav-item>
+<a href=/> Home </a>
+</li>
+<li class=nav-item>
+<a href=/posts/> Posts </a>
+</li>
+<li class=nav-item>
+<a href=/projects/> Projects </a>
+</li>
+<li class=nav-item>
+<a href=https://followtheprocess.github.io/cv/> CV </a>
+</li>
+<li class=nav-item>
+<a href=https://github.com/FollowTheProcess/><span data-feather=github></span> </a>
+</li>
+<li class="nav-item dark-theme-toggle">
+<a>
+<span id=theme-toggle-icon data-feather=moon></span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<main id=content>
+<div class="post container">
+<div class=post-header-section>
+<h1>Py</h1>
+</div>
+<div class=post-content>
+<p>
+<p><em>(Experimental) port of Brett Cannon&rsquo;s <a href=https://github.com/brettcannon/python-launcher>python-launcher</a> to Go, with a few tweaks 😉</em></p>
+<ul>
+<li>Free software: MIT License</li>
+</ul>
+<h2 id=project-description>Project Description</h2>
+<p><strong>Description of the original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a>:</strong></p>
+<blockquote>
+<p><em>Taken directly from the official <a href=https://github.com/brettcannon/python-launcher/blob/main/README.md>README</a></em></p>
+</blockquote>
+<p>Launch your Python interpreter the lazy/smart way!</p>
+<p>This project is an implementation of the <code>py</code> command for Unix-based platforms
+(with some potential experimentation for good measure 😉).</p>
+<p>The goal is to have <code>py</code> become the cross-platform command that Python users
+typically use to launch an interpreter while doing development. By having a
+command that is version-agnostic when it comes to Python, it side-steps
+the &ldquo;what should the <code>python</code> command point to?&rdquo; debate by clearly specifying
+that upfront (i.e. the newest version of Python that can be found). This also
+unifies the suggested command to document for launching Python on both Windows
+as Unix as <code>py</code> has existed as the preferred
+<a href=https://docs.python.org/3/using/windows.html#launcher>command on Windows</a>
+since 2012 with the release of Python 3.3.</p>
+<p>Typical usage would be:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -m venv .venv
+py ...  <span style=color:#75715e># Normal `python` usage.</span>
+</code></pre></div><p>This creates a virtual environment in a <code>.venv</code> directory using the latest
+version of Python installed. Subsequent uses of <code>py</code> will then use that virtual
+environment as long as it is in the current (or higher) directory; no
+environment activation required (although the Python Launcher supports activated
+environments as well)!</p>
+<p>A non-goal of this project is to become the way to launch the Python
+interpreter <em>all the time</em>. If you know the exact interpreter you want to launch
+then you should launch it directly; same goes for when you have
+requirements on the type of interpreter you want (e.g. 32-bit, framework build
+on macOS, etc.). The Python Launcher should be viewed as a tool of convenience,
+not necessity.</p>
+<h3 id=why-are-you-reimplementing-it-in-go>Why are you reimplementing it in Go?</h3>
+<ul>
+<li>I don&rsquo;t know, fun I guess?</li>
+<li>I love the original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a> and I love Go, so why not combine them!</li>
+<li>Learning and stuff</li>
+</ul>
+<h3 id=whats-different-about-this-one-vs-the-original>What&rsquo;s different about this one vs the original?</h3>
+<p>Initially, I wanted to do a 100% pure port copying the functionality of the original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a> exactly.</p>
+<p>Then I realised that&rsquo;s boring and pointless because why wouldn&rsquo;t I just use the original? It&rsquo;s written really well, easy to understand,
+is fast to launch, 100% test coverage etc etc.</p>
+<p>So I thought why not tweak it a little bit?</p>
+<p>As a result, this version behaves slightly differently in a few ways:</p>
+<ol>
+<li>It won&rsquo;t let you do anything with <code>python2</code>, because it&rsquo;s deprecated and using it is naughty! In fact, it completely ignores any python2 interpreters it finds, so if you use this <code>py</code> there is 0 chance of accidentally launching <code>python2</code></li>
+<li>It won&rsquo;t climb the file tree looking for a <code>.venv</code> in any parent directory, it only looks in <code>cwd</code> (personally I only ever really use python in a virtual environment when I&rsquo;m actively working on a python project, and 99% of the time for that I&rsquo;m sitting in the project root where the <code>.venv</code> is anyway)</li>
+<li>The change above allows this one to easily support both virtual environments named <code>.venv</code> <strong>and</strong> <code>venv</code> (although <code>.venv</code> will be preferred)</li>
+</ol>
+<h2 id=installation>Installation</h2>
+<p>There are binaries published in the <a href=https://github.com/FollowTheProcess/py/releases>GitHub releases</a> section, and a homebrew formula:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew tap FollowTheProcess/homebrew-tap
+
+brew install FollowTheProcess/homebrew-tap/py
+</code></pre></div><h2 id=quickstart>Quickstart</h2>
+<h3 id=launch-the-most-appropriate-python>Launch the most appropriate python</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py ...
+</code></pre></div><h3 id=launch-the-latest-python3-on-path>Launch the latest python3 on <code>$PATH</code></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -3 ...
+</code></pre></div><h3 id=launch-an-exact-version>Launch an exact version</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -3.10 ...
+</code></pre></div><h3 id=debugging>Debugging</h3>
+<p>If you want to see what <code>py</code> is doing to find your python, set the <code>PYLAUNCH_DEBUG</code> environment variable to 1 (or anything really, the value doesn&rsquo;t matter) before running <code>py</code>.</p>
+<p>You will see something like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>PYLAUNCH_DEBUG<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span> py -c <span style=color:#e6db74>&#34;import sys; print(sys.executable)&#34;</span>
+DEBUG py called with multiple arguments             arguments<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[-c import sys; print(sys.executable)]&#34;</span>
+DEBUG Unrecognised arguments                        arguments<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[-c import sys; print(sys.executable)]&#34;</span>
+DEBUG Looking <span style=color:#66d9ef>for</span> $VIRTUAL_ENV environment variable
+DEBUG Looking <span style=color:#66d9ef>for</span> virtual environment in cwd        cwd<span style=color:#f92672>=</span>/Users/tomfleet/Development/py
+DEBUG Looking <span style=color:#66d9ef>for</span> $PY_PYTHON environment variable
+DEBUG Found environment variable                    $PY_PYTHON<span style=color:#f92672>=</span>3.10
+DEBUG Searching <span style=color:#66d9ef>for</span> exact python version            version<span style=color:#f92672>=</span>3.10
+DEBUG Checking $PATH environment variable
+DEBUG $PATH: <span style=color:#f92672>[</span>/Users/tomfleet/.pyenv/shims /Users/tomfleet/go/bin /Users/tomfleet/.local/bin /Users/tomfleet/.cargo/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin<span style=color:#f92672>]</span>
+DEBUG Looking through $PATH <span style=color:#66d9ef>for</span> python3 interpreters
+DEBUG Found matching interpreters                   matching interpreters<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[/Users/tomfleet/.pyenv/shims/python3.10]&#34;</span>
+DEBUG Launching exact python                        python<span style=color:#f92672>=</span>/Users/tomfleet/.pyenv/shims/python3.10
+/Users/tomfleet/.pyenv/versions/3.10.0/bin/python3.10
+</code></pre></div><h2 id=control-flow>Control Flow</h2>
+<p>As previously mentioned, this experimental port behaves slightly differently than the original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a>. The adjusted control flow diagram is shown below:</p>
+<p><img src=https://raw.githubusercontent.com/FollowTheProcess/py/main/docs/control_flow/control_flow.svg alt=control_flow></p>
+<h2 id=benchmarks>Benchmarks</h2>
+<p>Although I&rsquo;ve not made any special efforts to optimise <code>py</code>, it is very close to the original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a> in terms of performance:</p>
+<ul>
+<li><strong>Left:</strong> This version of <code>py</code>, written in Go</li>
+<li><strong>Right:</strong> The original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a> written in Rust</li>
+</ul>
+<p><img src=https://raw.githubusercontent.com/FollowTheProcess/py/main/docs/img/comp.png alt=comparison></p>
+</p>
+</div>
+</div>
+</main><footer class=footer>
+<span>&copy; 2021 Tom Fleet</span>
+<span>
+Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a>
+</span>
+</footer>
+</body>
+</html>
