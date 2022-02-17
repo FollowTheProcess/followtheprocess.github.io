@@ -9,18 +9,19 @@ enableRobotsTXT = true
 pygmentsStyle = "monokai"
 
 [params]
-  footer = "Tom Fleet"
-  description = """
-    Software/Backend Developer.
+footer = "Tom Fleet"
+description = """
+    Software Engineer.
     Python | Go | ML
   """
-  avatarURL = "/images/profile.jpg"
-  avatarSize = "size-m"
-  socialIcons = [
-    {name = "linkedin", url = "https://www.linkedin.com/in/tom-fleet-03b03280/"},
-    {name = "github", url = "https://github.com/FollowTheProcess/"},
-  ]
-  customHeadHTML = """
+avatarURL = "/images/profile.jpg"
+avatarSize = "size-m"
+socialIcons = [
+  { name = "linkedin", url = "https://www.linkedin.com/in/tom-fleet-03b03280/" },
+  { name = "github", url = "https://github.com/FollowTheProcess/" },
+  { name = "twitter", url = "https://twitter.com/FollowTheProc" },
+]
+customHeadHTML = """
     <!-- KaTeX -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 
@@ -31,38 +32,45 @@ pygmentsStyle = "monokai"
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
         onload="renderMathInElement(document.body,);"></script>
   """
-  showPostsOnHomePage = "recent"
+showPostsOnHomePage = "recent"
 
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 2
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 2
 
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 3
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 3
 
-  [[menu.main]]
-  # Serve my CV from the FollowTheProcess/cv repo
-  name = "CV"
-  url = "https://followtheprocess.github.io/cv/"
-  weight = 4
+[[menu.main]]
+# Serve my CV from the FollowTheProcess/cv repo
+name = "CV"
+url = "https://followtheprocess.github.io/cv/"
+weight = 4
 
-  [[menu.main]]
-  identifier = "github"
-  url = "https://github.com/FollowTheProcess/"
-  weight = 5
-  # Using feather-icons
-  pre = "<span data-feather='github'></span>"
+[[menu.main]]
+identifier = "github"
+url = "https://github.com/FollowTheProcess/"
+weight = 5
+# Using feather-icons
+pre = "<span data-feather='github'></span>"
+
+[[menu.main]]
+identifier = "twitter"
+url = "https://twitter.com/FollowTheProc"
+weight = 6
+# Using feather-icons
+pre = "<span data-feather='twitter'></span>"
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

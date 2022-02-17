@@ -97,12 +97,12 @@ When writing pytoil I discovered ines/wasabi for this exact purpose and absolute
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://followtheprocess.github.io/projects/py/</guid>
-      <description>(Experimental) port of Brett Cannon&amp;rsquo;s python-launcher to Go.
-(Approximate) port of Brett Cannon&amp;rsquo;s python-launcher for Unix to Go, with a few tweaks 😉
+      <description>(Experimental) port of Brett Cannon&amp;rsquo;s python-launcher to Go, with a few tweaks 😉
  Free software: MIT License  Project Description Description of the original python-launcher:
  Taken directly from the official README
  Launch your Python interpreter the lazy/smart way!
-This project is an implementation of the py command for Unix-based platforms (with some potential experimentation for good measure 😉).</description>
+This project is an implementation of the py command for Unix-based platforms (with some potential experimentation for good measure 😉).
+The goal is to have py become the cross-platform command that Python users typically use to launch an interpreter while doing development.</description>
     </item>
     
     <item>
