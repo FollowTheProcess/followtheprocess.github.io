@@ -115,7 +115,7 @@ October 25, 2021
 <p>When you hit <code>ctrl + c</code>, (on UNIX systems) your program is passed the <code>SIGINT</code> Unix signal. The go runtime handles this and will stop your program relatively safely, but it&rsquo;s not <strong>great</strong> practice!</p>
 <p>What if you have database connection pools open or forgot to close a file etc.?</p>
 <p>This is where graceful shutdown comes in 🎉</p>
-<p>This is going to be a super short post just showing a good example of imnplementing graceful shutdown of a Go HTTP server.</p>
+<p>This is going to be a super short post just showing a good example of implementing graceful shutdown of a Go HTTP server.</p>
 <h2 id=the-bad-way>The Bad Way</h2>
 <p>A simple web server that connects to a SQL database without graceful shutdown might look something like this:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#ff79c6>package</span> main
