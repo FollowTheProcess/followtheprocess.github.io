@@ -18,7 +18,7 @@ What if you have database connection pools open or forgot to close a file etc.?
 
 This is where graceful shutdown comes in :tada:
 
-This is going to be a super short post just showing a good example of imnplementing graceful shutdown of a Go HTTP server.
+This is going to be a super short post just showing a good example of implementing graceful shutdown of a Go HTTP server.
 
 ## The Bad Way
 

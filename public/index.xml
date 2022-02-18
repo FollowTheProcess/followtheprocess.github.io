@@ -13,7 +13,9 @@
       <pubDate>Thu, 17 Feb 2022 17:31:45 +0000</pubDate>
       
       <guid>https://followtheprocess.github.io/posts/modern_python/</guid>
-      <description></description>
+      <description>Python is going through a huge modernisation kick in recent years with things like PEP 484 Type Hints, performance improvements coming in 3.11 and now being able to run on web assembly, moving away from the hangover of python 2 and fully embracing the new style of &amp;ldquo;modern&amp;rdquo; python 3.
+The python sphere is full of posts, packages and repos claiming to use or take advantage of &amp;ldquo;modern python&amp;rdquo;
+So you may be asking&amp;hellip; what exactly do people mean when they say &amp;ldquo;modern python&amp;rdquo;?</description>
     </item>
     
     <item>

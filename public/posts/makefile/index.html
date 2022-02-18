@@ -182,60 +182,60 @@
 <p><img src="/images/posts/makefile/makefile_search.png" alt="makefile_search"></p>
 <p>Despite this, most Makefiles I&rsquo;ve come across in the wild have been poorly documented and not very user friendly! We can fix this with a bit of shell trickery 😉</p>
 <p>So here it is, the self-documenting Makefile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile">.DEFAULT_GOAL <span style="color:#f92672">:=</span> help
-<span style="color:#a6e22e">.PHONY</span><span style="color:#f92672">:</span> help start build clean colors
-SHELL<span style="color:#f92672">=</span>/usr/bin/env zsh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#8be9fd;font-style:italic">.DEFAULT_GOAL</span> <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">help</span>
+<span style="color:#50fa7b">.PHONY</span><span style="color:#ff79c6">:</span> help start build clean colors
+<span style="color:#8be9fd;font-style:italic">SHELL</span><span style="color:#ff79c6">=</span>/usr/bin/env zsh
 
-<span style="color:#75715e"># Define standard colors
-</span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">ifneq</span> <span style="color:#960050;background-color:#1e0010">(,</span><span style="color:#66d9ef">$(</span>findstring xterm,<span style="color:#66d9ef">$</span>{TERM}<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">)</span>
-    BLACK        <span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 0<span style="color:#66d9ef">)</span>
-    RED          :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 1<span style="color:#66d9ef">)</span>
-    GREEN        :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 2<span style="color:#66d9ef">)</span>
-    YELLOW       :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 3<span style="color:#66d9ef">)</span>
-    LIGHTPURPLE  :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 4<span style="color:#66d9ef">)</span>
-    PURPLE       :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 5<span style="color:#66d9ef">)</span>
-    BLUE         :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 6<span style="color:#66d9ef">)</span>
-    WHITE        :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm setaf 7<span style="color:#66d9ef">)</span>
-    RESET    :<span style="color:#f92672">=</span> <span style="color:#66d9ef">$(</span>shell tput -Txterm sgr0<span style="color:#66d9ef">)</span>
-<span style="color:#960050;background-color:#1e0010">else</span>
-    BLACK        <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    RED          :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    GREEN        :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    YELLOW       :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    LIGHTPURPLE  :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    PURPLE       :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    BLUE         :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    WHITE        :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-    RESET        :<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
-<span style="color:#960050;background-color:#1e0010">endif</span>
+<span style="color:#6272a4"># Define standard colors
+</span><span style="color:#6272a4"></span>ifneq (,<span style="color:#ff79c6">$(</span><span style="color:#8be9fd;font-style:italic">findstring</span> <span style="color:#8be9fd;font-style:italic">xterm</span>,<span style="color:#ff79c6">$</span>{<span style="color:#8be9fd;font-style:italic">TERM</span>}<span style="color:#ff79c6">)</span>)
+    <span style="color:#8be9fd;font-style:italic">BLACK</span>        <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 0<span style="color:#ff79c6">)</span>
+    RED          :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 1<span style="color:#ff79c6">)</span>
+    GREEN        :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 2<span style="color:#ff79c6">)</span>
+    YELLOW       :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 3<span style="color:#ff79c6">)</span>
+    LIGHTPURPLE  :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 4<span style="color:#ff79c6">)</span>
+    PURPLE       :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 5<span style="color:#ff79c6">)</span>
+    BLUE         :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 6<span style="color:#ff79c6">)</span>
+    WHITE        :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm setaf 7<span style="color:#ff79c6">)</span>
+    RESET    :<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$(</span>shell tput -Txterm sgr0<span style="color:#ff79c6">)</span>
+else
+    <span style="color:#8be9fd;font-style:italic">BLACK</span>        <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    RED          :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    GREEN        :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    YELLOW       :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    LIGHTPURPLE  :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    PURPLE       :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    BLUE         :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    WHITE        :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+    RESET        :<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+endif
 
-<span style="color:#75715e"># Set target color
-</span><span style="color:#75715e"></span>TARGET_COLOR <span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>BLUE<span style="color:#66d9ef">)</span>
+<span style="color:#6272a4"># Set target color
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">TARGET_COLOR</span> <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">$(</span>BLUE<span style="color:#ff79c6">)</span>
 
-<span style="color:#a6e22e">colors</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Show all the colors
-</span><span style="color:#75715e"></span>    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BLACK<span style="color:#e6db74">}</span><span style="color:#e6db74">BLACK</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>RED<span style="color:#e6db74">}</span><span style="color:#e6db74">RED</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>GREEN<span style="color:#e6db74">}</span><span style="color:#e6db74">GREEN</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>YELLOW<span style="color:#e6db74">}</span><span style="color:#e6db74">YELLOW</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>LIGHTPURPLE<span style="color:#e6db74">}</span><span style="color:#e6db74">LIGHTPURPLE</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PURPLE<span style="color:#e6db74">}</span><span style="color:#e6db74">PURPLE</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>BLUE<span style="color:#e6db74">}</span><span style="color:#e6db74">BLUE</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>WHITE<span style="color:#e6db74">}</span><span style="color:#e6db74">WHITE</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#50fa7b">colors</span><span style="color:#ff79c6">:</span> <span style="color:#6272a4">## Show all the colors
+</span><span style="color:#6272a4"></span>    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">BLACK</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">BLACK</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RED</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">RED</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">GREEN</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">GREEN</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">YELLOW</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">YELLOW</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">LIGHTPURPLE</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">LIGHTPURPLE</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">PURPLE</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">PURPLE</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">BLUE</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">BLUE</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">WHITE</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">WHITE</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
 
-<span style="color:#a6e22e">help</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Show the list of available tasks
-</span><span style="color:#75715e"></span>    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>GREEN<span style="color:#e6db74">}</span><span style="color:#e6db74">Available Tasks: </span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-    @echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>WHITE<span style="color:#e6db74">}</span><span style="color:#e6db74">-----------------------------------------------------------------</span><span style="color:#e6db74">${</span>RESET<span style="color:#e6db74">}</span><span style="color:#e6db74">\n&#34;</span>
-    @grep -E <span style="color:#e6db74">&#39;^[a-zA-Z_0-9%-]+:.*?## .*$$&#39;</span> <span style="color:#66d9ef">$(</span>MAKEFILE_LIST<span style="color:#66d9ef">)</span> | sort | awk <span style="color:#e6db74">&#39;BEGIN {FS = &#34;:.*?## &#34;}; {printf &#34;${TARGET_COLOR}%-10s${RESET} %s\n&#34;, $$1, $$2}&#39;</span>
+<span style="color:#50fa7b">help</span><span style="color:#ff79c6">:</span> <span style="color:#6272a4">## Show the list of available tasks
+</span><span style="color:#6272a4"></span>    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">GREEN</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">Available Tasks: </span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">&#34;</span>
+    @echo <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">WHITE</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">-----------------------------------------------------------------</span><span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">RESET</span><span style="color:#f1fa8c">}</span><span style="color:#f1fa8c">\n&#34;</span>
+    @grep -E <span style="color:#f1fa8c">&#39;^[a-zA-Z_0-9%-]+:.*?## .*$$&#39;</span> <span style="color:#ff79c6">$(</span>MAKEFILE_LIST<span style="color:#ff79c6">)</span> | sort | awk <span style="color:#f1fa8c">&#39;BEGIN {FS = &#34;:.*?## &#34;}; {printf &#34;${TARGET_COLOR}%-10s${RESET} %s\n&#34;, $$1, $$2}&#39;</span>
 
 
-<span style="color:#a6e22e">build</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Build some things
-</span><span style="color:#75715e"></span>    @echo <span style="color:#e6db74">&#34;building&#34;</span>
+<span style="color:#50fa7b">build</span><span style="color:#ff79c6">:</span> <span style="color:#6272a4">## Build some things
+</span><span style="color:#6272a4"></span>    @echo <span style="color:#f1fa8c">&#34;building&#34;</span>
 
-<span style="color:#a6e22e">start</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Start some service
-</span><span style="color:#75715e"></span>    docker compose up
+<span style="color:#50fa7b">start</span><span style="color:#ff79c6">:</span> <span style="color:#6272a4">## Start some service
+</span><span style="color:#6272a4"></span>    docker compose up
 
-<span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span> <span style="color:#75715e">## Remove unused clutter
-</span><span style="color:#75715e"></span>    rm -rf ./cache
+<span style="color:#50fa7b">clean</span><span style="color:#ff79c6">:</span> <span style="color:#6272a4">## Remove unused clutter
+</span><span style="color:#6272a4"></span>    rm -rf ./cache
 </code></pre></div><p>And now because we set <code>.DEFAULT_GOAL</code> to <code>help</code>, when we run <code>make</code> we get a very pretty help message!</p>
 <p><img src="/images/posts/makefile/make_help.png" alt="make_help"></p>
 

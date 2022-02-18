@@ -182,7 +182,7 @@
 <p>If you&rsquo;ve not had the joy of running into this particular error: <a href="https://github.com/numpy/numpy/issues/15947">https://github.com/numpy/numpy/issues/15947</a> I don&rsquo;t envy you.</p>
 <p>There&rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me! There&rsquo;s lots of informed discussion on exactly <em>why</em> this error is raised which I&rsquo;m not going to go into here.</p>
 <p>However, when this error happened to me a few months ago I ended up trying multiple solutions before finding that thread and getting to the one that worked, in the process messing with my python installation and causing more headaches.</p>
-<p>So I thought the best thing to do is try and summarise (in jokey caveman speak for fun), and point you <em>precisely</em> to what fixed it for me incase it helps you.</p>
+<p>So I thought the best thing to do is try and summarise (in jokey caveman speak for fun), and point you <em>precisely</em> to what fixed it for me in case it helps you.</p>
 <h2 id="problem">Problem</h2>
 <ul>
 <li>NumPy needs C for fast maths</li>
@@ -197,23 +197,23 @@
 <li>bad</li>
 </ul>
 <h2 id="solution">Solution</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Make pip forget about numpy</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#6272a4"># Make pip forget about numpy</span>
 pip cache remove numpy
 
-<span style="color:#75715e"># Non-buggy wheel backend</span>
+<span style="color:#6272a4"># Non-buggy wheel backend</span>
 brew install openblas
 
-cd &lt;your_numpy_project&gt;
+<span style="color:#8be9fd;font-style:italic">cd</span> &lt;your_numpy_project&gt;
 
-<span style="color:#75715e"># Remove your old virtualenv and create a new one</span>
+<span style="color:#6272a4"># Remove your old virtualenv and create a new one</span>
 rm -rf .venv
 python3 -m venv .venv
 
-<span style="color:#75715e"># Activate it</span>
-source .venv/bin/activate
+<span style="color:#6272a4"># Activate it</span>
+<span style="color:#8be9fd;font-style:italic">source</span> .venv/bin/activate
 
-<span style="color:#75715e"># Point numpy to openblas</span>
-OPENBLAS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --prefix openblas<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> pip install numpy
+<span style="color:#6272a4"># Point numpy to openblas</span>
+<span style="color:#8be9fd;font-style:italic">OPENBLAS</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">$(</span>brew --prefix openblas<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">&#34;</span> pip install numpy
 </code></pre></div><p>Fixed 👍</p>
 <p>P.S. Once you&rsquo;ve done this for the first time, the NumPy wheel is cached and will be used for all future pip installs until a new version is released, you won&rsquo;t need to do <code>OPENBLAS=...</code> again unless you:</p>
 <ul>
