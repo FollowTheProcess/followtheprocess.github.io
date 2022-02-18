@@ -131,8 +131,8 @@ as Unix as <code>py</code> has existed as the preferred
 <a href=https://docs.python.org/3/using/windows.html#launcher>command on Windows</a>
 since 2012 with the release of Python 3.3.</p>
 <p>Typical usage would be:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -m venv .venv
-py ...  <span style=color:#75715e># Normal `python` usage.</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -m venv .venv
+py ...  <span style=color:#6272a4># Normal `python` usage.</span>
 </code></pre></div><p>This creates a virtual environment in a <code>.venv</code> directory using the latest
 version of Python installed. Subsequent uses of <code>py</code> will then use that virtual
 environment as long as it is in the current (or higher) directory; no
@@ -163,32 +163,32 @@ is fast to launch, 100% test coverage etc etc.</p>
 </ol>
 <h2 id=installation>Installation</h2>
 <p>There are binaries published in the <a href=https://github.com/FollowTheProcess/py/releases>GitHub releases</a> section, and a homebrew formula:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew tap FollowTheProcess/homebrew-tap
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>brew tap FollowTheProcess/homebrew-tap
 
 brew install FollowTheProcess/homebrew-tap/py
 </code></pre></div><h2 id=quickstart>Quickstart</h2>
 <h3 id=launch-the-most-appropriate-python>Launch the most appropriate python</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py ...
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py ...
 </code></pre></div><h3 id=launch-the-latest-python3-on-path>Launch the latest python3 on <code>$PATH</code></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -3 ...
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -3 ...
 </code></pre></div><h3 id=launch-an-exact-version>Launch an exact version</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -3.10 ...
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>py -3.10 ...
 </code></pre></div><h3 id=debugging>Debugging</h3>
 <p>If you want to see what <code>py</code> is doing to find your python, set the <code>PYLAUNCH_DEBUG</code> environment variable to 1 (or anything really, the value doesn&rsquo;t matter) before running <code>py</code>.</p>
 <p>You will see something like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>PYLAUNCH_DEBUG<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span> py -c <span style=color:#e6db74>&#34;import sys; print(sys.executable)&#34;</span>
-DEBUG py called with multiple arguments             arguments<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[-c import sys; print(sys.executable)]&#34;</span>
-DEBUG Unrecognised arguments                        arguments<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[-c import sys; print(sys.executable)]&#34;</span>
-DEBUG Looking <span style=color:#66d9ef>for</span> $VIRTUAL_ENV environment variable
-DEBUG Looking <span style=color:#66d9ef>for</span> virtual environment in cwd        cwd<span style=color:#f92672>=</span>/Users/tomfleet/Development/py
-DEBUG Looking <span style=color:#66d9ef>for</span> $PY_PYTHON environment variable
-DEBUG Found environment variable                    $PY_PYTHON<span style=color:#f92672>=</span>3.10
-DEBUG Searching <span style=color:#66d9ef>for</span> exact python version            version<span style=color:#f92672>=</span>3.10
-DEBUG Checking $PATH environment variable
-DEBUG $PATH: <span style=color:#f92672>[</span>/Users/tomfleet/.pyenv/shims /Users/tomfleet/go/bin /Users/tomfleet/.local/bin /Users/tomfleet/.cargo/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin<span style=color:#f92672>]</span>
-DEBUG Looking through $PATH <span style=color:#66d9ef>for</span> python3 interpreters
-DEBUG Found matching interpreters                   matching interpreters<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[/Users/tomfleet/.pyenv/shims/python3.10]&#34;</span>
-DEBUG Launching exact python                        python<span style=color:#f92672>=</span>/Users/tomfleet/.pyenv/shims/python3.10
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#8be9fd;font-style:italic>PYLAUNCH_DEBUG</span><span style=color:#ff79c6>=</span><span style=color:#bd93f9>1</span> py -c <span style=color:#f1fa8c>&#34;import sys; print(sys.executable)&#34;</span>
+DEBUG py called with multiple arguments             <span style=color:#8be9fd;font-style:italic>arguments</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;[-c import sys; print(sys.executable)]&#34;</span>
+DEBUG Unrecognised arguments                        <span style=color:#8be9fd;font-style:italic>arguments</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;[-c import sys; print(sys.executable)]&#34;</span>
+DEBUG Looking <span style=color:#ff79c6>for</span> <span style=color:#8be9fd;font-style:italic>$VIRTUAL_ENV</span> environment variable
+DEBUG Looking <span style=color:#ff79c6>for</span> virtual environment in cwd        <span style=color:#8be9fd;font-style:italic>cwd</span><span style=color:#ff79c6>=</span>/Users/tomfleet/Development/py
+DEBUG Looking <span style=color:#ff79c6>for</span> <span style=color:#8be9fd;font-style:italic>$PY_PYTHON</span> environment variable
+DEBUG Found environment variable                    <span style=color:#8be9fd;font-style:italic>$PY_PYTHON</span><span style=color:#ff79c6>=</span>3.10
+DEBUG Searching <span style=color:#ff79c6>for</span> exact python version            <span style=color:#8be9fd;font-style:italic>version</span><span style=color:#ff79c6>=</span>3.10
+DEBUG Checking <span style=color:#8be9fd;font-style:italic>$PATH</span> environment variable
+DEBUG <span style=color:#8be9fd;font-style:italic>$PATH</span>: <span style=color:#ff79c6>[</span>/Users/tomfleet/.pyenv/shims /Users/tomfleet/go/bin /Users/tomfleet/.local/bin /Users/tomfleet/.cargo/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin<span style=color:#ff79c6>]</span>
+DEBUG Looking through <span style=color:#8be9fd;font-style:italic>$PATH</span> <span style=color:#ff79c6>for</span> python3 interpreters
+DEBUG Found matching interpreters                   matching <span style=color:#8be9fd;font-style:italic>interpreters</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;[/Users/tomfleet/.pyenv/shims/python3.10]&#34;</span>
+DEBUG Launching exact python                        <span style=color:#8be9fd;font-style:italic>python</span><span style=color:#ff79c6>=</span>/Users/tomfleet/.pyenv/shims/python3.10
 /Users/tomfleet/.pyenv/versions/3.10.0/bin/python3.10
 </code></pre></div><h2 id=control-flow>Control Flow</h2>
 <p>As previously mentioned, this experimental port behaves slightly differently than the original <a href=https://github.com/brettcannon/python-launcher>python-launcher</a>. The adjusted control flow diagram is shown below:</p>

@@ -123,9 +123,9 @@ February 23, 2021
 <p>However, like most other things you could worry about, the python developers have got you covered.</p>
 <p>It turns out that there is an environment variable <code>PIP_REQUIRE_VIRTUALENV</code> that pip will check for before doing anything that might alter your system/environment.</p>
 <p>If you set this environment variable to <code>true</code> like this&mldr;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Inside ~/.zshrc or ~/.bashrc or whatever your shells init file is</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#6272a4># Inside ~/.zshrc or ~/.bashrc or whatever your shells init file is</span>
 
-export PIP_REQUIRE_VIRTUALENV<span style=color:#f92672>=</span>true
+<span style=color:#8be9fd;font-style:italic>export</span> <span style=color:#8be9fd;font-style:italic>PIP_REQUIRE_VIRTUALENV</span><span style=color:#ff79c6>=</span><span style=color:#8be9fd;font-style:italic>true</span>
 </code></pre></div><p>Then pip literally won&rsquo;t let you do anything stupid until you&rsquo;re in an activate virtual environment!</p>
 <p>See&mldr;</p>
 <p><img src=/images/posts/pip_no_venv.png alt="pip without a virtual environment"></p>

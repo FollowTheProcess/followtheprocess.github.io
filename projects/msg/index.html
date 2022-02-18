@@ -134,28 +134,28 @@
 <p><img src=https://github.com/FollowTheProcess/msg/raw/main/img/demo.png alt=demo></p>
 <h2 id=installation>Installation</h2>
 <p>To use <code>msg</code> in your code:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>go get github.com/FollowTheProcess/msg@latest
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>go get github.com/FollowTheProcess/msg@latest
 </code></pre></div><h2 id=quickstart>Quickstart</h2>
 <p>The quickest way to get started is to use the top level functions that come pre-configured with colors and symbols:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#ff79c6>package</span> main
 
-<span style=color:#f92672>import</span> <span style=color:#e6db74>&#34;github.com/FollowTheProcess/msg&#34;</span>
+<span style=color:#ff79c6>import</span> <span style=color:#f1fa8c>&#34;github.com/FollowTheProcess/msg&#34;</span>
 
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
-    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Title</span>(<span style=color:#e6db74>&#34;Your Title here&#34;</span>)
-    <span style=color:#75715e>// Do some stuff
-</span><span style=color:#75715e></span>
-    <span style=color:#75715e>// Give the user an update
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Info</span>(<span style=color:#e6db74>&#34;Getting your files&#34;</span>)
+<span style=color:#8be9fd;font-style:italic>func</span> <span style=color:#50fa7b>main</span>() {
+    msg.<span style=color:#50fa7b>Title</span>(<span style=color:#f1fa8c>&#34;Your Title here&#34;</span>)
+    <span style=color:#6272a4>// Do some stuff
+</span><span style=color:#6272a4></span>
+    <span style=color:#6272a4>// Give the user an update
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Info</span>(<span style=color:#f1fa8c>&#34;Getting your files&#34;</span>)
 
-    <span style=color:#75715e>// Report success
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Good</span>(<span style=color:#e6db74>&#34;It worked!&#34;</span>)
+    <span style=color:#6272a4>// Report success
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Good</span>(<span style=color:#f1fa8c>&#34;It worked!&#34;</span>)
 
-    <span style=color:#75715e>// Uh oh, an error
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Fail</span>(<span style=color:#e6db74>&#34;Oh no!, file not found&#34;</span>)
+    <span style=color:#6272a4>// Uh oh, an error
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Fail</span>(<span style=color:#f1fa8c>&#34;Oh no!, file not found&#34;</span>)
 
-    <span style=color:#75715e>// Warn a user about something
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Warn</span>(<span style=color:#e6db74>&#34;This action is irreversible&#34;</span>)
+    <span style=color:#6272a4>// Warn a user about something
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Warn</span>(<span style=color:#f1fa8c>&#34;This action is irreversible&#34;</span>)
 }
 </code></pre></div><p>This will get you something that looks like this:</p>
 <p><img src=https://github.com/FollowTheProcess/msg/raw/main/img/demo2.png alt=demo2></p>
@@ -174,76 +174,76 @@
 <h3 id=print-verbs>Print Verbs</h3>
 <p><code>msg</code> follow Go&rsquo;s lead when it comes to print verbs (think <code>Printf</code>, <code>Sprintf</code>, <code>Fprintf</code> etc.). As such, each of the 5 output types has these methods available (except they have weird names like <code>Sinfof</code>, but that&rsquo;s part of the fun.)</p>
 <p>For example, let&rsquo;s take the <code>Warn</code> message which is the yellow one with the ⚠️ above:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#ff79c6>package</span> main
 
-<span style=color:#f92672>import</span> <span style=color:#e6db74>&#34;github.com/FollowTheProcess/msg&#34;</span>
+<span style=color:#ff79c6>import</span> <span style=color:#f1fa8c>&#34;github.com/FollowTheProcess/msg&#34;</span>
 
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
+<span style=color:#8be9fd;font-style:italic>func</span> <span style=color:#50fa7b>main</span>() {
     
-    <span style=color:#75715e>// The &#34;normal&#34; one -&gt; fmt.Println
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Warn</span>(<span style=color:#e6db74>&#34;I&#39;m a Warning&#34;</span>)
+    <span style=color:#6272a4>// The &#34;normal&#34; one -&gt; fmt.Println
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Warn</span>(<span style=color:#f1fa8c>&#34;I&#39;m a Warning&#34;</span>)
 
-    <span style=color:#75715e>// When you want to inject some variables -&gt; fmt.Printf
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// Note: you don&#39;t have to put the &#39;\n&#39; at the end, we do that for you
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>file</span> <span style=color:#f92672>:=</span> <span style=color:#e6db74>&#34;msg.go&#34;</span>
-    <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Warnf</span>(<span style=color:#e6db74>&#34;File: %s not found&#34;</span>, <span style=color:#a6e22e>file</span>)
+    <span style=color:#6272a4>// When you want to inject some variables -&gt; fmt.Printf
+</span><span style=color:#6272a4></span>    <span style=color:#6272a4>// Note: you don&#39;t have to put the &#39;\n&#39; at the end, we do that for you
+</span><span style=color:#6272a4></span>    file <span style=color:#ff79c6>:=</span> <span style=color:#f1fa8c>&#34;msg.go&#34;</span>
+    msg.<span style=color:#50fa7b>Warnf</span>(<span style=color:#f1fa8c>&#34;File: %s not found&#34;</span>, file)
 
-    <span style=color:#75715e>// When you want the string back to use elsewhere -&gt; fmt.Sprint
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// this will strip any newlines and trailing/leading whitespace
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>s</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Swarn</span>(<span style=color:#e6db74>&#34;I&#39;m a Warning string&#34;</span>)
+    <span style=color:#6272a4>// When you want the string back to use elsewhere -&gt; fmt.Sprint
+</span><span style=color:#6272a4></span>    <span style=color:#6272a4>// this will strip any newlines and trailing/leading whitespace
+</span><span style=color:#6272a4></span>    s <span style=color:#ff79c6>:=</span> msg.<span style=color:#50fa7b>Swarn</span>(<span style=color:#f1fa8c>&#34;I&#39;m a Warning string&#34;</span>)
 
-    <span style=color:#75715e>// But I want a string AND formatting -&gt; fmt.Sprintf
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>s</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Swarnf</span>(<span style=color:#e6db74>&#34;Here&#39;s a warning string about: %s&#34;</span>, <span style=color:#a6e22e>file</span>)
+    <span style=color:#6272a4>// But I want a string AND formatting -&gt; fmt.Sprintf
+</span><span style=color:#6272a4></span>    s <span style=color:#ff79c6>:=</span> msg.<span style=color:#50fa7b>Swarnf</span>(<span style=color:#f1fa8c>&#34;Here&#39;s a warning string about: %s&#34;</span>, file)
 }
 </code></pre></div><p>The functions that return strings have all whitespace and newlines trimmed before returning so you&rsquo;ll get back just the raw colored string (and the symbol if you have one, more on this later)</p>
 <p>There is no <code>Fwarnf</code> though, that&rsquo;s because where <code>msg</code> writes to is configured as part of the <code>Printer</code>. More on that down here 👇</p>
 <h3 id=configuration>Configuration</h3>
 <p>You can get pretty far with just what we&rsquo;ve seen up to now, especially if you agree with my choice of symbols and colors.</p>
 <p>But I <em>know</em> that some of you want finer grained control than this. For you folks, you can instantiate your own <code>Printer</code> and have full control over the colors and symbols:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#ff79c6>package</span> main
 
-<span style=color:#f92672>import</span> (
-    <span style=color:#e6db74>&#34;os&#34;</span>
+<span style=color:#ff79c6>import</span> (
+    <span style=color:#f1fa8c>&#34;os&#34;</span>
 
-    <span style=color:#e6db74>&#34;github.com/FollowTheProcess/msg&#34;</span>
-    <span style=color:#e6db74>&#34;github.com/fatih/color&#34;</span>
+    <span style=color:#f1fa8c>&#34;github.com/FollowTheProcess/msg&#34;</span>
+    <span style=color:#f1fa8c>&#34;github.com/fatih/color&#34;</span>
 )
 
-<span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
-    <span style=color:#75715e>// Defaults shown
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>printer</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>msg</span>.<span style=color:#a6e22e>Printer</span>{
-        <span style=color:#a6e22e>SymbolInfo</span>:  <span style=color:#e6db74>&#34;ℹ&#34;</span>,
-        <span style=color:#a6e22e>SymbolTitle</span>: <span style=color:#e6db74>&#34;&#34;</span>,
-        <span style=color:#a6e22e>SymbolWarn</span>:  <span style=color:#e6db74>&#34;⚠️&#34;</span>,
-        <span style=color:#a6e22e>SymbolFail</span>:  <span style=color:#e6db74>&#34;✘&#34;</span>,
-        <span style=color:#a6e22e>SymbolGood</span>:  <span style=color:#e6db74>&#34;✔&#34;</span>,
+<span style=color:#8be9fd;font-style:italic>func</span> <span style=color:#50fa7b>main</span>() {
+    <span style=color:#6272a4>// Defaults shown
+</span><span style=color:#6272a4></span>    printer <span style=color:#ff79c6>:=</span> msg.Printer{
+        SymbolInfo:  <span style=color:#f1fa8c>&#34;ℹ&#34;</span>,
+        SymbolTitle: <span style=color:#f1fa8c>&#34;&#34;</span>,
+        SymbolWarn:  <span style=color:#f1fa8c>&#34;⚠️&#34;</span>,
+        SymbolFail:  <span style=color:#f1fa8c>&#34;✘&#34;</span>,
+        SymbolGood:  <span style=color:#f1fa8c>&#34;✔&#34;</span>,
 
-        <span style=color:#75715e>// Any fg color from fatih/color will work here
-</span><span style=color:#75715e></span>        <span style=color:#a6e22e>ColorInfo</span>:  <span style=color:#a6e22e>color</span>.<span style=color:#a6e22e>FgHiCyan</span>,
-        <span style=color:#a6e22e>ColorTitle</span>: <span style=color:#a6e22e>color</span>.<span style=color:#a6e22e>FgCyan</span>,
-        <span style=color:#a6e22e>ColorWarn</span>:  <span style=color:#a6e22e>color</span>.<span style=color:#a6e22e>FgYellow</span>,
-        <span style=color:#a6e22e>ColorFail</span>:  <span style=color:#a6e22e>color</span>.<span style=color:#a6e22e>FgRed</span>,
-        <span style=color:#a6e22e>ColorGood</span>:  <span style=color:#a6e22e>color</span>.<span style=color:#a6e22e>FgGreen</span>,
+        <span style=color:#6272a4>// Any fg color from fatih/color will work here
+</span><span style=color:#6272a4></span>        ColorInfo:  color.FgHiCyan,
+        ColorTitle: color.FgCyan,
+        ColorWarn:  color.FgYellow,
+        ColorFail:  color.FgRed,
+        ColorGood:  color.FgGreen,
 
-        <span style=color:#75715e>// Mainly used for testing but you can set it if you want
-</span><span style=color:#75715e></span>        <span style=color:#a6e22e>Out</span>: <span style=color:#a6e22e>os</span>.<span style=color:#a6e22e>Stdout</span>,
+        <span style=color:#6272a4>// Mainly used for testing but you can set it if you want
+</span><span style=color:#6272a4></span>        Out: os.Stdout,
     }
 
-    <span style=color:#75715e>// Now your printer is set up, just call the normal methods
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// all the same methods are available
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>printer</span>.<span style=color:#a6e22e>Warn</span>(<span style=color:#e6db74>&#34;Warning from my custom printer!&#34;</span>)
+    <span style=color:#6272a4>// Now your printer is set up, just call the normal methods
+</span><span style=color:#6272a4></span>    <span style=color:#6272a4>// all the same methods are available
+</span><span style=color:#6272a4></span>    printer.<span style=color:#50fa7b>Warn</span>(<span style=color:#f1fa8c>&#34;Warning from my custom printer!&#34;</span>)
 }
 
 </code></pre></div><p><strong>But what if I change my mind half way through?</strong></p>
 <p>That&rsquo;s cool, all of the fields in <code>Printer</code> are exported so you can just change them whenever you want:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go>    <span style=color:#75715e>// Code above omitted
-</span><span style=color:#75715e></span>
-    <span style=color:#a6e22e>printer</span>.<span style=color:#a6e22e>Info</span>(<span style=color:#e6db74>&#34;Old symbol&#34;</span>)
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go>    <span style=color:#6272a4>// Code above omitted
+</span><span style=color:#6272a4></span>
+    printer.<span style=color:#50fa7b>Info</span>(<span style=color:#f1fa8c>&#34;Old symbol&#34;</span>)
 
-    <span style=color:#75715e>// I want a different symbol for Info for this section only
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>printer</span>.<span style=color:#a6e22e>SymbolInfo</span> = <span style=color:#e6db74>&#34;🔎&#34;</span>
+    <span style=color:#6272a4>// I want a different symbol for Info for this section only
+</span><span style=color:#6272a4></span>    printer.SymbolInfo = <span style=color:#f1fa8c>&#34;🔎&#34;</span>
 
-    <span style=color:#a6e22e>printer</span>.<span style=color:#a6e22e>Info</span>(<span style=color:#e6db74>&#34;New symbol&#34;</span>)
+    printer.<span style=color:#50fa7b>Info</span>(<span style=color:#f1fa8c>&#34;New symbol&#34;</span>)
 </code></pre></div><p>And you&rsquo;ll get:</p>
 <p><img src=https://github.com/FollowTheProcess/msg/raw/main/img/symbol.png alt=symbol></p>
 <p>That&rsquo;s about all there is really 🎉</p>

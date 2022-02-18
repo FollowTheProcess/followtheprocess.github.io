@@ -134,24 +134,24 @@
 <p>Easy automation & flexible testing for python:</p>
 <ul>
 <li>nox is just like tox, but with easy configuration in a python file</li>
-<li>Comes preconfigured to do project maintainence tasks like build and serve docs in one command:</li>
+<li>Comes preconfigured to do project maintenance tasks like build and serve docs in one command:</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nox docs -- serve
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nox docs -- serve
 </code></pre></div><h3 id=mkdocs><a href=https://www.mkdocs.org>MkDocs</a></h3>
 <p>Production ready docs with MkDocs and GitHub Pages. Sphinx has been the go to for python documentation but MkDocs offers easier configuration and documentation in markdown.</p>
 <p>Project template comes with configured <code>mkdocs.yml</code> config file for a beautiful theme, all you need to do is add your markdown files and reference them in your nav tree!</p>
 <p>Examples of MkDocs sites include <a href=https://fastapi.tiangolo.com>FastAPI</a>, <a href=https://typer.tiangolo.com>Typer</a>, <a href=https://pycqa.github.io/isort/>isort</a> and more!</p>
 <p>When you&rsquo;re ready to deploy your documentation, just run:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mkdocs gh-deploy
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mkdocs gh-deploy
 </code></pre></div><p>And your docs will be right there next to your code on <a href=https://pages.github.com>GitHub Pages</a></p>
 <p>This also happens when you push a new tag to main as part of a release (see below)!</p>
 <h3 id=easy-versioning>Easy Versioning</h3>
 <p>Pre-configured version bumping with <a href=https://pypi.org/project/bump2version/>Bump2Version</a>, all you need to do when you&rsquo;re ready for a new version is:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>bump2version patch <span style=color:#75715e># Possible: patch, minor, major</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>bump2version patch <span style=color:#6272a4># Possible: patch, minor, major</span>
 git push
 git push --tags
 </code></pre></div><p>There&rsquo;s also a nox session for this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nox -s release -- patch <span style=color:#75715e># Possible: patch, minor, major</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nox -s release -- patch <span style=color:#6272a4># Possible: patch, minor, major</span>
 </code></pre></div><p>And your new version will be pushed up in a new commit and tag.</p>
 <p>You can also choose to automatically release your new version to <a href=https://pypi.org>PyPI</a> if your CI passes by creating a <a href=https://pypi.org/help/#apitoken>PyPI API Token</a> and saving it in a repository secret named <code>PYPI_API_TOKEN</code></p>
 <ul>
@@ -161,13 +161,13 @@ git push --tags
 <p>Option to use the new GitHub CLI to create a GitHub repo for you during project creation. (You&rsquo;ll need to have this already installed)</p>
 <h3 id=pep-517518-ready>PEP 517/518 Ready</h3>
 <p>PEP 517 & 518 (think <code>pyproject.toml</code>) are on their way to becoming the default. No more <code>requirements.txt</code> <code>requirements_dev.txt</code> <code>requirements_docs.txt</code>. It&rsquo;s all in the <code>setup.cfg</code> and the <code>pyproject.toml</code>. All you need to do now is:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>pip install .           <span style=color:#75715e># Installs your project and its dependencies</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>pip install .           <span style=color:#6272a4># Installs your project and its dependencies</span>
 
-pip install .<span style=color:#f92672>[</span>dev<span style=color:#f92672>]</span>      <span style=color:#75715e># Also includes development dependencies e.g. docs, testing</span>
+pip install .<span style=color:#ff79c6>[</span>dev<span style=color:#ff79c6>]</span>      <span style=color:#6272a4># Also includes development dependencies e.g. docs, testing</span>
 
-pip install .<span style=color:#f92672>[</span>docs<span style=color:#f92672>]</span>     <span style=color:#75715e># Just the docs stuff</span>
+pip install .<span style=color:#ff79c6>[</span>docs<span style=color:#ff79c6>]</span>     <span style=color:#6272a4># Just the docs stuff</span>
 
-<span style=color:#75715e># etc etc.</span>
+<span style=color:#6272a4># etc etc.</span>
 </code></pre></div><h3 id=github-issue-labelling>GitHub Issue Labelling</h3>
 <p>Series of helpful labels that you can use to categorise issues and pull requests. These come in especially handy when combined with the Release Drafter workflow!</p>
 <h3 id=automatic-release-drafts>Automatic Release Drafts</h3>
@@ -177,13 +177,13 @@ pip install .<span style=color:#f92672>[</span>docs<span style=color:#f92672>]</
 <ul>
 <li>Ensure you have cookiecutter installed:</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#75715e># Mac</span>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#6272a4># Mac</span>
 brew install cookiecutter
 
-<span style=color:#75715e># Linux</span>
+<span style=color:#6272a4># Linux</span>
 apt-get install cookiecutter
 
-<span style=color:#75715e># pipx</span>
+<span style=color:#6272a4># pipx</span>
 pipx install cookiecutter
 </code></pre></div><ul>
 <li>
@@ -193,21 +193,21 @@ pipx install cookiecutter
 <p>Call cookiecutter with this template and answer all the questions</p>
 </li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cookiecutter https://github.com/FollowTheProcess/cookie_pypackage.git --checkout v0.4.0
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cookiecutter https://github.com/FollowTheProcess/cookie_pypackage.git --checkout v0.4.0
 </code></pre></div><ul>
 <li>Create a virtual environment, a git repo (if not using the gh cli) and start developing</li>
 </ul>
 <p>Either do this yourself:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>cd &lt;name_of_your_project&gt;
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#8be9fd;font-style:italic>cd</span> &lt;name_of_your_project&gt;
 
 python3 -m venv .venv
 
-<span style=color:#75715e># Activate the venv, install dependencies and project root</span>
-source .venv/bin/activate
+<span style=color:#6272a4># Activate the venv, install dependencies and project root</span>
+<span style=color:#8be9fd;font-style:italic>source</span> .venv/bin/activate
 
-python3 -m pip install -e .<span style=color:#f92672>[</span>dev<span style=color:#f92672>]</span> <span style=color:#75715e># Tells pip to install all development dependencies too</span>
+python3 -m pip install -e .<span style=color:#ff79c6>[</span>dev<span style=color:#ff79c6>]</span> <span style=color:#6272a4># Tells pip to install all development dependencies too</span>
 </code></pre></div><p>Or just let <a href=https://nox.thea.codes/en/stable/>nox</a> do it!</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nox
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nox
 </code></pre></div><p>If you&rsquo;re running nox for the first time, it will recognise there&rsquo;s no virtual environment yet and go through all the above steps for you! Any future times you run it, it will do all sorts of testing and linting and other goodness!</p>
 <ul>
 <li>
