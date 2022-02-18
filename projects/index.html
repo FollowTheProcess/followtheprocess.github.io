@@ -109,19 +109,187 @@
 </div>
 <div class=post-content>
 <p>
-<h3 id=personal--open-source-projects>Personal & Open Source Projects</h3>
-<p>Below you&rsquo;ll find some of the stuff I&rsquo;ve been working on 🤓</p>
-<ol>
-<li><a href=/projects/pytoil/>pytoil</a></li>
-<li><a href=/projects/gotoil>gotoil</a></li>
-<li><a href=/projects/msg/>msg</a></li>
-<li><a href=/projects/tag/>tag</a></li>
-<li><a href=/projects/py/>py</a></li>
-<li><a href=/projects/pymechtest/>pymechtest</a></li>
-<li><a href=/projects/fatigue/>fatigue damage prediction</a></li>
-<li><a href=/projects/goignore/>goignore</a></li>
-<li><a href=/projects/cookie_pypackage/>cookie_pypackage</a></li>
-</ol>
+<p>Below you&rsquo;ll find some of the top things stealing lots of time from my social life 🤓. There&rsquo;s loads more than what&rsquo;s here, both my projects and other open source stuff I help maintain, but I didn&rsquo;t want to bore! 😴</p>
+<p>Check out my <a href=https://github.com/FollowTheProcess>GitHub</a> if you&rsquo;re interested.</p>
+<p>My favourite things to work on are:</p>
+<ul>
+<li>CLIs</li>
+<li>Developer tooling</li>
+<li>Automation</li>
+<li>All 3 combined!</li>
+</ul>
+<h2 id=pytoil><a href=https://github.com/FollowTheProcess/pytoil>pytoil</a></h2>
+<p>pytoil is a helpful CLI to take the toil out of software development!</p>
+<p>It seamlessly lets you work with your development projects whether they are on your local machine,
+or on GitHub.</p>
+<p>In a nutshell you can:</p>
+<ul>
+<li>Open up a project regardless of where it is with a single command</li>
+<li>Fuzzy text search your repos to find matching projects</li>
+<li>Sync your local development directory with your GitHub in seconds</li>
+<li>Automatically detect appropriate python virtual environments on clone and set them up in the background</li>
+<li>And loads more, check out the <a href=https://followtheprocess.github.io/pytoil/>docs</a></li>
+</ul>
+<p><img src=https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/help.svg alt=help></p>
+<p><strong>Highlights:</strong></p>
+<ul>
+<li>Asynchronous from the ground up, as much as possible is done concurrently</li>
+<li>Beautiful CLI powered by <a href=https://click.palletsprojects.com/en/8.0.x/>click</a> and <a href=https://rich.readthedocs.io/en/stable/introduction.html>rich</a></li>
+<li>Optimised performance and memory use, on my machine the CLI starts up in about 200ms (pretty good for a python interpreter!)</li>
+<li>Interacts with the GitHub GraphQL API to fetch only the data it needs</li>
+<li>API request are cached with a configurable timeout for maximum responsiveness</li>
+<li>Glues together various python development tools (virtualenv, conda, poetry, flit, git, VSCode etc.)</li>
+<li>High test coverage and great <a href=https://followtheprocess.github.io/pytoil/>docs</a></li>
+</ul>
+<h2 id=spok><a href=https://github.com/FollowTheProcess/spok>spok</a></h2>
+<p>⚠️ This one is still a work in progress but check back soon 👀</p>
+<p>Spok is a modern, concurrent task runner/build system written in Go.</p>
+<p>It has it&rsquo;s own, original custom lexed and parsed syntax with the overall (ambitious) objective of being
+the modern equivalent to make.</p>
+<p>Improvements over make include:</p>
+<ul>
+<li>Much cleaner, more developer friendly syntax</li>
+<li>Tasks (make: targets) are run concurrently by default (unless dependencies preclude)</li>
+<li>Built in support for glob patterns</li>
+<li>Full cross-compatibility, tested on mac, linux and windows</li>
+<li>Incremental runs based on file dependency hashing not OS timestamps</li>
+</ul>
+<p>An example of spok&rsquo;s syntax:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#6272a4># Comments are preceded by a hash</span>
+
+<span style=color:#6272a4># You can store global variables like this (caps are optional)</span>
+GLOBAL_VARIABLE <span style=color:#ff79c6>:=</span> <span style=color:#f1fa8c>&#34;hello&#34;</span>
+BIN <span style=color:#ff79c6>:=</span> <span style=color:#f1fa8c>&#34;./bin/main&#34;</span>
+
+<span style=color:#6272a4># You can store the output of a shell command as a variable</span>
+<span style=color:#6272a4># leading and trailing whitespace will always be trimmed off when doing this</span>
+GIT_COMMIT <span style=color:#ff79c6>:=</span> exec(<span style=color:#f1fa8c>&#34;git rev-parse HEAD&#34;</span>)
+
+<span style=color:#6272a4># Use a global variable like this</span>
+task hello() {
+    echo GLOBAL_VARIABLE
+}
+
+<span style=color:#6272a4># Run the go tests (depends on all go source files)</span>
+task test(<span style=color:#f1fa8c>&#34;**/*.go&#34;</span>) {
+    go test <span style=color:#ff79c6>./...</span>
+}
+
+<span style=color:#6272a4># Format the project source code (depends on all go source files)</span>
+<span style=color:#6272a4># if the go source files have not changed, this becomes a no op</span>
+task fmt(<span style=color:#f1fa8c>&#34;**/*.go&#34;</span>) {
+    go fmt <span style=color:#ff79c6>./...</span>
+}
+
+<span style=color:#6272a4># Compile the program (depends on fmt, fmt will run first)</span>
+<span style=color:#6272a4># also outputs a build binary</span>
+task build(fmt) <span style=color:#ff79c6>-&gt;</span> <span style=color:#f1fa8c>&#34;./bin/main&#34;</span> {
+    go build
+}
+
+<span style=color:#6272a4># Can also use global variables as outputs</span>
+task build2(fmt) <span style=color:#ff79c6>-&gt;</span> BIN {
+    go build
+}
+
+<span style=color:#6272a4># Tasks can generate multiple things</span>
+task many(<span style=color:#f1fa8c>&#34;**/*.go&#34;</span>) <span style=color:#ff79c6>-&gt;</span> (<span style=color:#f1fa8c>&#34;output1.go&#34;</span>, <span style=color:#f1fa8c>&#34;output2.go&#34;</span>) {
+    go do many things
+}
+
+<span style=color:#6272a4># Can also do glob outputs</span>
+<span style=color:#6272a4># e.g. tasks that populate entire directories like building documentation</span>
+task glob(<span style=color:#f1fa8c>&#34;docs/src/*.md&#34;</span>) <span style=color:#ff79c6>-&gt;</span> <span style=color:#f1fa8c>&#34;docs/build/*.html&#34;</span> {
+    build docs
+}
+
+<span style=color:#6272a4># Can register a default task (by default spok will list all tasks)</span>
+task default() {
+    echo <span style=color:#f1fa8c>&#34;default&#34;</span>
+}
+
+<span style=color:#6272a4># Can register a custom clean task</span>
+<span style=color:#6272a4># By default `spok --clean` will remove all declared outputs</span>
+<span style=color:#6272a4># if a task called &#34;clean&#34; is present in the spokfile</span>
+<span style=color:#6272a4># this task will be run instead when `--clean` is used</span>
+task clean() {
+    rm <span style=color:#ff79c6>-</span>rf somedir
+}
+</code></pre></div><p>I&rsquo;m currently working towards the MVP stage with just the features it immediately needs but future planned features include:</p>
+<ul>
+<li>Automatic loading of <code>.env</code> files</li>
+<li>Passing command line arguments/flags to tasks</li>
+<li>A VSCode extension providing syntax highlighting, task exploration etc.</li>
+</ul>
+<h2 id=tag><a href=https://github.com/FollowTheProcess/tag>tag</a></h2>
+<p>tag is a CLI to help automate semantic version releases and GitOps.</p>
+<p>With tag you can easily create, delete, sort and push git semver tags. It&rsquo;s written in Go including a
+hand-rolled, robust semantic version parser.</p>
+<p><img src=https://github.com/FollowTheProcess/tag/raw/main/img/demo.gif alt=demo></p>
+<p><strong>Highlights:</strong></p>
+<ul>
+<li>Simple, intuitive CLI</li>
+<li>Understands semantic versioning, <code>tag minor</code> bumps the minor version etc.</li>
+<li>Can push tags with a single flag: <code>tag patch --push</code> will push a new patch tag to the origin repo</li>
+<li>Supports the full range of semantic versions, including build tags and post releases</li>
+</ul>
+<p>PS. If someone knows how to use asciicinema or equivalent to record great terminal gifs get in touch, I&rsquo;ve tried a few times
+but can never get it to work properly! 😂</p>
+<h2 id=msg><a href=https://github.com/FollowTheProcess/msg>msg</a></h2>
+<p>Continuing the theme of CLIs targeted at developers&mldr; msg is a lightweight console printing toolkit for authors
+of CLI programs written in Go.</p>
+<p>It enables very easy, very pretty output with a very familiar Go <code>printf</code> interface.</p>
+<p>This:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#ff79c6>package</span> main
+
+<span style=color:#ff79c6>import</span> <span style=color:#f1fa8c>&#34;github.com/FollowTheProcess/msg&#34;</span>
+
+<span style=color:#8be9fd;font-style:italic>func</span> <span style=color:#50fa7b>main</span>() {
+    msg.<span style=color:#50fa7b>Title</span>(<span style=color:#f1fa8c>&#34;Your Title here&#34;</span>)
+    <span style=color:#6272a4>// Do some stuff
+</span><span style=color:#6272a4></span>
+    <span style=color:#6272a4>// Give the user an update
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Info</span>(<span style=color:#f1fa8c>&#34;Getting your files&#34;</span>)
+
+    <span style=color:#6272a4>// Report success
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Good</span>(<span style=color:#f1fa8c>&#34;It worked!&#34;</span>)
+
+    <span style=color:#6272a4>// Uh oh, an error
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Fail</span>(<span style=color:#f1fa8c>&#34;Oh no!, file not found&#34;</span>)
+
+    <span style=color:#6272a4>// Warn a user about something
+</span><span style=color:#6272a4></span>    msg.<span style=color:#50fa7b>Warn</span>(<span style=color:#f1fa8c>&#34;This action is irreversible&#34;</span>)
+}
+</code></pre></div><p>Gets you this:</p>
+<p><img src=https://github.com/FollowTheProcess/msg/raw/main/img/demo2.png alt=msg-demo></p>
+<p>I&rsquo;ve dogfooded msg into most of my other Go CLIs and it works great!</p>
+<p><strong>Highlights</strong></p>
+<ul>
+<li>Simple top level interface if you don&rsquo;t want to customise</li>
+<li>Exposes a <code>Printer</code> object that lets you configure colors and symbols if you want to</li>
+<li>Has all the go printf verbs for all the constructs (e.g. <code>Infof</code> for a formatted info message)</li>
+<li>No fuss, just works!</li>
+</ul>
+<h2 id=py><a href=https://github.com/FollowTheProcess/py>py</a></h2>
+<p>A port of Brett Cannon&rsquo;s excellent <a href=https://github.com/brettcannon/python-launcher>python-launcher</a> to Go, with some experimentation thrown in for good measure.</p>
+<p>Does all the things the original does i.e. all you have to do is run <code>py</code> and it will find the
+python interpreter you almost certainly want to use:</p>
+<p><img src=https://github.com/FollowTheProcess/py/raw/main/docs/img/demo.png alt=py-demo></p>
+<p>The few experimental tweaks I&rsquo;ve made:</p>
+<ul>
+<li>This one also finds virtual environments named <code>venv</code> not just <code>.venv</code> (even though I prefer the latter)</li>
+<li>This one won&rsquo;t let you do anything with python2, it completely ignores any python 2 interpreter it finds</li>
+<li>It won&rsquo;t climb the file tree searching for <code>.venv</code> it just looks in <code>$CWD</code></li>
+</ul>
+<p>I was actually quite impressed that it gets very close to the performance of the original (written in rust), especially
+considering I&rsquo;ve made no real effort to optimise it!</p>
+<p><img src=https://raw.githubusercontent.com/FollowTheProcess/py/main/docs/img/comp.png alt=py-benchmark></p>
+<ul>
+<li><strong>Left:</strong> My version, written in Go</li>
+<li><strong>Right:</strong> The original, written in Rust</li>
+</ul>
+<p>I&rsquo;ve also kept the nice support for ancillary dev tools like shell prompts etc:</p>
+<p><img src=https://github.com/FollowTheProcess/py/raw/main/docs/img/starship_demo.png alt=py-starship></p>
 </p>
 </div>
 </div>
