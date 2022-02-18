@@ -43,7 +43,7 @@ For these types of simple tasks where you don't need the incremental build natur
 
 ## Just
 
-Just is like make but more focussed on being a command runner rather than a fully fledged build system. It let's you do a few cool things that are either impossible or tricky to do in make!
+Just is like make but more focused on being a command runner rather than a fully fledged build system. It let's you do a few cool things that are either impossible or tricky to do in make!
 
 Just is available in all sorts of ways, if you're on macOS you can get it with [homebrew]:
 
@@ -122,7 +122,7 @@ Now, did you spot this: `git rev-parse HEAD` 🤔...
 
 ## Getting Info from External Commands
 
-In just, when you declare a variable with backticks the expression inside the backticks is run in a shell and the output of that expresssion is used as the variable.
+In just, when you declare a variable with backticks the expression inside the backticks is run in a shell and the output of that expression is used as the variable.
 
 So in this expression:
 
@@ -216,7 +216,7 @@ func main() {
         }
     }()
 
-    // trap sigterm or interupt and gracefully shutdown the server
+    // trap sigterm or interrupt and gracefully shutdown the server
     c := make(chan os.Signal, 1)
     signal.Notify(c, os.Interrupt)
     signal.Notify(c, os.Kill)

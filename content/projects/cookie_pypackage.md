@@ -31,7 +31,7 @@ The project template comes with a ready to go GitHub Actions configuration file 
 Easy automation & flexible testing for python:
 
 * nox is just like tox, but with easy configuration in a python file
-* Comes preconfigured to do project maintainence tasks like build and serve docs in one command:
+* Comes preconfigured to do project maintenance tasks like build and serve docs in one command:
 
 ``` shell
 nox docs -- serve

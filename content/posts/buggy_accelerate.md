@@ -19,7 +19,7 @@ There's quite a lot of information on the GitHub issue thread about it and on st
 
 However, when this error happened to me a few months ago I ended up trying multiple solutions before finding that thread and getting to the one that worked, in the process messing with my python installation and causing more headaches. 
 
-So I thought the best thing to do is try and summarise (in jokey caveman speak for fun), and point you *precisely* to what fixed it for me incase it helps you.
+So I thought the best thing to do is try and summarise (in jokey caveman speak for fun), and point you *precisely* to what fixed it for me in case it helps you.
 
 ## Problem
 

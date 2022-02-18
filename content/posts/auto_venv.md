@@ -64,7 +64,7 @@ code ~/.my_commands.sh
 
 Now in that file, we're going to make a function that you can call from any terminal session. This function will:
 
-* Create a new virtual environment (if there isnt one already in the current directory)
+* Create a new virtual environment (if there isn't one already in the current directory)
 * If there is one, it'll activate it for us
 
 ```bash
@@ -140,7 +140,7 @@ function checkout() {
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-        echo "Project: '$1' found locally" # Helpful to say whats going on
+        echo "Project: '$1' found locally" # Helpful to say what's going on
         cd $1 # Go there
         venv # Call your venv function from before
         code . # Open the project in VSCode
@@ -190,7 +190,7 @@ function checkout() {
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-        echo "Project: '$1' found locally" # Helpful to say whats going on
+        echo "Project: '$1' found locally" # Helpful to say what's going on
         cd $1 # Go there
         venv # Call your venv function from before
         code . # Open the project in VSCode
@@ -255,7 +255,7 @@ cat that_file.json | jq '."name"'
 
 See how that works? [jq] actually has really great [docs] and interactive sandbox to play with.
 
-I think most people use the JSON view for the settings, but incase you've never seen them they look like this:
+I think most people use the JSON view for the settings, but in case you've never seen them they look like this:
 
 ![VSCode Settings](/images/posts/vscode_settings_json.png)
 
@@ -263,7 +263,7 @@ And they live here: `.vscode/settings.json` inside your project.
 
 The setting I'm interested in here is:
 
-`python.defaultInterpreterPath`: This controls which verion of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically
+`python.defaultInterpreterPath`: This controls which version of the python executable will be used to run your stuff, i.e. this is how we can tell VSCode to use our virtual environment automatically
 
 #### Setting python.defaultInterpreterPath
 
@@ -283,7 +283,7 @@ function checkout() {
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-        echo "Project: '$1' found locally" # Helpful to say whats going on
+        echo "Project: '$1' found locally" # Helpful to say what's going on
         cd $1 # Go there
         venv # Call your venv function from before
         code . # Open the project in VSCode
@@ -359,7 +359,7 @@ function checkout() {
     cd PROJECTS_DIR
 
     if [[ -d $1 ]]; then
-        echo "Project: '$1' found locally" # Helpful to say whats going on
+        echo "Project: '$1' found locally" # Helpful to say what's going on
         cd $1
         venv
         code_set_venv # Here is a good place

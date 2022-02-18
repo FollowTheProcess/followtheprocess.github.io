@@ -18,3 +18,7 @@ post title:
 # Create a new project
 project title:
     hugo new -k project content/projects/{{ title }}.md
+
+# Spellcheck
+check:
+    codespell ./content -L ines,sur

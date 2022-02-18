@@ -42,7 +42,7 @@ That's one less thing to worry about whilst you're trying to figure out how to a
 
 ## Installation
 
-Now installing it on my mac was pretty straightforward but it can throw errors if you get a step wrong so I'll share the script I used incase its useful to anyone else.
+Now installing it on my mac was pretty straightforward but it can throw errors if you get a step wrong so I'll share the script I used in case its useful to anyone else.
 
 For this to work though, we're going to need to install some compilation dependencies. If you have [homebrew] this is what you'll need to do...
 
@@ -119,7 +119,7 @@ python -m venv .venv
 # This now uses our magic pyenv version! we dont have to worry about saying python3.
 ```
 
-So my pyenv global python acts as if it were my system one (but far safer) and all my projects have their own virtual environments. If you do this too, it is virtually impossible for you to mess up your python installation and you'll never end up understanding the xkcd comic, and thats a good thing! :thumbsup:.
+So my pyenv global python acts as if it were my system one (but far safer) and all my projects have their own virtual environments. If you do this too, it is virtually impossible for you to mess up your python installation and you'll never end up understanding the xkcd comic, and that's a good thing! :thumbsup:.
 
 ***
 

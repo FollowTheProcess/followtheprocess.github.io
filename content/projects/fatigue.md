@@ -74,7 +74,7 @@ A feature importance study was conducted, results shown below.
 
 The data show that the natural frequency was the most important predictor for both materials. Temperature and crack position were shown to be comparatively less important - an interesting finding.
 
-Infact, the comparatively low importance of crack position in the prediction of crack depth allowed me to pull crack position out of the feature pool entirely and predict it alongside crack depth and only sacrifice a small amount of accuracy (shown below).
+In fact, the comparatively low importance of crack position in the prediction of crack depth allowed me to pull crack position out of the feature pool entirely and predict it alongside crack depth and only sacrifice a small amount of accuracy (shown below).
 
 ![Multi Output Prediction](/images/projects/msc_project/multi_output_accuracy.png)
 
