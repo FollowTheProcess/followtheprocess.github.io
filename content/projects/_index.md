@@ -37,7 +37,7 @@ In a nutshell you can:
 * Beautiful CLI powered by [click] and [rich]
 * Optimised performance and memory use, on my machine the CLI starts up in about 200ms (pretty good for a python interpreter!)
 * Interacts with the GitHub GraphQL API to fetch only the data it needs
-* API request are cached with a configurable timeout for maximum responsiveness
+* API requests are cached with a configurable timeout for maximum responsiveness
 * Glues together various python development tools (virtualenv, conda, poetry, flit, git, VSCode etc.)
 * High test coverage and great [docs]
 
@@ -136,7 +136,7 @@ tag is a CLI to help automate semantic version releases and GitOps.
 With tag you can easily create, delete, sort and push git semver tags. It's written in Go including a
 hand-rolled, robust semantic version parser.
 
-![demo](https://github.com/FollowTheProcess/tag/raw/main/img/demo.gif)
+![demo](https://github.com/FollowTheProcess/tag/raw/main/img/push.png)
 
 **Highlights:**
 
