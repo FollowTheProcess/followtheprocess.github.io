@@ -1,207 +1,81 @@
-<!doctype html><html lang=en><head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<style>:root{--accent-color:#FF4D4D}</style>
-<title>goignore</title>
-<meta name=description content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file.">
-<meta name=keywords content="go,automation,cli">
-<meta property="og:url" content="https://followtheprocess.github.io/projects/goignore/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="goignore">
-<meta property="og:description" content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file.">
-<meta property="og:image" content="/images/profile.jpg">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:title content="goignore">
-<meta name=twitter:description content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file.">
-<meta property="twitter:domain" content="https://followtheprocess.github.io/projects/goignore/">
-<meta property="twitter:url" content="https://followtheprocess.github.io/projects/goignore/">
-<meta name=twitter:image content="/images/profile.jpg">
-<link rel=canonical href=https://followtheprocess.github.io/projects/goignore/>
-<link rel=stylesheet type=text/css href=/css/normalize.min.css media=print onload="this.media='all'">
-<link rel=stylesheet type=text/css href=/css/main.css>
-<link disabled id=dark-theme rel=stylesheet href=/css/dark.css>
-<script src=/js/svg-injector.min.js></script>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{--accent-color:#FF4D4D}</style><title>goignore</title><meta name=description content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file."><meta name=keywords content="go,automation,cli"><meta property="og:url" content="https://followtheprocess.github.io/projects/goignore/"><meta property="og:type" content="website"><meta property="og:title" content="goignore"><meta property="og:description" content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file."><meta property="og:image" content="/images/profile.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="goignore"><meta name=twitter:description content="Tiny go CLI to hit the gitignore.io API and generate a .gitignore file."><meta property="twitter:domain" content="https://followtheprocess.github.io/projects/goignore/"><meta property="twitter:url" content="https://followtheprocess.github.io/projects/goignore/"><meta name=twitter:image content="/images/profile.jpg"><link rel=canonical href=https://followtheprocess.github.io/projects/goignore/><link rel=stylesheet type=text/css href=/css/normalize.min.css media=print onload='this.media="all"'><link rel=stylesheet type=text/css href=/css/main.css><link disabled id=dark-theme rel=stylesheet href=/css/dark.css><script src=/js/svg-injector.min.js></script>
 <script src=/js/feather-icons.min.js></script>
 <script src=/js/main.js></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script>
-</head>
-<body>
-<script type=text/javascript>setThemeByUserPref()</script><header class=header>
-<nav class=header-nav>
-<div class=avatar>
-<a href=https://followtheprocess.github.io>
-<img src=/images/profile.jpg alt=avatar>
-</a>
-</div>
-<div class=nav-title>
-<a class=nav-brand href=https://followtheprocess.github.io>@FollowTheProcess</a>
-</div>
-<div class=nav-links>
-<div class=nav-link>
-<a href=/> Home </a>
-</div>
-<div class=nav-link>
-<a href=/posts/> Posts </a>
-</div>
-<div class=nav-link>
-<a href=/projects/> Projects </a>
-</div>
-<div class=nav-link>
-<a href=https://followtheprocess.github.io/cv/> CV </a>
-</div>
-<div class=nav-link>
-<a href=https://github.com/FollowTheProcess/><span data-feather=github></span> </a>
-</div>
-<div class=nav-link>
-<a href=https://twitter.com/FollowTheProc><span data-feather=twitter></span> </a>
-</div>
-<span class=nav-icons-divider></span>
-<div class="nav-link dark-theme-toggle">
-<a>
-<span id=theme-toggle-icon data-feather=moon></span>
-</a>
-</div>
-<div class=nav-link id=hamburger-menu-toggle>
-<a>
-<span data-feather=menu></span>
-</a>
-</div>
-<ul class="nav-hamburger-list visibility-hidden">
-<li class=nav-item>
-<a href=/> Home </a>
-</li>
-<li class=nav-item>
-<a href=/posts/> Posts </a>
-</li>
-<li class=nav-item>
-<a href=/projects/> Projects </a>
-</li>
-<li class=nav-item>
-<a href=https://followtheprocess.github.io/cv/> CV </a>
-</li>
-<li class=nav-item>
-<a href=https://github.com/FollowTheProcess/><span data-feather=github></span> </a>
-</li>
-<li class=nav-item>
-<a href=https://twitter.com/FollowTheProc><span data-feather=twitter></span> </a>
-</li>
-<li class="nav-item dark-theme-toggle">
-<a>
-<span id=theme-toggle-icon data-feather=moon></span>
-</a>
-</li>
-</ul>
-</div>
-</nav>
-</header>
-<main id=content>
-<div class="post container">
-<div class=post-header-section>
-<h1>goignore</h1>
-</div>
-<div class=post-content>
-<p>
-<p><em>An extremely simple go CLI to hit the <a href=https://www.toptal.com/developers/gitignore>gitignore API</a> with whatever you pass as command line arguments. The list of things you can pass here are documented on <a href=https://www.toptal.com/developers/gitignore>gitignore.io</a>.</em></p>
-<ul>
-<li><strong>Source Code</strong>: <a href=https://github.com/FollowTheProcess/goignore/>https://github.com/FollowTheProcess/goignore</a></li>
-</ul>
-<p>You&rsquo;ll get back a .gitignore file saved to <code>$CWD/.gitignore</code> with the contents generated from the API.</p>
-<h2 id=installation>Installation</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>go install github.com/FollowTheProcess/goignore@latest
-</code></pre></div><h2 id=usage>Usage</h2>
-<p>Inside the folder you want the <code>.gitignore</code> to live in, run:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>goignore macos visualstudiocode go
-</code></pre></div><p>This will get you a <code>.gitignore</code> file that looks like&mldr;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext># Created by https://www.toptal.com/developers/gitignore/api/macos,vscode,go
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,vscode,go
-
-### Go ###
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-### Go Patch ###
-/vendor/
-/Godeps/
-
-### macOS ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### vscode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# End of https://www.toptal.com/developers/gitignore/api/macos,vscode,go
-</code></pre></div><h2 id=list-options>List Options</h2>
-<p>If you&rsquo;re not sure what you can type in, run:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>goignore --list
-</code></pre></div><p>And you&rsquo;ll see something like&mldr;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>1c,1c-bitrix,a-frame,actionscript,ada
-adobe,advancedinstaller,adventuregamestudio,agda,al
-alteraquartusii,altium,amplify,android,androidstudio
-angular,anjuta,ansible,apachecordova,apachehadoop
-appbuilder,appceleratortitanium,appcode,appcode+all,appcode+iml
-
-<span style=color:#6272a4># etc.</span>
-</code></pre></div><p>If you have a particular thing in mind:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>goignore --list list | grep visualstudiocode
-
-virtuoso,visualstudio,visualstudiocode,vivado,vlab
-</code></pre></div><h2 id=tech-notes>Tech Notes</h2>
-<p>I&rsquo;ve been learning Go and working through <a href=https://quii.gitbook.io/learn-go-with-tests/>Learn Go with Tests</a> and I really like it! This is the first thing I&rsquo;ve ever written in Go, its pretty simple as programs go but it was tricky stitching this together in a new language. Although go actually makes this sort of thing super easy, the go standard library is really incredible.</p>
-<p>The best part coming from python though is no worrying about versions, virtual environments or anything like that. Just run <code>go install</code> and you have a binary application ready to run in your <code>$PATH</code> just like that!</p>
-</p>
-</div>
-</div>
-</main><footer class=footer>
-<span>&copy; 2022 Tom Fleet</span>
-<span>
-Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a>
-</span>
-</footer>
-</body>
-</html>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script></head><body><script type=text/javascript>setThemeByUserPref()</script><header class=header><nav class=header-nav><div class=avatar><a href=https://followtheprocess.github.io><img src=/images/profile.jpg alt=avatar></a></div><div class=nav-title><a class=nav-brand href=https://followtheprocess.github.io>@FollowTheProcess</a></div><div class=nav-links><div class=nav-link><a href=/>Home</a></div><div class=nav-link><a href=/posts/>Posts</a></div><div class=nav-link><a href=/projects/>Projects</a></div><div class=nav-link><a href=https://followtheprocess.github.io/cv/>CV</a></div><div class=nav-link><a href=https://github.com/FollowTheProcess/><span data-feather=github></span></a></div><div class=nav-link><a href=https://twitter.com/FollowTheProc><span data-feather=twitter></span></a></div><span class=nav-icons-divider></span><div class="nav-link dark-theme-toggle"><a><span id=theme-toggle-icon data-feather=moon></span></a></div><div class=nav-link id=hamburger-menu-toggle><a><span data-feather=menu></span></a></div><ul class="nav-hamburger-list visibility-hidden"><li class=nav-item><a href=/>Home</a></li><li class=nav-item><a href=/posts/>Posts</a></li><li class=nav-item><a href=/projects/>Projects</a></li><li class=nav-item><a href=https://followtheprocess.github.io/cv/>CV</a></li><li class=nav-item><a href=https://github.com/FollowTheProcess/><span data-feather=github></span></a></li><li class=nav-item><a href=https://twitter.com/FollowTheProc><span data-feather=twitter></span></a></li><li class="nav-item dark-theme-toggle"><a><span id=theme-toggle-icon data-feather=moon></span></a></li></ul></div></nav></header><main id=content><div class="post container"><div class=post-header-section><h1>goignore</h1></div><div class=post-content><p><p><em>An extremely simple go CLI to hit the <a href=https://www.toptal.com/developers/gitignore>gitignore API</a> with whatever you pass as command line arguments. The list of things you can pass here are documented on <a href=https://www.toptal.com/developers/gitignore>gitignore.io</a>.</em></p><ul><li><strong>Source Code</strong>: <a href=https://github.com/FollowTheProcess/goignore/>https://github.com/FollowTheProcess/goignore</a></li></ul><p>You&rsquo;ll get back a .gitignore file saved to <code>$CWD/.gitignore</code> with the contents generated from the API.</p><h2 id=installation>Installation</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>go install github.com/FollowTheProcess/goignore@latest
+</span></span></code></pre></div><h2 id=usage>Usage</h2><p>Inside the folder you want the <code>.gitignore</code> to live in, run:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>goignore macos visualstudiocode go
+</span></span></code></pre></div><p>This will get you a <code>.gitignore</code> file that looks like&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span># Created by https://www.toptal.com/developers/gitignore/api/macos,vscode,go
+</span></span><span style=display:flex><span># Edit at https://www.toptal.com/developers/gitignore?templates=macos,vscode,go
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>### Go ###
+</span></span><span style=display:flex><span># Binaries for programs and plugins
+</span></span><span style=display:flex><span>*.exe
+</span></span><span style=display:flex><span>*.exe~
+</span></span><span style=display:flex><span>*.dll
+</span></span><span style=display:flex><span>*.so
+</span></span><span style=display:flex><span>*.dylib
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Test binary, built with `go test -c`
+</span></span><span style=display:flex><span>*.test
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Output of the go coverage tool, specifically when used with LiteIDE
+</span></span><span style=display:flex><span>*.out
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Dependency directories (remove the comment below to include it)
+</span></span><span style=display:flex><span># vendor/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>### Go Patch ###
+</span></span><span style=display:flex><span>/vendor/
+</span></span><span style=display:flex><span>/Godeps/
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>### macOS ###
+</span></span><span style=display:flex><span># General
+</span></span><span style=display:flex><span>.DS_Store
+</span></span><span style=display:flex><span>.AppleDouble
+</span></span><span style=display:flex><span>.LSOverride
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Icon must end with two \r
+</span></span><span style=display:flex><span>Icon
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Thumbnails
+</span></span><span style=display:flex><span>._*
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Files that might appear in the root of a volume
+</span></span><span style=display:flex><span>.DocumentRevisions-V100
+</span></span><span style=display:flex><span>.fseventsd
+</span></span><span style=display:flex><span>.Spotlight-V100
+</span></span><span style=display:flex><span>.TemporaryItems
+</span></span><span style=display:flex><span>.Trashes
+</span></span><span style=display:flex><span>.VolumeIcon.icns
+</span></span><span style=display:flex><span>.com.apple.timemachine.donotpresent
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># Directories potentially created on remote AFP share
+</span></span><span style=display:flex><span>.AppleDB
+</span></span><span style=display:flex><span>.AppleDesktop
+</span></span><span style=display:flex><span>Network Trash Folder
+</span></span><span style=display:flex><span>Temporary Items
+</span></span><span style=display:flex><span>.apdisk
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>### vscode ###
+</span></span><span style=display:flex><span>.vscode/*
+</span></span><span style=display:flex><span>!.vscode/settings.json
+</span></span><span style=display:flex><span>!.vscode/tasks.json
+</span></span><span style=display:flex><span>!.vscode/launch.json
+</span></span><span style=display:flex><span>!.vscode/extensions.json
+</span></span><span style=display:flex><span>*.code-workspace
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span># End of https://www.toptal.com/developers/gitignore/api/macos,vscode,go
+</span></span></code></pre></div><h2 id=list-options>List Options</h2><p>If you&rsquo;re not sure what you can type in, run:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>goignore --list
+</span></span></code></pre></div><p>And you&rsquo;ll see something like&mldr;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>1c,1c-bitrix,a-frame,actionscript,ada
+</span></span><span style=display:flex><span>adobe,advancedinstaller,adventuregamestudio,agda,al
+</span></span><span style=display:flex><span>alteraquartusii,altium,amplify,android,androidstudio
+</span></span><span style=display:flex><span>angular,anjuta,ansible,apachecordova,apachehadoop
+</span></span><span style=display:flex><span>appbuilder,appceleratortitanium,appcode,appcode+all,appcode+iml
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#6272a4># etc.</span>
+</span></span></code></pre></div><p>If you have a particular thing in mind:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>goignore --list list | grep visualstudiocode
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>virtuoso,visualstudio,visualstudiocode,vivado,vlab
+</span></span></code></pre></div><h2 id=tech-notes>Tech Notes</h2><p>I&rsquo;ve been learning Go and working through <a href=https://quii.gitbook.io/learn-go-with-tests/>Learn Go with Tests</a> and I really like it! This is the first thing I&rsquo;ve ever written in Go, its pretty simple as programs go but it was tricky stitching this together in a new language. Although go actually makes this sort of thing super easy, the go standard library is really incredible.</p><p>The best part coming from python though is no worrying about versions, virtual environments or anything like that. Just run <code>go install</code> and you have a binary application ready to run in your <code>$PATH</code> just like that!</p></p></div></div></main><footer class=footer><span>&copy; 2022 Tom Fleet</span>
+<span>Made with &#10084;&#65039; using <a target=_blank href=https://github.com/526avijitgupta/gokarna>Gokarna</a></span></footer></body></html>
