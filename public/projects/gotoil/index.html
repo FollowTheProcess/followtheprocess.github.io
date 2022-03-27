@@ -191,31 +191,30 @@
 <h2 id="installation">Installation</h2>
 <p>There are compiled executables for mac, linux and windows in the GitHub releases section, just download the correct one for your system and architecture and put it somewhere on <code>$PATH</code></p>
 <p>There is also a <a href="https://brew.sh">homebrew</a> tap:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew tap FollowTheProcess/homebrew-tap
-
-brew install FollowTheProcess/homebrew-tap/gotoil
-</code></pre></div><h2 id="quickstart">Quickstart</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew tap FollowTheProcess/homebrew-tap
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>brew install FollowTheProcess/homebrew-tap/gotoil
+</span></span></code></pre></div><h2 id="quickstart">Quickstart</h2>
 <p><code>gotoil</code> is super easy to get started with.</p>
 <p>After installation just run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ gotoil config show
-
-No config file yet!
-Making you a default one...
-</code></pre></div><p>This will create a default config file which can be found at <code>~/.gotoil.yaml</code>. See the [docs] for what information you need to put in here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ gotoil config show
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>No config file yet!
+</span></span><span style="display:flex;"><span>Making you a default one...
+</span></span></code></pre></div><p>This will create a default config file which can be found at <code>~/.gotoil.yaml</code>. See the [docs] for what information you need to put in here.</p>
 <p>Don&rsquo;t worry though, there&rsquo;s only a few options to configure! 😴</p>
 <p>After that you&rsquo;re good to go! You can do things like:</p>
 <h4 id="see-your-local-and-remote-projects">See your local and remote projects</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gotoil show all
-</code></pre></div><h4 id="see-which-ones-you-have-on-github-but-not-on-your-computer">See which ones you have on GitHub, but not on your computer</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gotoil show diff
-</code></pre></div><h4 id="easily-grab-a-project-regardless-of-where-it-is">Easily grab a project, regardless of where it is</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gotoil checkout my_project
-</code></pre></div><h4 id="create-a-new-project-in-the-right-place">Create a new project in the right place</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gotoil new my_project
-
-</code></pre></div><h4 id="and-even-do-this-from-a-cookiecutter-template">And even do this from a <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a> template</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">gotoil new my_project --cookie https://github.com/some/cookie.git
-</code></pre></div><p>Check out the [docs] for more 💥</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gotoil show all
+</span></span></code></pre></div><h4 id="see-which-ones-you-have-on-github-but-not-on-your-computer">See which ones you have on GitHub, but not on your computer</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gotoil show diff
+</span></span></code></pre></div><h4 id="easily-grab-a-project-regardless-of-where-it-is">Easily grab a project, regardless of where it is</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gotoil checkout my_project
+</span></span></code></pre></div><h4 id="create-a-new-project-in-the-right-place">Create a new project in the right place</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gotoil new my_project
+</span></span></code></pre></div><h4 id="and-even-do-this-from-a-cookiecutter-template">And even do this from a <a href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a> template</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gotoil new my_project --cookie https://github.com/some/cookie.git
+</span></span></code></pre></div><p>Check out the [docs] for more 💥</p>
 <h2 id="contributing">Contributing</h2>
 <p><code>gotoil</code> is an open source project and, as such, welcomes contributions of all kinds 😃</p>
 <p>Your best bet is to check out the [contributing guide] in the docs!</p>

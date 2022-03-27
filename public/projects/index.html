@@ -217,67 +217,67 @@ the modern equivalent to make.</p>
 <li>Incremental runs based on file dependency hashing not OS timestamps</li>
 </ul>
 <p>An example of spok&rsquo;s syntax:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># Comments are preceded by a hash</span>
-
-<span style="color:#6272a4"># You can store global variables like this (caps are optional)</span>
-GLOBAL_VARIABLE <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;hello&#34;</span>
-BIN <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;./bin/main&#34;</span>
-
-<span style="color:#6272a4"># You can store the output of a shell command as a variable</span>
-<span style="color:#6272a4"># leading and trailing whitespace will always be trimmed off when doing this</span>
-GIT_COMMIT <span style="color:#ff79c6">:=</span> exec(<span style="color:#f1fa8c">&#34;git rev-parse HEAD&#34;</span>)
-
-<span style="color:#6272a4"># Use a global variable like this</span>
-task hello() {
-    echo GLOBAL_VARIABLE
-}
-
-<span style="color:#6272a4"># Run the go tests (depends on all go source files)</span>
-task test(<span style="color:#f1fa8c">&#34;**/*.go&#34;</span>) {
-    go test <span style="color:#ff79c6">./...</span>
-}
-
-<span style="color:#6272a4"># Format the project source code (depends on all go source files)</span>
-<span style="color:#6272a4"># if the go source files have not changed, this becomes a no op</span>
-task fmt(<span style="color:#f1fa8c">&#34;**/*.go&#34;</span>) {
-    go fmt <span style="color:#ff79c6">./...</span>
-}
-
-<span style="color:#6272a4"># Compile the program (depends on fmt, fmt will run first)</span>
-<span style="color:#6272a4"># also outputs a build binary</span>
-task build(fmt) <span style="color:#ff79c6">-&gt;</span> <span style="color:#f1fa8c">&#34;./bin/main&#34;</span> {
-    go build
-}
-
-<span style="color:#6272a4"># Can also use global variables as outputs</span>
-task build2(fmt) <span style="color:#ff79c6">-&gt;</span> BIN {
-    go build
-}
-
-<span style="color:#6272a4"># Tasks can generate multiple things</span>
-task many(<span style="color:#f1fa8c">&#34;**/*.go&#34;</span>) <span style="color:#ff79c6">-&gt;</span> (<span style="color:#f1fa8c">&#34;output1.go&#34;</span>, <span style="color:#f1fa8c">&#34;output2.go&#34;</span>) {
-    go do many things
-}
-
-<span style="color:#6272a4"># Can also do glob outputs</span>
-<span style="color:#6272a4"># e.g. tasks that populate entire directories like building documentation</span>
-task glob(<span style="color:#f1fa8c">&#34;docs/src/*.md&#34;</span>) <span style="color:#ff79c6">-&gt;</span> <span style="color:#f1fa8c">&#34;docs/build/*.html&#34;</span> {
-    build docs
-}
-
-<span style="color:#6272a4"># Can register a default task (by default spok will list all tasks)</span>
-task default() {
-    echo <span style="color:#f1fa8c">&#34;default&#34;</span>
-}
-
-<span style="color:#6272a4"># Can register a custom clean task</span>
-<span style="color:#6272a4"># By default `spok --clean` will remove all declared outputs</span>
-<span style="color:#6272a4"># if a task called &#34;clean&#34; is present in the spokfile</span>
-<span style="color:#6272a4"># this task will be run instead when `--clean` is used</span>
-task clean() {
-    rm <span style="color:#ff79c6">-</span>rf somedir
-}
-</code></pre></div><p>I&rsquo;m currently working towards the MVP stage with just the features it immediately needs but future planned features include:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4"># Comments are preceded by a hash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># You can store global variables like this (caps are optional)</span>
+</span></span><span style="display:flex;"><span>GLOBAL_VARIABLE <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span>BIN <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;./bin/main&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># You can store the output of a shell command as a variable</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># leading and trailing whitespace will always be trimmed off when doing this</span>
+</span></span><span style="display:flex;"><span>GIT_COMMIT <span style="color:#ff79c6">:=</span> exec(<span style="color:#f1fa8c">&#34;git rev-parse HEAD&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Use a global variable like this</span>
+</span></span><span style="display:flex;"><span>task hello() {
+</span></span><span style="display:flex;"><span>    echo GLOBAL_VARIABLE
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Run the go tests (depends on all go source files)</span>
+</span></span><span style="display:flex;"><span>task test(<span style="color:#f1fa8c">&#34;**/*.go&#34;</span>) {
+</span></span><span style="display:flex;"><span>    go test <span style="color:#ff79c6">./...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Format the project source code (depends on all go source files)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># if the go source files have not changed, this becomes a no op</span>
+</span></span><span style="display:flex;"><span>task fmt(<span style="color:#f1fa8c">&#34;**/*.go&#34;</span>) {
+</span></span><span style="display:flex;"><span>    go fmt <span style="color:#ff79c6">./...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Compile the program (depends on fmt, fmt will run first)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># also outputs a build binary</span>
+</span></span><span style="display:flex;"><span>task build(fmt) <span style="color:#ff79c6">-&gt;</span> <span style="color:#f1fa8c">&#34;./bin/main&#34;</span> {
+</span></span><span style="display:flex;"><span>    go build
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Can also use global variables as outputs</span>
+</span></span><span style="display:flex;"><span>task build2(fmt) <span style="color:#ff79c6">-&gt;</span> BIN {
+</span></span><span style="display:flex;"><span>    go build
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Tasks can generate multiple things</span>
+</span></span><span style="display:flex;"><span>task many(<span style="color:#f1fa8c">&#34;**/*.go&#34;</span>) <span style="color:#ff79c6">-&gt;</span> (<span style="color:#f1fa8c">&#34;output1.go&#34;</span>, <span style="color:#f1fa8c">&#34;output2.go&#34;</span>) {
+</span></span><span style="display:flex;"><span>    go do many things
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Can also do glob outputs</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># e.g. tasks that populate entire directories like building documentation</span>
+</span></span><span style="display:flex;"><span>task glob(<span style="color:#f1fa8c">&#34;docs/src/*.md&#34;</span>) <span style="color:#ff79c6">-&gt;</span> <span style="color:#f1fa8c">&#34;docs/build/*.html&#34;</span> {
+</span></span><span style="display:flex;"><span>    build docs
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Can register a default task (by default spok will list all tasks)</span>
+</span></span><span style="display:flex;"><span>task default() {
+</span></span><span style="display:flex;"><span>    echo <span style="color:#f1fa8c">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Can register a custom clean task</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># By default `spok --clean` will remove all declared outputs</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># if a task called &#34;clean&#34; is present in the spokfile</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># this task will be run instead when `--clean` is used</span>
+</span></span><span style="display:flex;"><span>task clean() {
+</span></span><span style="display:flex;"><span>    rm <span style="color:#ff79c6">-</span>rf somedir
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I&rsquo;m currently working towards the MVP stage with just the features it immediately needs but future planned features include:</p>
 <ul>
 <li>Automatic loading of <code>.env</code> files</li>
 <li>Passing command line arguments/flags to tasks</li>
@@ -303,27 +303,27 @@ but can never get it to work properly! 😂</p>
 of CLI programs written in Go.</p>
 <p>It enables very easy, very pretty output with a very familiar Go <code>printf</code> interface.</p>
 <p>This:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ff79c6">package</span> main
-
-<span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#34;github.com/FollowTheProcess/msg&#34;</span>
-
-<span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
-    msg.<span style="color:#50fa7b">Title</span>(<span style="color:#f1fa8c">&#34;Your Title here&#34;</span>)
-    <span style="color:#6272a4">// Do some stuff
-</span><span style="color:#6272a4"></span>
-    <span style="color:#6272a4">// Give the user an update
-</span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Info</span>(<span style="color:#f1fa8c">&#34;Getting your files&#34;</span>)
-
-    <span style="color:#6272a4">// Report success
-</span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Good</span>(<span style="color:#f1fa8c">&#34;It worked!&#34;</span>)
-
-    <span style="color:#6272a4">// Uh oh, an error
-</span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Fail</span>(<span style="color:#f1fa8c">&#34;Oh no!, file not found&#34;</span>)
-
-    <span style="color:#6272a4">// Warn a user about something
-</span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Warn</span>(<span style="color:#f1fa8c">&#34;This action is irreversible&#34;</span>)
-}
-</code></pre></div><p>Gets you this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#ff79c6">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">import</span> <span style="color:#f1fa8c">&#34;github.com/FollowTheProcess/msg&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">main</span>() {
+</span></span><span style="display:flex;"><span>    msg.<span style="color:#50fa7b">Title</span>(<span style="color:#f1fa8c">&#34;Your Title here&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Do some stuff
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Give the user an update
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Info</span>(<span style="color:#f1fa8c">&#34;Getting your files&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Report success
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Good</span>(<span style="color:#f1fa8c">&#34;It worked!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Uh oh, an error
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Fail</span>(<span style="color:#f1fa8c">&#34;Oh no!, file not found&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4">// Warn a user about something
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    msg.<span style="color:#50fa7b">Warn</span>(<span style="color:#f1fa8c">&#34;This action is irreversible&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Gets you this:</p>
 <p><img src="https://github.com/FollowTheProcess/msg/raw/main/img/demo2.png" alt="msg-demo"></p>
 <p>I&rsquo;ve dogfooded msg into most of my other Go CLIs and it works great!</p>
 <p><strong>Highlights</strong></p>
