@@ -15,41 +15,16 @@ My favourite things to work on are:
 * Things useful for myself
 * All of the above!
 
-## [pytoil]
-
-pytoil is a helpful CLI to take the toil out of software development!
-
-It seamlessly lets you work with your development projects whether they are on your local machine,
-or on GitHub.
-
-In a nutshell you can:
-
-* Open up a project regardless of where it is with a single command
-* Fuzzy text search your repos to find matching projects
-* Sync your local development directory with your GitHub in seconds
-* Automatically detect appropriate python virtual environments on clone and set them up in the background
-* And loads more, check out the [docs]
-
-![help](https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/help.svg)
-
-**Highlights:**
-
-* Asynchronous from the ground up, as much as possible is done concurrently
-* Beautiful CLI powered by [click] and [rich]
-* Optimised performance and memory use, on my machine the CLI starts up in about 200ms (pretty good for a python interpreter!)
-* Interacts with the GitHub GraphQL API to fetch only the data it needs
-* API requests are cached with a configurable timeout for maximum responsiveness
-* Glues together various python development tools (virtualenv, conda, poetry, flit, git, VSCode etc.)
-* High test coverage and great [docs]
-
 ## [spok]
-
-⚠️ This one is still a work in progress but check back soon 👀
 
 Spok is a modern, concurrent task runner/build system written in Go.
 
-It has it's own, original custom lexed and parsed syntax with the overall (ambitious) objective of being
-the modern equivalent to make.
+It uses it's own hand written declarative language to create tasks and declare dependencies between them, or on files on disk. I'm particularly
+proud of the lexer and parser as the lexer is a novel state-based approach which runs concurrently with the parser passing tokens around
+using go channels.
+
+Another highlight for me is the performance of the file hashing, spok can hash a deeply nested directory tree containing thousands
+of files in ~300ms.
 
 Improvements over make include:
 
@@ -57,7 +32,9 @@ Improvements over make include:
 * Tasks (make: targets) are run concurrently by default (unless dependencies preclude)
 * Built in support for glob patterns
 * Full cross-compatibility, tested on mac, linux and windows
-* Incremental runs based on file dependency hashing not OS timestamps
+* Incremental runs based on file dependency hashing and checksums not OS timestamps
+* Automatic loading of `.env` files
+* A VSCode extension providing syntax highlighting, task exploration etc.
 
 An example of spok's syntax:
 
@@ -74,7 +51,7 @@ GIT_COMMIT := exec("git rev-parse HEAD")
 
 # Use a global variable like this
 task hello() {
-    echo GLOBAL_VARIABLE
+    echo {{.GLOBAL_VARIABLE}}
 }
 
 # Run the go tests (depends on all go source files)
@@ -124,11 +101,32 @@ task clean() {
 }
 ```
 
-I'm currently working towards the MVP stage with just the features it immediately needs but future planned features include:
+## [pytoil]
 
-* Automatic loading of `.env` files
-* Passing command line arguments/flags to tasks
-* A VSCode extension providing syntax highlighting, task exploration etc.
+pytoil is a helpful CLI to take the toil out of software development!
+
+It seamlessly lets you work with your development projects whether they are on your local machine,
+or on GitHub.
+
+In a nutshell you can:
+
+* Open up a project regardless of where it is with a single command
+* Fuzzy text search your repos to find matching projects
+* Sync your local development directory with your GitHub in seconds
+* Automatically detect appropriate python virtual environments on clone and set them up in the background
+* And loads more, check out the [docs]
+
+![help](https://github.com/FollowTheProcess/pytoil/raw/main/docs/img/help.svg)
+
+**Highlights:**
+
+* Beautiful CLI powered by [click] and [rich]
+* Optimised performance and memory use, on my machine the CLI starts up in about 200ms (pretty good for a python interpreter!)
+* Interacts with the GitHub GraphQL API to fetch only the data it needs
+* API requests are cached with a configurable timeout for maximum responsiveness
+* Glues together various python development tools (virtualenv, conda, poetry, flit, git, VSCode etc.)
+* Bulk actions like cloning/deleting lots of projects are done in a threadpool
+* High test coverage and great [docs]
 
 ## [tag]
 
@@ -136,8 +134,6 @@ tag is a CLI to help automate semantic version releases and GitOps.
 
 With tag you can easily create, delete, sort and push git semver tags. It's written in Go including a
 hand-rolled, robust semantic version parser.
-
-![demo](https://github.com/FollowTheProcess/tag/raw/main/img/push.png)
 
 **Highlights:**
 
@@ -152,54 +148,32 @@ but can never get it to work properly! 😂
 
 ## [msg]
 
-Continuing the theme of CLIs targeted at developers... msg is a lightweight console printing toolkit for authors
+Continuing the theme of CLIs targeted at developers... msg is a lightweight terminal printing toolkit for authors
 of CLI programs written in Go.
 
 It enables very easy, very pretty output with a very familiar Go `printf` interface.
 
 This:
 
-```go
-package main
-
-import "github.com/FollowTheProcess/msg"
-
-func main() {
-    msg.Title("Your Title here")
-    // Do some stuff
-
-    // Give the user an update
-    msg.Info("Getting your files")
-
-    // Report success
-    msg.Good("It worked!")
-
-    // Uh oh, an error
-    msg.Fail("Oh no!, file not found")
-
-    // Warn a user about something
-    msg.Warn("This action is irreversible")
-}
-```
+![msg-demo](https://github.com/FollowTheProcess/msg/raw/main/img/demo.png)
 
 Gets you this:
 
-![msg-demo](https://github.com/FollowTheProcess/msg/raw/main/img/demo2.png)
+![msg-demo-output](https://github.com/FollowTheProcess/msg/raw/main/img/demo-output.png)
 
 I've dogfooded msg into most of my other Go CLIs and it works great!
 
 **Highlights**
 
-* Simple top level interface if you don't want to customise
-* Exposes a `Printer` object that lets you configure colors and symbols if you want to
-* Has all the go printf verbs for all the constructs (e.g. `Infof` for a formatted info message)
+* Simple, intuitive API
+* Has an `Fprint` API so you can write to any `io.Writer`
 * No fuss, just works!
 
 ## [py]
 
 A port of Brett Cannon's excellent [python-launcher] to Go, with some experimentation thrown in for good measure.
 
-Does all the things the original does i.e. all you have to do is run `py` and it will find the 
+Does all the things the original does i.e. all you have to do is run `py` and it will find the
 python interpreter you almost certainly want to use:
 
 ![py-demo](https://github.com/FollowTheProcess/py/raw/main/docs/img/demo.png)
@@ -315,7 +289,7 @@ The end result was a model that could predict the severity of a thermomechanical
 
 This work was submitted for publication in the academic journal [MDPI Sensors](https://www.mdpi.com/journal/sensors) and was accepted and published on 30/11/2020. Full text available [here](https://www.mdpi.com/1424-8220/20/23/6847)
 
-[1] Fleet, T.; Kamei, K.; He, F.; Khan, M.A.; Khan, K.A.; Starr, A. A Machine Learning Approach to Model Interdependencies between Dynamic Response and Crack Propagation. Sensors 2020, 20, 6847. https://doi.org/10.3390/s20236847
+[1] Fleet, T.; Kamei, K.; He, F.; Khan, M.A.; Khan, K.A.; Starr, A. A Machine Learning Approach to Model Interdependencies between Dynamic Response and Crack Propagation. Sensors 2020, 20, 6847. <https://doi.org/10.3390/s20236847>
 
 [GitHub]: https://github.com/FollowTheProcess
 [pytoil]: https://github.com/FollowTheProcess/pytoil

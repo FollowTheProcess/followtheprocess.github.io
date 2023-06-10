@@ -25,7 +25,7 @@ In fact, a filename global search on GitHub yields an astonishing 112 million re
       
       <guid>https://followtheprocess.github.io/projects/goignore/</guid>
       <description>An extremely simple go CLI to hit the gitignore API with whatever you pass as command line arguments. The list of things you can pass here are documented on gitignore.io.
- Source Code: https://github.com/FollowTheProcess/goignore  You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
+Source Code: https://github.com/FollowTheProcess/goignore You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
 Installation go install github.com/FollowTheProcess/goignore@latest Usage Inside the folder you want the .gitignore to live in, run:
 goignore macos visualstudiocode go This will get you a .</description>
     </item>
@@ -37,11 +37,11 @@ goignore macos visualstudiocode go This will get you a .</description>
       
       <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
       <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
-  Source Code: https://github.com/FollowTheProcess/pytoil
-  Documentation: https://FollowTheProcess.github.io/pytoil/
-  What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
+Source Code: https://github.com/FollowTheProcess/pytoil
+Documentation: https://FollowTheProcess.github.io/pytoil/
+What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
 pytoil is:
- Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
+Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@ pytoil is:
       
       <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
       <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
-# Make it python -m venv .venv  # Activate it source .venv/bin/activate  # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel  # Install what you actually wanted python -m pip install things i actually wanted  python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
+# Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
     </item>
     
     <item>
@@ -61,9 +61,9 @@ pytoil is:
       
       <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
       <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
-  Source Code: https://github.com/FollowTheProcess/pymechtest
-  Documentation: https://FollowTheProcess.github.io/pymechtest/
-  Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
+Source Code: https://github.com/FollowTheProcess/pymechtest
+Documentation: https://FollowTheProcess.github.io/pymechtest/
+Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
     </item>
     
   </channel>

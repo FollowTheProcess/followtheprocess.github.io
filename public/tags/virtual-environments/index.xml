@@ -14,7 +14,7 @@
       
       <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
       <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
-# Make it python -m venv .venv  # Activate it source .venv/bin/activate  # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel  # Install what you actually wanted python -m pip install things i actually wanted  python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
+# Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
     </item>
     
     <item>

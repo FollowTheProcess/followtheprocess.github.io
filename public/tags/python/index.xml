@@ -25,11 +25,11 @@ So you may be asking&amp;hellip; what exactly do people mean when they say &amp;
       
       <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
       <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
-  Source Code: https://github.com/FollowTheProcess/pytoil
-  Documentation: https://FollowTheProcess.github.io/pytoil/
-  What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
+Source Code: https://github.com/FollowTheProcess/pytoil
+Documentation: https://FollowTheProcess.github.io/pytoil/
+What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
 pytoil is:
- Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
+Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ pytoil is:
       
       <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
       <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
-# Make it python -m venv .venv  # Activate it source .venv/bin/activate  # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel  # Install what you actually wanted python -m pip install things i actually wanted  python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
+# Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
     </item>
     
     <item>
@@ -72,9 +72,9 @@ There&amp;rsquo;s lots you can do to avoid this happening to you.</description>
       
       <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
       <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
-  Source Code: https://github.com/FollowTheProcess/pymechtest
-  Documentation: https://FollowTheProcess.github.io/pymechtest/
-  Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
+Source Code: https://github.com/FollowTheProcess/pymechtest
+Documentation: https://FollowTheProcess.github.io/pymechtest/
+Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
     </item>
     
     <item>

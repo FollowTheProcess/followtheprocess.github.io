@@ -6,13 +6,13 @@ theme = "gokarna"
 enableEmoji = true
 enableRobotsTXT = true
 
-pygmentsStyle = "dracula"
+pygmentsStyle = "github-dark"
 
 [params]
 footer = "Tom Fleet"
 description = """
     Software Engineer.
-    Python | Go | ML
+    Python | Go | Rust
   """
 avatarURL = "/images/profile.jpg"
 avatarSize = "size-m"

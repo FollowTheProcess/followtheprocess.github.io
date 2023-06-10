@@ -58,7 +58,7 @@ Consider the following example for a simple Go project:</description>
       
       <guid>https://followtheprocess.github.io/posts/fieldsfunc/</guid>
       <description>I&amp;rsquo;ve been playing with Go a lot recently, and one thing it lends itself really well to is CLIs (Command Line Interfaces):
- Runs very fast, feels snappy to use Standalone, statically linked binary - easy to distribute Easy cross-compilation for multiple platforms, OS&amp;rsquo;s and processor architectures Excellent libraries for creating CLIs e.g. cobra  The excellent GitHub CLI is written in Go 👏🏻
+Runs very fast, feels snappy to use Standalone, statically linked binary - easy to distribute Easy cross-compilation for multiple platforms, OS&amp;rsquo;s and processor architectures Excellent libraries for creating CLIs e.g. cobra The excellent GitHub CLI is written in Go 👏🏻
 So needless to say, I&amp;rsquo;ve been writing more than a few CLIs: gotoil, tag, goignore etc&amp;hellip;</description>
     </item>
     
@@ -69,7 +69,7 @@ So needless to say, I&amp;rsquo;ve been writing more than a few CLIs: gotoil, ta
       
       <guid>https://followtheprocess.github.io/projects/goignore/</guid>
       <description>An extremely simple go CLI to hit the gitignore API with whatever you pass as command line arguments. The list of things you can pass here are documented on gitignore.io.
- Source Code: https://github.com/FollowTheProcess/goignore  You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
+Source Code: https://github.com/FollowTheProcess/goignore You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
 Installation go install github.com/FollowTheProcess/goignore@latest Usage Inside the folder you want the .gitignore to live in, run:
 goignore macos visualstudiocode go This will get you a .</description>
     </item>
@@ -81,11 +81,11 @@ goignore macos visualstudiocode go This will get you a .</description>
       
       <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
       <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
-  Source Code: https://github.com/FollowTheProcess/pytoil
-  Documentation: https://FollowTheProcess.github.io/pytoil/
-  What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
+Source Code: https://github.com/FollowTheProcess/pytoil
+Documentation: https://FollowTheProcess.github.io/pytoil/
+What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
 pytoil is:
- Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
+Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
     </item>
     
     <item>
@@ -95,7 +95,7 @@ pytoil is:
       
       <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
       <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
-# Make it python -m venv .venv  # Activate it source .venv/bin/activate  # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel  # Install what you actually wanted python -m pip install things i actually wanted  python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
+# Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
     </item>
     
     <item>
@@ -128,9 +128,9 @@ There&amp;rsquo;s lots you can do to avoid this happening to you.</description>
       
       <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
       <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
-  Source Code: https://github.com/FollowTheProcess/pymechtest
-  Documentation: https://FollowTheProcess.github.io/pymechtest/
-  Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
+Source Code: https://github.com/FollowTheProcess/pymechtest
+Documentation: https://FollowTheProcess.github.io/pymechtest/
+Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@ Background Repeated cyclic loading of a material will eventually lead to a pheno
       
       <guid>https://followtheprocess.github.io/projects/cookie_pypackage/</guid>
       <description>A modern python package template, inspired by the original but with some updates bringing it to the forefront of modern python!
- Source Code: https://github.com/FollowTheProcess/cookie_pypackage  Changes from the Original  Changed from tox to nox for flexible python test automation Drop support for unittest in favour of pytest Change CI provider from Travis to GitHub actions Change docs from Sphinx to MkDocs Built in support for static type hinting with mypy Made compliant with PEP 517/518  Features GitHub Actions The project template comes with a ready to go GitHub Actions configuration file which automates all your code quality checks:</description>
+Source Code: https://github.com/FollowTheProcess/cookie_pypackage Changes from the Original Changed from tox to nox for flexible python test automation Drop support for unittest in favour of pytest Change CI provider from Travis to GitHub actions Change docs from Sphinx to MkDocs Built in support for static type hinting with mypy Made compliant with PEP 517/518 Features GitHub Actions The project template comes with a ready to go GitHub Actions configuration file which automates all your code quality checks:</description>
     </item>
     
     <item>
@@ -172,7 +172,7 @@ Background Repeated cyclic loading of a material will eventually lead to a pheno
       
       <guid>https://followtheprocess.github.io/projects/gotoil/</guid>
       <description>Handy CLI to automate the development workflow 🤖
- Free software: Apache Software License 2.0  Project Description gotoil is a handly CLI tool that helps you stay on top of all your development projects, whether they&amp;rsquo;re on your local machine or on GitHub! It&amp;rsquo;s based on it&amp;rsquo;s sister project pytoil but (as you&amp;rsquo;ve probably guessed by the name) it&amp;rsquo;s written in Go, not python!
+Free software: Apache Software License 2.0 Project Description gotoil is a handly CLI tool that helps you stay on top of all your development projects, whether they&amp;rsquo;re on your local machine or on GitHub! It&amp;rsquo;s based on it&amp;rsquo;s sister project pytoil but (as you&amp;rsquo;ve probably guessed by the name) it&amp;rsquo;s written in Go, not python!
 pytoil is aimed primarily at python developers, it has some python specific features such as automatically creating and managing virtual environments.</description>
     </item>
     
@@ -183,11 +183,12 @@ pytoil is aimed primarily at python developers, it has some python specific feat
       
       <guid>https://followtheprocess.github.io/projects/msg/</guid>
       <description>🚀 A lightweight console printing toolkit for Go CLIs.
-  Source Code: https://github.com/FollowTheProcess/msg
-  Free software: MIT License
-  Project Description Who else is bored with boring grey text in CLIs? 🙋‍♀️
+Source Code: https://github.com/FollowTheProcess/msg
+Free software: MIT License
+Project Description Who else is bored with boring grey text in CLIs? 🙋‍♀️
 We all have fancy terminals, utf-8 is everywhere, no one is still using the stock windows command prompt any more&amp;hellip; are they? 🤨
-When writing pytoil I discovered ines/wasabi for this exact purpose and absolutely loved it immediately:</description>
+When writing pytoil I discovered ines/wasabi for this exact purpose and absolutely loved it immediately:
+No dependencies outside the python stdlib Configurable if you want but the defaults look great Super easy to use and doesn&amp;rsquo;t get in the way of what your CLI is trying to do Then I started learning go and writing some CLIs I kept wishing I had it there too.</description>
     </item>
     
     <item>
@@ -197,9 +198,9 @@ When writing pytoil I discovered ines/wasabi for this exact purpose and absolute
       
       <guid>https://followtheprocess.github.io/projects/py/</guid>
       <description>(Experimental) port of Brett Cannon&amp;rsquo;s python-launcher to Go, with a few tweaks 😉
- Free software: MIT License  Project Description Description of the original python-launcher:
- Taken directly from the official README
- Launch your Python interpreter the lazy/smart way!
+Free software: MIT License Project Description Description of the original python-launcher:
+Taken directly from the official README
+Launch your Python interpreter the lazy/smart way!
 This project is an implementation of the py command for Unix-based platforms (with some potential experimentation for good measure 😉).
 The goal is to have py become the cross-platform command that Python users typically use to launch an interpreter while doing development.</description>
     </item>
@@ -211,9 +212,9 @@ The goal is to have py become the cross-platform command that Python users typic
       
       <guid>https://followtheprocess.github.io/projects/tag/</guid>
       <description>Interact with semver git tags with ease! 🏷
- Free software: Apache Software License 2.0  Project Description Releasing new versions of software can be hard! Most projects have CI/CD pipelines set up to help with this and these pipelines are typically triggered on push of a new semver tag e.g. v1.2.4.
+Free software: Apache Software License 2.0 Project Description Releasing new versions of software can be hard! Most projects have CI/CD pipelines set up to help with this and these pipelines are typically triggered on push of a new semver tag e.g. v1.2.4.
 I made tag because I can never remember the commands to correctly issue and push a tag:
- &amp;ldquo;Was it git tag v1.</description>
+&amp;ldquo;Was it git tag v1.</description>
     </item>
     
   </channel>
