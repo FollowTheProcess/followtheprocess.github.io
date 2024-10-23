@@ -1,70 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>automation on @FollowTheProcess</title>
-    <link>https://followtheprocess.github.io/tags/automation/</link>
-    <description>Recent content in automation on @FollowTheProcess</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Automation on @FollowTheProcess</title>
+    <link>http://localhost:1313/tags/automation/</link>
+    <description>Recent content in Automation on @FollowTheProcess</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Oct 2021 22:05:11 +0100</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Oct 2021 22:05:11 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self Documenting Makefile</title>
-      <link>https://followtheprocess.github.io/posts/makefile/</link>
+      <link>http://localhost:1313/posts/makefile/</link>
       <pubDate>Tue, 26 Oct 2021 22:05:11 +0100</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/makefile/</guid>
-      <description>If you aren&amp;rsquo;t familiar with make, it&amp;rsquo;s a command runner and build system capable of quite complicated stuff. It&amp;rsquo;s syntax can get complicated for non-trivial workflows and it has lots of weird quirks (like .PHONY).
-However, it&amp;rsquo;s ubiquitous on nearly all systems and pretty easy to get going with so it&amp;rsquo;s very widely used in all sorts of projects in just about every language.
-In fact, a filename global search on GitHub yields an astonishing 112 million results!</description>
+      <guid>http://localhost:1313/posts/makefile/</guid>
+      <description>&lt;p&gt;If you aren&amp;rsquo;t familiar with &lt;a href=&#34;https://www.gnu.org/software/make/&#34;&gt;make&lt;/a&gt;, it&amp;rsquo;s a command runner and build system capable of quite complicated stuff. It&amp;rsquo;s syntax can get complicated for non-trivial workflows and it has lots of weird quirks (like &lt;code&gt;.PHONY&lt;/code&gt;).&lt;/p&gt;&#xA;&lt;p&gt;However, it&amp;rsquo;s ubiquitous on nearly all systems and pretty easy to get going with so it&amp;rsquo;s very widely used in all sorts of projects in just about every language.&lt;/p&gt;&#xA;&lt;p&gt;In fact, a filename global search on GitHub yields an astonishing 112 million results!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>goignore</title>
-      <link>https://followtheprocess.github.io/projects/goignore/</link>
+      <link>http://localhost:1313/projects/goignore/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/projects/goignore/</guid>
-      <description>An extremely simple go CLI to hit the gitignore API with whatever you pass as command line arguments. The list of things you can pass here are documented on gitignore.io.
-Source Code: https://github.com/FollowTheProcess/goignore You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
-Installation go install github.com/FollowTheProcess/goignore@latest Usage Inside the folder you want the .gitignore to live in, run:
-goignore macos visualstudiocode go This will get you a .</description>
+      <guid>http://localhost:1313/projects/goignore/</guid>
+      <description>&lt;p&gt;&lt;em&gt;An extremely simple go CLI to hit the &lt;a href=&#34;https://www.toptal.com/developers/gitignore&#34;&gt;gitignore API&lt;/a&gt; with whatever you pass as command line arguments. The list of things you can pass here are documented on &lt;a href=&#34;https://www.toptal.com/developers/gitignore&#34;&gt;gitignore.io&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/goignore/&#34;&gt;https://github.com/FollowTheProcess/goignore&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You&amp;rsquo;ll get back a .gitignore file saved to &lt;code&gt;$CWD/.gitignore&lt;/code&gt; with the contents generated from the API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go install github.com/FollowTheProcess/goignore@latest&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;&#xA;&lt;p&gt;Inside the folder you want the &lt;code&gt;.gitignore&lt;/code&gt; to live in, run:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;goignore macos visualstudiocode go&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will get you a &lt;code&gt;.gitignore&lt;/code&gt; file that looks like&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>pytoil</title>
-      <link>https://followtheprocess.github.io/projects/pytoil/</link>
+      <link>http://localhost:1313/projects/pytoil/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
-      <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
-Source Code: https://github.com/FollowTheProcess/pytoil
-Documentation: https://FollowTheProcess.github.io/pytoil/
-What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
-pytoil is:
-Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
+      <guid>http://localhost:1313/projects/pytoil/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/pytoil/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/pytoil&#34;&gt;https://github.com/FollowTheProcess/pytoil&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href=&#34;https://FollowTheProcess.github.io/pytoil/&#34;&gt;https://FollowTheProcess.github.io/pytoil/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-it&#34;&gt;What is it?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;pytoil&lt;/code&gt; is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!&lt;/p&gt;&#xA;&lt;p&gt;pytoil is:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Easy to use &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Easy to configure &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Safe (it won&amp;rsquo;t edit your repos at all) &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Useful! (I hope &amp;#x1f603;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Say goodbye to janky bash scripts &amp;#x1f44b;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automate your Virtual Environments... and everything else.</title>
-      <link>https://followtheprocess.github.io/posts/auto_venv/</link>
+      <link>http://localhost:1313/posts/auto_venv/</link>
       <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
-      <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
-# Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
+      <guid>http://localhost:1313/posts/auto_venv/</guid>
+      <description>&lt;p&gt;We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Make it&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m venv .venv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Activate it&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source .venv/bin/activate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Install/upgrade seeds&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install --upgrade pip setuptools wheel&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Install what you actually wanted&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install things i actually wanted&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install this needs to be automated&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;automation&#34;&gt;Automation&lt;/h2&gt;&#xA;&lt;p&gt;I &lt;strong&gt;LOVE&lt;/strong&gt; automating things and given that the commands we see above have to be typed &lt;em&gt;every time&lt;/em&gt; you start a new project, this should scream automation to you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>pymechtest</title>
-      <link>https://followtheprocess.github.io/projects/pymechtest/</link>
+      <link>http://localhost:1313/projects/pymechtest/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
-      <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
-Source Code: https://github.com/FollowTheProcess/pymechtest
-Documentation: https://FollowTheProcess.github.io/pymechtest/
-Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
+      <guid>http://localhost:1313/projects/pymechtest/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/pymechtest/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/pymechtest&#34;&gt;https://github.com/FollowTheProcess/pymechtest&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href=&#34;https://FollowTheProcess.github.io/pymechtest/&#34;&gt;https://FollowTheProcess.github.io/pymechtest/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

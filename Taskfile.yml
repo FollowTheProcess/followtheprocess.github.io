@@ -1,0 +1,38 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - task --list
+    silent: true
+
+  build:
+    desc: Build the site locally
+    cmds:
+      - hugo build --buildDrafts
+
+  serve:
+    desc: Build and serve locally
+    cmds:
+      - open "http://localhost:1313/"
+      - hugo server --disableFastRender --buildDrafts
+
+  update:
+    desc: Update theme
+    cmds:
+      - git submodule foreach git pull origin main
+
+  post:
+    desc: Create a new post
+    cmds:
+      - hugo new --kind post content/posts/{{.CLI_ARGS}}.md
+
+  project:
+    desc: Create a new project
+    cmds:
+      - hugo new --kind project content/projects/{{.CLI_ARGS}}.md

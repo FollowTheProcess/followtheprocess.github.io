@@ -1,103 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on @FollowTheProcess</title>
-    <link>https://followtheprocess.github.io/tags/python/</link>
-    <description>Recent content in python on @FollowTheProcess</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Python on @FollowTheProcess</title>
+    <link>http://localhost:1313/tags/python/</link>
+    <description>Recent content in Python on @FollowTheProcess</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What exactly is &#39;Modern Python&#39;?</title>
-      <link>https://followtheprocess.github.io/posts/modern_python/</link>
+      <link>http://localhost:1313/posts/modern_python/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/modern_python/</guid>
-      <description>Python is going through a huge modernisation kick in recent years with things like PEP 484 Type Hints, performance improvements coming in 3.11 and now being able to run on web assembly, moving away from the hangover of python 2 and fully embracing the new style of &amp;ldquo;modern&amp;rdquo; python 3.
-The python sphere is full of posts, packages and repos claiming to use or take advantage of &amp;ldquo;modern python&amp;rdquo;
-So you may be asking&amp;hellip; what exactly do people mean when they say &amp;ldquo;modern python&amp;rdquo;?</description>
+      <guid>http://localhost:1313/posts/modern_python/</guid>
+      <description>&lt;p&gt;Python is going through a huge modernisation kick in recent years with things like &lt;a href=&#34;https://www.python.org/dev/peps/pep-0484/&#34;&gt;PEP 484 Type Hints&lt;/a&gt;, &lt;a href=&#34;https://github.com/markshannon/faster-cpython/blob/master/plan.md&#34;&gt;performance improvements&lt;/a&gt; coming in 3.11 and now being able to run on &lt;a href=&#34;https://twitter.com/ethanhs/status/1464308141105967104&#34;&gt;web assembly&lt;/a&gt;, moving away from the hangover of python 2 and fully embracing the new style of &amp;ldquo;modern&amp;rdquo; python 3.&lt;/p&gt;&#xA;&lt;p&gt;The python sphere is full of posts, packages and repos claiming to use or take advantage of &amp;ldquo;modern python&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;So you may be asking&amp;hellip; what exactly do people mean when they say &amp;ldquo;modern python&amp;rdquo;? What follows is a list of what I consider to the most essential components of &amp;ldquo;modern python&amp;rdquo; and by the end hopefully you&amp;rsquo;ll want to make sure you&amp;rsquo;re doing &amp;ldquo;modern python&amp;rdquo; too!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>pytoil</title>
-      <link>https://followtheprocess.github.io/projects/pytoil/</link>
+      <link>http://localhost:1313/projects/pytoil/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/projects/pytoil/</guid>
-      <description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
-Source Code: https://github.com/FollowTheProcess/pytoil
-Documentation: https://FollowTheProcess.github.io/pytoil/
-What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
-pytoil is:
-Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description>
+      <guid>http://localhost:1313/projects/pytoil/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/pytoil/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/pytoil&#34;&gt;https://github.com/FollowTheProcess/pytoil&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href=&#34;https://FollowTheProcess.github.io/pytoil/&#34;&gt;https://FollowTheProcess.github.io/pytoil/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-it&#34;&gt;What is it?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;pytoil&lt;/code&gt; is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!&lt;/p&gt;&#xA;&lt;p&gt;pytoil is:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Easy to use &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Easy to configure &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Safe (it won&amp;rsquo;t edit your repos at all) &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Useful! (I hope &amp;#x1f603;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Say goodbye to janky bash scripts &amp;#x1f44b;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automate your Virtual Environments... and everything else.</title>
-      <link>https://followtheprocess.github.io/posts/auto_venv/</link>
+      <link>http://localhost:1313/posts/auto_venv/</link>
       <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/auto_venv/</guid>
-      <description>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;
-# Make it python -m venv .venv # Activate it source .venv/bin/activate # Install/upgrade seeds python -m pip install --upgrade pip setuptools wheel # Install what you actually wanted python -m pip install things i actually wanted python -m pip install this needs to be automated Automation I LOVE automating things and given that the commands we see above have to be typed every time you start a new project, this should scream automation to you!</description>
+      <guid>http://localhost:1313/posts/auto_venv/</guid>
+      <description>&lt;p&gt;We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Make it&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m venv .venv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Activate it&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source .venv/bin/activate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Install/upgrade seeds&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install --upgrade pip setuptools wheel&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Install what you actually wanted&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install things i actually wanted&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install this needs to be automated&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;automation&#34;&gt;Automation&lt;/h2&gt;&#xA;&lt;p&gt;I &lt;strong&gt;LOVE&lt;/strong&gt; automating things and given that the commands we see above have to be typed &lt;em&gt;every time&lt;/em&gt; you start a new project, this should scream automation to you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Prevent Global Pip Installs</title>
-      <link>https://followtheprocess.github.io/posts/require_venv/</link>
+      <link>http://localhost:1313/posts/require_venv/</link>
       <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/require_venv/</guid>
-      <description>This is going to be a short one, about something I discovered in the pip documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!
-Problem We all know the dangers of breaking your system python installation with package conflicts.
-Virtual environments are probably the most common way of avoiding nasty package conflicts.</description>
+      <guid>http://localhost:1313/posts/require_venv/</guid>
+      <description>&lt;p&gt;This is going to be a short one, about something I discovered in the &lt;a href=&#34;https://pip.pypa.io/en/stable/&#34;&gt;pip&lt;/a&gt; documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!&lt;/p&gt;&#xA;&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;&#xA;&lt;p&gt;We all know the dangers of breaking your system python installation with package conflicts.&lt;/p&gt;&#xA;&lt;p&gt;Virtual environments are probably the most common way of avoiding nasty package conflicts. A virtual environment is effectively (but not exactly) a self contained version of python you can install packages into without touching your system python.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Pyenv is Awesome!</title>
-      <link>https://followtheprocess.github.io/posts/pyenv/</link>
+      <link>http://localhost:1313/posts/pyenv/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/pyenv/</guid>
-      <description>I think everyone who has touched python at some point has seen this picture&amp;hellip;
-It&amp;rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&amp;rsquo;re not careful but is often misinterpreted as throwing shade on how python works.
-Brett Cannon&amp;rsquo;s Blog Post has an excellent deconstruction of what this xkcd means and how to avoid it.
-There&amp;rsquo;s lots you can do to avoid this happening to you.</description>
+      <guid>http://localhost:1313/posts/pyenv/</guid>
+      <description>&lt;p&gt;I think everyone who has touched python at some point has seen this picture&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/python_environment.png&#34; alt=&#34;environment hell&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&amp;rsquo;re not careful but is often misinterpreted as throwing shade on how python works.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://snarky.ca/deconstructing-xkcd-com-1987/&#34;&gt;Brett Cannon&amp;rsquo;s Blog Post&lt;/a&gt; has an excellent deconstruction of what this xkcd means and how to avoid it.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s lots you can do to avoid this happening to you. My favourite method is &lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;pyenv&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>pymechtest</title>
-      <link>https://followtheprocess.github.io/projects/pymechtest/</link>
+      <link>http://localhost:1313/projects/pymechtest/</link>
       <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/projects/pymechtest/</guid>
-      <description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
-Source Code: https://github.com/FollowTheProcess/pymechtest
-Documentation: https://FollowTheProcess.github.io/pymechtest/
-Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description>
+      <guid>http://localhost:1313/projects/pymechtest/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/pymechtest/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/pymechtest&#34;&gt;https://github.com/FollowTheProcess/pymechtest&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href=&#34;https://FollowTheProcess.github.io/pymechtest/&#34;&gt;https://FollowTheProcess.github.io/pymechtest/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Buggy Accelerate Backend</title>
-      <link>https://followtheprocess.github.io/posts/buggy_accelerate/</link>
+      <link>http://localhost:1313/posts/buggy_accelerate/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/buggy_accelerate/</guid>
-      <description>If you work on macOS and use numpy, chances are at some point you may have had some very confusing error message appear about &amp;ldquo;buggy accelerate backend&amp;hellip; something something&amp;hellip; polyfit sanity check.&amp;rdquo;
-If you&amp;rsquo;ve not had the joy of running into this particular error: https://github.com/numpy/numpy/issues/15947 I don&amp;rsquo;t envy you.
-There&amp;rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me!</description>
+      <guid>http://localhost:1313/posts/buggy_accelerate/</guid>
+      <description>&lt;p&gt;If you work on macOS and use &lt;a href=&#34;https://numpy.org&#34;&gt;numpy&lt;/a&gt;, chances are at some point you may have had some very confusing error message appear about &amp;ldquo;buggy accelerate backend&amp;hellip; something something&amp;hellip; polyfit sanity check.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve not had the joy of running into this particular error: &lt;a href=&#34;https://github.com/numpy/numpy/issues/15947&#34;&gt;https://github.com/numpy/numpy/issues/15947&lt;/a&gt; I don&amp;rsquo;t envy you.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me! There&amp;rsquo;s lots of informed discussion on exactly &lt;em&gt;why&lt;/em&gt; this error is raised which I&amp;rsquo;m not going to go into here.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Fatigue Damage Prediction</title>
-      <link>https://followtheprocess.github.io/projects/fatigue/</link>
+      <link>http://localhost:1313/projects/fatigue/</link>
       <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/projects/fatigue/</guid>
-      <description>Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.
-Tom Fleet, Sep 2020
-Background Repeated cyclic loading of a material will eventually lead to a phenomenon called &amp;ldquo;fatigue crack growth&amp;rdquo;. I&amp;rsquo;m not going to explain the details here but I&amp;rsquo;d point you to this for more info. Essentially, a crack will start to form and repeated cyclic loading will progressively grow this crack until it is large enough such that the remaining material can no longer handle the stress and the component will break.</description>
+      <guid>http://localhost:1313/projects/fatigue/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Tom Fleet, Sep 2020&lt;/p&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;Repeated cyclic loading of a material will eventually lead to a phenomenon called &amp;ldquo;fatigue crack growth&amp;rdquo;. I&amp;rsquo;m not going to explain the details here but I&amp;rsquo;d point you to &lt;a href=&#34;https://en.wikipedia.org/wiki/Fatigue_(material)&#34;&gt;this&lt;/a&gt; for more info. Essentially, a crack will start to form and repeated cyclic loading will progressively grow this crack until it is large enough such that the remaining material can no longer handle the stress and the component will break.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

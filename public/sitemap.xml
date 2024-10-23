@@ -2,119 +2,119 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://followtheprocess.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/modern_python/</loc>
+    <loc>http://localhost:1313/posts/modern_python/</loc>
     <lastmod>2022-03-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2021-10-26T22:05:11+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/makefile/</loc>
+    <loc>http://localhost:1313/posts/makefile/</loc>
     <lastmod>2021-10-26T22:05:11+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/tips/</loc>
+    <loc>http://localhost:1313/tags/tips/</loc>
     <lastmod>2021-10-26T22:05:11+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2021-10-25T19:04:46+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/http/</loc>
+    <loc>http://localhost:1313/tags/http/</loc>
     <lastmod>2021-10-25T19:04:46+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/graceful_shutdown/</loc>
+    <loc>http://localhost:1313/posts/graceful_shutdown/</loc>
     <lastmod>2021-10-25T19:04:46+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/command-line/</loc>
+    <loc>http://localhost:1313/tags/command-line/</loc>
     <lastmod>2021-10-24T10:22:23+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/just/</loc>
+    <loc>http://localhost:1313/posts/just/</loc>
     <lastmod>2021-10-24T10:22:23+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/utilities/</loc>
+    <loc>http://localhost:1313/tags/utilities/</loc>
     <lastmod>2021-10-24T10:22:23+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/fieldsfunc/</loc>
+    <loc>http://localhost:1313/posts/fieldsfunc/</loc>
     <lastmod>2021-10-22T20:34:50+01:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/cli/</loc>
+    <loc>http://localhost:1313/tags/cli/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/goignore/</loc>
+    <loc>http://localhost:1313/projects/goignore/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2021-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/oss/</loc>
+    <loc>http://localhost:1313/tags/oss/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/pytoil/</loc>
+    <loc>http://localhost:1313/projects/pytoil/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/auto_venv/</loc>
+    <loc>http://localhost:1313/posts/auto_venv/</loc>
     <lastmod>2021-03-01T17:27:07+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2021-03-01T17:27:07+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/categories/tips-tricks/</loc>
+    <loc>http://localhost:1313/categories/tips--tricks/</loc>
     <lastmod>2021-03-01T17:27:07+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/virtual-environments/</loc>
+    <loc>http://localhost:1313/tags/virtual-environments/</loc>
     <lastmod>2021-03-01T17:27:07+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/pip/</loc>
+    <loc>http://localhost:1313/tags/pip/</loc>
     <lastmod>2021-02-23T14:21:11+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/require_venv/</loc>
+    <loc>http://localhost:1313/posts/require_venv/</loc>
     <lastmod>2021-02-23T14:21:11+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/installation/</loc>
+    <loc>http://localhost:1313/tags/installation/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/pyenv/</loc>
+    <loc>http://localhost:1313/posts/pyenv/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/engineering/</loc>
+    <loc>http://localhost:1313/tags/engineering/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/pymechtest/</loc>
+    <loc>http://localhost:1313/projects/pymechtest/</loc>
     <lastmod>2021-02-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/posts/buggy_accelerate/</loc>
+    <loc>http://localhost:1313/posts/buggy_accelerate/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/numpy/</loc>
+    <loc>http://localhost:1313/tags/numpy/</loc>
     <lastmod>2021-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/fatigue/</loc>
+    <loc>http://localhost:1313/projects/fatigue/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/machine-learning/</loc>
+    <loc>http://localhost:1313/tags/machine-learning/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/tags/material-science/</loc>
+    <loc>http://localhost:1313/tags/material-science/</loc>
     <lastmod>2020-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/cookie_pypackage/</loc>
+    <loc>http://localhost:1313/projects/cookie_pypackage/</loc>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/gotoil/</loc>
+    <loc>http://localhost:1313/projects/gotoil/</loc>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/msg/</loc>
+    <loc>http://localhost:1313/projects/msg/</loc>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/py/</loc>
+    <loc>http://localhost:1313/projects/py/</loc>
   </url><url>
-    <loc>https://followtheprocess.github.io/projects/tag/</loc>
+    <loc>http://localhost:1313/projects/tag/</loc>
   </url>
 </urlset>

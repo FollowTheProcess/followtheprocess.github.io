@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>installation on @FollowTheProcess</title>
-    <link>https://followtheprocess.github.io/tags/installation/</link>
-    <description>Recent content in installation on @FollowTheProcess</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Installation on @FollowTheProcess</title>
+    <link>http://localhost:1313/tags/installation/</link>
+    <description>Recent content in Installation on @FollowTheProcess</description>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/tags/installation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/installation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pyenv is Awesome!</title>
-      <link>https://followtheprocess.github.io/posts/pyenv/</link>
+      <link>http://localhost:1313/posts/pyenv/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/pyenv/</guid>
-      <description>I think everyone who has touched python at some point has seen this picture&amp;hellip;
-It&amp;rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&amp;rsquo;re not careful but is often misinterpreted as throwing shade on how python works.
-Brett Cannon&amp;rsquo;s Blog Post has an excellent deconstruction of what this xkcd means and how to avoid it.
-There&amp;rsquo;s lots you can do to avoid this happening to you.</description>
+      <guid>http://localhost:1313/posts/pyenv/</guid>
+      <description>&lt;p&gt;I think everyone who has touched python at some point has seen this picture&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/python_environment.png&#34; alt=&#34;environment hell&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&amp;rsquo;re not careful but is often misinterpreted as throwing shade on how python works.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://snarky.ca/deconstructing-xkcd-com-1987/&#34;&gt;Brett Cannon&amp;rsquo;s Blog Post&lt;/a&gt; has an excellent deconstruction of what this xkcd means and how to avoid it.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s lots you can do to avoid this happening to you. My favourite method is &lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;pyenv&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Buggy Accelerate Backend</title>
-      <link>https://followtheprocess.github.io/posts/buggy_accelerate/</link>
+      <link>http://localhost:1313/posts/buggy_accelerate/</link>
       <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://followtheprocess.github.io/posts/buggy_accelerate/</guid>
-      <description>If you work on macOS and use numpy, chances are at some point you may have had some very confusing error message appear about &amp;ldquo;buggy accelerate backend&amp;hellip; something something&amp;hellip; polyfit sanity check.&amp;rdquo;
-If you&amp;rsquo;ve not had the joy of running into this particular error: https://github.com/numpy/numpy/issues/15947 I don&amp;rsquo;t envy you.
-There&amp;rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me!</description>
+      <guid>http://localhost:1313/posts/buggy_accelerate/</guid>
+      <description>&lt;p&gt;If you work on macOS and use &lt;a href=&#34;https://numpy.org&#34;&gt;numpy&lt;/a&gt;, chances are at some point you may have had some very confusing error message appear about &amp;ldquo;buggy accelerate backend&amp;hellip; something something&amp;hellip; polyfit sanity check.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve not had the joy of running into this particular error: &lt;a href=&#34;https://github.com/numpy/numpy/issues/15947&#34;&gt;https://github.com/numpy/numpy/issues/15947&lt;/a&gt; I don&amp;rsquo;t envy you.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me! There&amp;rsquo;s lots of informed discussion on exactly &lt;em&gt;why&lt;/em&gt; this error is raised which I&amp;rsquo;m not going to go into here.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

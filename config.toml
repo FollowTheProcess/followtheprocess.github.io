@@ -15,7 +15,7 @@ description = """
     Python | Go | Rust
   """
 avatarURL = "/images/profile.jpg"
-avatarSize = "size-m"
+avatarSize = "size-s"
 socialIcons = [
   { name = "linkedin", url = "https://www.linkedin.com/in/tom-fleet-03b03280/" },
   { name = "github", url = "https://github.com/FollowTheProcess/" },
@@ -63,12 +63,6 @@ weight = 5
 # Using feather-icons
 pre = "<span data-feather='github'></span>"
 
-[[menu.main]]
-identifier = "twitter"
-url = "https://twitter.com/FollowTheProc"
-weight = 6
-# Using feather-icons
-pre = "<span data-feather='twitter'></span>"
 
 [markup]
 [markup.goldmark]
