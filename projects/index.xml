@@ -1,31 +1,120 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on @FollowTheProcess</title><link>https://followtheprocess.github.io/projects/</link><description>Recent content in Projects on @FollowTheProcess</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>goignore</title><link>https://followtheprocess.github.io/projects/goignore/</link><pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/goignore/</guid><description>An extremely simple go CLI to hit the gitignore API with whatever you pass as command line arguments. The list of things you can pass here are documented on gitignore.io.
-Source Code: https://github.com/FollowTheProcess/goignore You&amp;rsquo;ll get back a .gitignore file saved to $CWD/.gitignore with the contents generated from the API.
-Installation go install github.com/FollowTheProcess/goignore@latest Usage Inside the folder you want the .gitignore to live in, run:
-goignore macos visualstudiocode go This will get you a .</description></item><item><title>pytoil</title><link>https://followtheprocess.github.io/projects/pytoil/</link><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/pytoil/</guid><description>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!
-Source Code: https://github.com/FollowTheProcess/pytoil
-Documentation: https://FollowTheProcess.github.io/pytoil/
-What is it? pytoil is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!
-pytoil is:
-Easy to use ✅ Easy to configure ✅ Safe (it won&amp;rsquo;t edit your repos at all) ✅ Useful!</description></item><item><title>pymechtest</title><link>https://followtheprocess.github.io/projects/pymechtest/</link><pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/pymechtest/</guid><description>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!
-Source Code: https://github.com/FollowTheProcess/pymechtest
-Documentation: https://FollowTheProcess.github.io/pymechtest/
-Overview Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?</description></item><item><title>Fatigue Damage Prediction</title><link>https://followtheprocess.github.io/projects/fatigue/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/fatigue/</guid><description>Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.
-Tom Fleet, Sep 2020
-Background Repeated cyclic loading of a material will eventually lead to a phenomenon called &amp;ldquo;fatigue crack growth&amp;rdquo;. I&amp;rsquo;m not going to explain the details here but I&amp;rsquo;d point you to this for more info. Essentially, a crack will start to form and repeated cyclic loading will progressively grow this crack until it is large enough such that the remaining material can no longer handle the stress and the component will break.</description></item><item><title>Cookie Pypackage</title><link>https://followtheprocess.github.io/projects/cookie_pypackage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/cookie_pypackage/</guid><description>A modern python package template, inspired by the original but with some updates bringing it to the forefront of modern python!
-Source Code: https://github.com/FollowTheProcess/cookie_pypackage Changes from the Original Changed from tox to nox for flexible python test automation Drop support for unittest in favour of pytest Change CI provider from Travis to GitHub actions Change docs from Sphinx to MkDocs Built in support for static type hinting with mypy Made compliant with PEP 517/518 Features GitHub Actions The project template comes with a ready to go GitHub Actions configuration file which automates all your code quality checks:</description></item><item><title>Gotoil</title><link>https://followtheprocess.github.io/projects/gotoil/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/gotoil/</guid><description>Handy CLI to automate the development workflow 🤖
-Free software: Apache Software License 2.0 Project Description gotoil is a handly CLI tool that helps you stay on top of all your development projects, whether they&amp;rsquo;re on your local machine or on GitHub! It&amp;rsquo;s based on it&amp;rsquo;s sister project pytoil but (as you&amp;rsquo;ve probably guessed by the name) it&amp;rsquo;s written in Go, not python!
-pytoil is aimed primarily at python developers, it has some python specific features such as automatically creating and managing virtual environments.</description></item><item><title>msg</title><link>https://followtheprocess.github.io/projects/msg/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/msg/</guid><description>🚀 A lightweight console printing toolkit for Go CLIs.
-Source Code: https://github.com/FollowTheProcess/msg
-Free software: MIT License
-Project Description Who else is bored with boring grey text in CLIs? 🙋‍♀️
-We all have fancy terminals, utf-8 is everywhere, no one is still using the stock windows command prompt any more&amp;hellip; are they? 🤨
-When writing pytoil I discovered ines/wasabi for this exact purpose and absolutely loved it immediately:
-No dependencies outside the python stdlib Configurable if you want but the defaults look great Super easy to use and doesn&amp;rsquo;t get in the way of what your CLI is trying to do Then I started learning go and writing some CLIs I kept wishing I had it there too.</description></item><item><title>Py</title><link>https://followtheprocess.github.io/projects/py/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/py/</guid><description>(Experimental) port of Brett Cannon&amp;rsquo;s python-launcher to Go, with a few tweaks 😉
-Free software: MIT License Project Description Description of the original python-launcher:
-Taken directly from the official README
-Launch your Python interpreter the lazy/smart way!
-This project is an implementation of the py command for Unix-based platforms (with some potential experimentation for good measure 😉).
-The goal is to have py become the cross-platform command that Python users typically use to launch an interpreter while doing development.</description></item><item><title>Tag</title><link>https://followtheprocess.github.io/projects/tag/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/tag/</guid><description>Interact with semver git tags with ease! 🏷
-Free software: Apache Software License 2.0 Project Description Releasing new versions of software can be hard! Most projects have CI/CD pipelines set up to help with this and these pipelines are typically triggered on push of a new semver tag e.g. v1.2.4.
-I made tag because I can never remember the commands to correctly issue and push a tag:
-&amp;ldquo;Was it git tag v1.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on @FollowTheProcess</title><link>https://followtheprocess.github.io/projects/</link><description>Recent content in Projects on @FollowTheProcess</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>goignore</title><link>https://followtheprocess.github.io/projects/goignore/</link><pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/goignore/</guid><description>&lt;p>&lt;em>An extremely simple go CLI to hit the &lt;a href="https://www.toptal.com/developers/gitignore">gitignore API&lt;/a> with whatever you pass as command line arguments. The list of things you can pass here are documented on &lt;a href="https://www.toptal.com/developers/gitignore">gitignore.io&lt;/a>.&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Source Code&lt;/strong>: &lt;a href="https://github.com/FollowTheProcess/goignore/">https://github.com/FollowTheProcess/goignore&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>You&amp;rsquo;ll get back a .gitignore file saved to &lt;code>$CWD/.gitignore&lt;/code> with the contents generated from the API.&lt;/p>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>go install github.com/FollowTheProcess/goignore@latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="usage">Usage&lt;/h2>
+&lt;p>Inside the folder you want the &lt;code>.gitignore&lt;/code> to live in, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>goignore macos visualstudiocode go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will get you a &lt;code>.gitignore&lt;/code> file that looks like&amp;hellip;&lt;/p></description></item><item><title>pytoil</title><link>https://followtheprocess.github.io/projects/pytoil/</link><pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/pytoil/</guid><description>&lt;p>&lt;img src="https://followtheprocess.github.io/images/projects/pytoil/logo.png" alt="logo">&lt;/p>
+&lt;p>&lt;em>pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Source Code&lt;/strong>: &lt;a href="https://github.com/FollowTheProcess/pytoil">https://github.com/FollowTheProcess/pytoil&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Documentation&lt;/strong>: &lt;a href="https://FollowTheProcess.github.io/pytoil/">https://FollowTheProcess.github.io/pytoil/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="what-is-it">What is it?&lt;/h2>
+&lt;p>&lt;code>pytoil&lt;/code> is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!&lt;/p>
+&lt;p>pytoil is:&lt;/p>
+&lt;ul>
+&lt;li>Easy to use &amp;#x2705;&lt;/li>
+&lt;li>Easy to configure &amp;#x2705;&lt;/li>
+&lt;li>Safe (it won&amp;rsquo;t edit your repos at all) &amp;#x2705;&lt;/li>
+&lt;li>Useful! (I hope &amp;#x1f603;)&lt;/li>
+&lt;/ul>
+&lt;p>Say goodbye to janky bash scripts &amp;#x1f44b;&lt;/p></description></item><item><title>pymechtest</title><link>https://followtheprocess.github.io/projects/pymechtest/</link><pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/pymechtest/</guid><description>&lt;p>&lt;img src="https://followtheprocess.github.io/images/projects/pymechtest/logo.png" alt="logo">&lt;/p>
+&lt;p>&lt;em>pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Source Code&lt;/strong>: &lt;a href="https://github.com/FollowTheProcess/pymechtest">https://github.com/FollowTheProcess/pymechtest&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Documentation&lt;/strong>: &lt;a href="https://FollowTheProcess.github.io/pymechtest/">https://FollowTheProcess.github.io/pymechtest/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?&lt;/p></description></item><item><title>Fatigue Damage Prediction</title><link>https://followtheprocess.github.io/projects/fatigue/</link><pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/fatigue/</guid><description>&lt;p>&lt;em>Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.&lt;/em>&lt;/p>
+&lt;p>Tom Fleet, Sep 2020&lt;/p>
+&lt;h2 id="background">Background&lt;/h2>
+&lt;p>Repeated cyclic loading of a material will eventually lead to a phenomenon called &amp;ldquo;fatigue crack growth&amp;rdquo;. I&amp;rsquo;m not going to explain the details here but I&amp;rsquo;d point you to &lt;a href="https://en.wikipedia.org/wiki/Fatigue_(material)">this&lt;/a> for more info. Essentially, a crack will start to form and repeated cyclic loading will progressively grow this crack until it is large enough such that the remaining material can no longer handle the stress and the component will break.&lt;/p></description></item><item><title>Cookie Pypackage</title><link>https://followtheprocess.github.io/projects/cookie_pypackage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/cookie_pypackage/</guid><description>&lt;p>&lt;em>A modern python package template, inspired by the &lt;a href="https://github.com/audreyfeldroy/cookiecutter-pypackage">original&lt;/a> but with some updates bringing it to the forefront of modern python!&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Source Code&lt;/strong>: &lt;a href="https://github.com/FollowTheProcess/cookie_pypackage/">https://github.com/FollowTheProcess/cookie_pypackage&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="changes-from-the-original">Changes from the Original&lt;/h2>
+&lt;ul>
+&lt;li>Changed from &lt;a href="https://tox.readthedocs.io/en/latest/">tox&lt;/a> to &lt;a href="https://nox.thea.codes/en/stable/">nox&lt;/a> for flexible python test automation&lt;/li>
+&lt;li>Drop support for unittest in favour of &lt;a href="https://docs.pytest.org/en/stable/">pytest&lt;/a>&lt;/li>
+&lt;li>Change CI provider from Travis to &lt;a href="https://docs.github.com/en/free-pro-team@latest/actions">GitHub actions&lt;/a>&lt;/li>
+&lt;li>Change docs from &lt;a href="https://www.sphinx-doc.org/en/master/">Sphinx&lt;/a> to &lt;a href="https://www.mkdocs.org">MkDocs&lt;/a>&lt;/li>
+&lt;li>Built in support for static type hinting with &lt;a href="https://mypy.readthedocs.io/en/stable/">mypy&lt;/a>&lt;/li>
+&lt;li>Made compliant with PEP 517/518&lt;/li>
+&lt;/ul>
+&lt;h2 id="features">Features&lt;/h2>
+&lt;h3 id="github-actions">&lt;a href="https://docs.github.com/en/free-pro-team@latest/actions">GitHub Actions&lt;/a>&lt;/h3>
+&lt;p>The project template comes with a ready to go GitHub Actions configuration file which automates all your code quality checks:&lt;/p></description></item><item><title>Gotoil</title><link>https://followtheprocess.github.io/projects/gotoil/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/gotoil/</guid><description>&lt;p>&lt;img src="https://followtheprocess.github.io/images/projects/gotoil/logo.png" alt="logo">&lt;/p>
+&lt;p>Handy CLI to automate the development workflow &amp;#x1f916;&lt;/p>
+&lt;ul>
+&lt;li>Free software: Apache Software License 2.0&lt;/li>
+&lt;/ul>
+&lt;h2 id="project-description">Project Description&lt;/h2>
+&lt;p>&lt;code>gotoil&lt;/code> is a handly CLI tool that helps you stay on top of all your development projects, whether they&amp;rsquo;re on your local machine or on GitHub! It&amp;rsquo;s based on it&amp;rsquo;s sister project &lt;a href="https://github.com/FollowTheProcess/pytoil">pytoil&lt;/a> but (as you&amp;rsquo;ve probably guessed by the name) it&amp;rsquo;s written in Go, not python!&lt;/p>
+&lt;p>&lt;a href="https://github.com/FollowTheProcess/pytoil">pytoil&lt;/a> is aimed primarily at python developers, it has some python specific features such as automatically creating and managing virtual environments. Gotoil was written as a much more general tool and just implements the core features everyone is likely to use regardless of tech stack!&lt;/p></description></item><item><title>msg</title><link>https://followtheprocess.github.io/projects/msg/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/msg/</guid><description>&lt;img src="https://followtheprocess.github.io/images/projects/msg/logo.png" alt="logo" class="img-responsive" width=50% height=50%>
+&lt;p>&lt;em>&amp;#x1f680; A lightweight console printing toolkit for Go CLIs.&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Source Code&lt;/strong>: &lt;a href="https://github.com/FollowTheProcess/msg/">https://github.com/FollowTheProcess/msg&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Free software: MIT License&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="project-description">Project Description&lt;/h2>
+&lt;p>Who else is bored with boring grey text in CLIs? &amp;#x1f64b;&lt;/p>
+&lt;p>We all have fancy terminals, utf-8 is everywhere, no one is still using the stock windows command prompt any more&amp;hellip; are they? &amp;#x1f928;&lt;/p>
+&lt;p>When writing &lt;a href="https://github.com/FollowTheProcess/pytoil">pytoil&lt;/a> I discovered &lt;a href="https://github.com/ines/wasabi">ines/wasabi&lt;/a> for this exact purpose and absolutely loved it immediately:&lt;/p>
+&lt;ul>
+&lt;li>No dependencies outside the python stdlib&lt;/li>
+&lt;li>Configurable if you want but the defaults look great&lt;/li>
+&lt;li>Super easy to use and doesn&amp;rsquo;t get in the way of what your CLI is trying to do&lt;/li>
+&lt;/ul>
+&lt;p>Then I started learning go and writing some CLIs I kept wishing I had it there too.&lt;/p></description></item><item><title>Py</title><link>https://followtheprocess.github.io/projects/py/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/py/</guid><description>&lt;p>&lt;em>(Experimental) port of Brett Cannon&amp;rsquo;s &lt;a href="https://github.com/brettcannon/python-launcher">python-launcher&lt;/a> to Go, with a few tweaks 😉&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>Free software: MIT License&lt;/li>
+&lt;/ul>
+&lt;h2 id="project-description">Project Description&lt;/h2>
+&lt;p>&lt;strong>Description of the original &lt;a href="https://github.com/brettcannon/python-launcher">python-launcher&lt;/a>:&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>Taken directly from the official &lt;a href="https://github.com/brettcannon/python-launcher/blob/main/README.md">README&lt;/a>&lt;/em>&lt;/p>
+&lt;/blockquote>
+&lt;p>Launch your Python interpreter the lazy/smart way!&lt;/p>
+&lt;p>This project is an implementation of the &lt;code>py&lt;/code> command for Unix-based platforms
+(with some potential experimentation for good measure 😉).&lt;/p>
+&lt;p>The goal is to have &lt;code>py&lt;/code> become the cross-platform command that Python users
+typically use to launch an interpreter while doing development. By having a
+command that is version-agnostic when it comes to Python, it side-steps
+the &amp;ldquo;what should the &lt;code>python&lt;/code> command point to?&amp;rdquo; debate by clearly specifying
+that upfront (i.e. the newest version of Python that can be found). This also
+unifies the suggested command to document for launching Python on both Windows
+as Unix as &lt;code>py&lt;/code> has existed as the preferred
+&lt;a href="https://docs.python.org/3/using/windows.html#launcher">command on Windows&lt;/a>
+since 2012 with the release of Python 3.3.&lt;/p></description></item><item><title>Tag</title><link>https://followtheprocess.github.io/projects/tag/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://followtheprocess.github.io/projects/tag/</guid><description>&lt;img src="https://followtheprocess.github.io/images/projects/tag/logo.png" alt="logo" class="img-responsive" width=50% height=50%>
+&lt;p>Interact with semver git tags with ease! 🏷&lt;/p>
+&lt;ul>
+&lt;li>Free software: Apache Software License 2.0&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://github.com/FollowTheProcess/tag/raw/main/img/demo.gif" alt="demo">&lt;/p>
+&lt;h2 id="project-description">Project Description&lt;/h2>
+&lt;p>Releasing new versions of software can be hard! Most projects have CI/CD pipelines set up to help with this and these pipelines are typically triggered on push of a new &lt;a href="https://semver.org">semver&lt;/a> tag e.g. &lt;code>v1.2.4&lt;/code>.&lt;/p>
+&lt;p>I made tag because I can never remember the commands to correctly issue and push a tag:&lt;/p>
+&lt;ul>
+&lt;li>&amp;ldquo;Was it &lt;code>git tag v1.2.4&lt;/code>?&amp;rdquo;&lt;/li>
+&lt;li>&amp;ldquo;Do I need to annotate it: &lt;code>git tag -a v1.2.4&lt;/code>?&amp;rdquo;&lt;/li>
+&lt;li>&amp;ldquo;Do I need to add a message: &lt;code>git tag -a v1.2.4 -m &amp;quot;Some message&amp;quot;&lt;/code>?&lt;/li>
+&lt;li>&amp;ldquo;Wait how do I push it again: &lt;code>git push --tags&lt;/code> or &lt;code>git push origin v1.2.4&lt;/code>?&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;p>This invariably ends up with me doing it differently across every project, spending (even more) time on stackoverflow googling random git commands.&lt;/p></description></item></channel></rss>

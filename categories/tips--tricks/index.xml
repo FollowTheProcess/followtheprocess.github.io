@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tips &amp; Tricks on @FollowTheProcess</title><link>https://followtheprocess.github.io/categories/tips--tricks/</link><description>Recent content in Tips &amp; Tricks on @FollowTheProcess</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 01 Mar 2021 17:27:07 +0000</lastBuildDate><atom:link href="https://followtheprocess.github.io/categories/tips--tricks/index.xml" rel="self" type="application/rss+xml"/><item><title>Automate your Virtual Environments... and everything else.</title><link>https://followtheprocess.github.io/posts/auto_venv/</link><pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate><guid>https://followtheprocess.github.io/posts/auto_venv/</guid><description>&lt;p>We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8b949e;font-style:italic"># Make it&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m venv .venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8b949e;font-style:italic"># Activate it&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source .venv/bin/activate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8b949e;font-style:italic"># Install/upgrade seeds&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m pip install --upgrade pip setuptools wheel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8b949e;font-style:italic"># Install what you actually wanted&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m pip install things i actually wanted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m pip install this needs to be automated
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="automation">Automation&lt;/h2>
+&lt;p>I &lt;strong>LOVE&lt;/strong> automating things and given that the commands we see above have to be typed &lt;em>every time&lt;/em> you start a new project, this should scream automation to you!&lt;/p></description></item></channel></rss>
