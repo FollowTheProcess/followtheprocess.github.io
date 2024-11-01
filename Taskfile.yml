@@ -20,12 +20,12 @@ tasks:
     desc: Build and serve locally
     cmds:
       - open "http://localhost:1313/"
-      - hugo server --disableFastRender --buildDrafts
+      - hugo server --buildDrafts
 
   update:
     desc: Update theme
     cmds:
-      - git submodule foreach git pull origin main
+      - hugo mod get -u
 
   post:
     desc: Create a new post

@@ -2,137 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>@FollowTheProcess</title>
-    <link>http://localhost:1313/</link>
+    <link>/</link>
     <description>Recent content on @FollowTheProcess</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>tomfleet2018@gmail.com (Tom Fleet)</managingEditor>
+    <webMaster>tomfleet2018@gmail.com (Tom Fleet)</webMaster>
+    <copyright>© 2024 Tom Fleet</copyright>
+    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>What exactly is &#39;Modern Python&#39;?</title>
-      <link>http://localhost:1313/posts/modern_python/</link>
-      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/modern_python/</guid>
-      <description>&lt;p&gt;Python is going through a huge modernisation kick in recent years with things like &lt;a href=&#34;https://www.python.org/dev/peps/pep-0484/&#34;&gt;PEP 484 Type Hints&lt;/a&gt;, &lt;a href=&#34;https://github.com/markshannon/faster-cpython/blob/master/plan.md&#34;&gt;performance improvements&lt;/a&gt; coming in 3.11 and now being able to run on &lt;a href=&#34;https://twitter.com/ethanhs/status/1464308141105967104&#34;&gt;web assembly&lt;/a&gt;, moving away from the hangover of python 2 and fully embracing the new style of &amp;ldquo;modern&amp;rdquo; python 3.&lt;/p&gt;&#xA;&lt;p&gt;The python sphere is full of posts, packages and repos claiming to use or take advantage of &amp;ldquo;modern python&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;So you may be asking&amp;hellip; what exactly do people mean when they say &amp;ldquo;modern python&amp;rdquo;? What follows is a list of what I consider to the most essential components of &amp;ldquo;modern python&amp;rdquo; and by the end hopefully you&amp;rsquo;ll want to make sure you&amp;rsquo;re doing &amp;ldquo;modern python&amp;rdquo; too!&lt;/p&gt;</description>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
+      <author>tomfleet2018@gmail.com (Tom Fleet)</author>
+      <guid>/about/</guid>
+      <description></description>
+      
     </item>
-    <item>
-      <title>Self Documenting Makefile</title>
-      <link>http://localhost:1313/posts/makefile/</link>
-      <pubDate>Tue, 26 Oct 2021 22:05:11 +0100</pubDate>
-      <guid>http://localhost:1313/posts/makefile/</guid>
-      <description>&lt;p&gt;If you aren&amp;rsquo;t familiar with &lt;a href=&#34;https://www.gnu.org/software/make/&#34;&gt;make&lt;/a&gt;, it&amp;rsquo;s a command runner and build system capable of quite complicated stuff. It&amp;rsquo;s syntax can get complicated for non-trivial workflows and it has lots of weird quirks (like &lt;code&gt;.PHONY&lt;/code&gt;).&lt;/p&gt;&#xA;&lt;p&gt;However, it&amp;rsquo;s ubiquitous on nearly all systems and pretty easy to get going with so it&amp;rsquo;s very widely used in all sorts of projects in just about every language.&lt;/p&gt;&#xA;&lt;p&gt;In fact, a filename global search on GitHub yields an astonishing 112 million results!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Shut Down a Go HTTP Server Gracefully</title>
-      <link>http://localhost:1313/posts/graceful_shutdown/</link>
-      <pubDate>Mon, 25 Oct 2021 19:04:46 +0100</pubDate>
-      <guid>http://localhost:1313/posts/graceful_shutdown/</guid>
-      <description>&lt;p&gt;When developing HTTP services in Go, you will start and stop your server hundreds of times, think of the whole &lt;code&gt;go run main.go&lt;/code&gt; &lt;code&gt;ctrl + c&lt;/code&gt; loop!&lt;/p&gt;&#xA;&lt;p&gt;When you hit &lt;code&gt;ctrl + c&lt;/code&gt;, (on UNIX systems) your program is passed the &lt;code&gt;SIGINT&lt;/code&gt; Unix signal. The go runtime handles this and will stop your program relatively safely, but it&amp;rsquo;s not &lt;strong&gt;great&lt;/strong&gt; practice!&lt;/p&gt;&#xA;&lt;p&gt;What if you have database connection pools open or forgot to close a file etc.?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Just &gt; Make</title>
-      <link>http://localhost:1313/posts/just/</link>
-      <pubDate>Sun, 24 Oct 2021 10:22:23 +0100</pubDate>
-      <guid>http://localhost:1313/posts/just/</guid>
-      <description>&lt;p&gt;Makefiles (&lt;a href=&#34;https://www.gnu.org/software/make/&#34;&gt;GNU Make&lt;/a&gt;) are ubiquitous in software development and they are a fantastically useful tool! But for all but the simplest tasks, the syntax can get very unreadable and messy.&lt;/p&gt;&#xA;&lt;p&gt;Some programs like complex C or C++ projects will use Makefiles as the full build system it was designed to be, however most people tend to use Makefiles as simple task runners.&lt;/p&gt;&#xA;&lt;p&gt;Consider the following example for a simple Go project:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Using FieldsFunc in Go</title>
-      <link>http://localhost:1313/posts/fieldsfunc/</link>
-      <pubDate>Fri, 22 Oct 2021 20:34:50 +0100</pubDate>
-      <guid>http://localhost:1313/posts/fieldsfunc/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been playing with Go a lot recently, and one thing it lends itself &lt;strong&gt;really&lt;/strong&gt; well to is CLIs (Command Line Interfaces):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Runs very fast, feels snappy to use&lt;/li&gt;&#xA;&lt;li&gt;Standalone, statically linked binary - easy to distribute&lt;/li&gt;&#xA;&lt;li&gt;Easy cross-compilation for multiple platforms, OS&amp;rsquo;s and processor architectures&lt;/li&gt;&#xA;&lt;li&gt;Excellent libraries for creating CLIs e.g. &lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;cobra&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The excellent &lt;a href=&#34;https://github.com/cli/cli&#34;&gt;GitHub CLI&lt;/a&gt; is written in Go 👏🏻&lt;/p&gt;&#xA;&lt;p&gt;So needless to say, I&amp;rsquo;ve been writing more than a few CLIs: &lt;a href=&#34;https://github.com/FollowTheProcess/gotoil&#34;&gt;gotoil&lt;/a&gt;, &lt;a href=&#34;https://github.com/FollowTheProcess/tag&#34;&gt;tag&lt;/a&gt;, &lt;a href=&#34;https://github.com/FollowTheProcess/goignore&#34;&gt;goignore&lt;/a&gt; etc&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>goignore</title>
-      <link>http://localhost:1313/projects/goignore/</link>
-      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/goignore/</guid>
-      <description>&lt;p&gt;&lt;em&gt;An extremely simple go CLI to hit the &lt;a href=&#34;https://www.toptal.com/developers/gitignore&#34;&gt;gitignore API&lt;/a&gt; with whatever you pass as command line arguments. The list of things you can pass here are documented on &lt;a href=&#34;https://www.toptal.com/developers/gitignore&#34;&gt;gitignore.io&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/goignore/&#34;&gt;https://github.com/FollowTheProcess/goignore&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;You&amp;rsquo;ll get back a .gitignore file saved to &lt;code&gt;$CWD/.gitignore&lt;/code&gt; with the contents generated from the API.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go install github.com/FollowTheProcess/goignore@latest&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;&#xA;&lt;p&gt;Inside the folder you want the &lt;code&gt;.gitignore&lt;/code&gt; to live in, run:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;goignore macos visualstudiocode go&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will get you a &lt;code&gt;.gitignore&lt;/code&gt; file that looks like&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>pytoil</title>
-      <link>http://localhost:1313/projects/pytoil/</link>
-      <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/pytoil/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/pytoil/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;pytoil is a small, helpful CLI to help developers manage their local and remote projects with ease!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/pytoil&#34;&gt;https://github.com/FollowTheProcess/pytoil&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href=&#34;https://FollowTheProcess.github.io/pytoil/&#34;&gt;https://FollowTheProcess.github.io/pytoil/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-is-it&#34;&gt;What is it?&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;pytoil&lt;/code&gt; is a handy tool that helps you stay on top of all your projects, remote or local. It&amp;rsquo;s primarily aimed at python developers but you could easily use it to manage any project!&lt;/p&gt;&#xA;&lt;p&gt;pytoil is:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Easy to use &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Easy to configure &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Safe (it won&amp;rsquo;t edit your repos at all) &amp;#x2705;&lt;/li&gt;&#xA;&lt;li&gt;Useful! (I hope &amp;#x1f603;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Say goodbye to janky bash scripts &amp;#x1f44b;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Automate your Virtual Environments... and everything else.</title>
-      <link>http://localhost:1313/posts/auto_venv/</link>
-      <pubDate>Mon, 01 Mar 2021 17:27:07 +0000</pubDate>
-      <guid>http://localhost:1313/posts/auto_venv/</guid>
-      <description>&lt;p&gt;We all know virtual environments are important! But they are a bit of a pain if you do them a lot&amp;hellip;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Make it&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m venv .venv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Activate it&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source .venv/bin/activate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Install/upgrade seeds&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install --upgrade pip setuptools wheel&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b949e;font-style:italic&#34;&gt;# Install what you actually wanted&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install things i actually wanted&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m pip install this needs to be automated&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;automation&#34;&gt;Automation&lt;/h2&gt;&#xA;&lt;p&gt;I &lt;strong&gt;LOVE&lt;/strong&gt; automating things and given that the commands we see above have to be typed &lt;em&gt;every time&lt;/em&gt; you start a new project, this should scream automation to you!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Prevent Global Pip Installs</title>
-      <link>http://localhost:1313/posts/require_venv/</link>
-      <pubDate>Tue, 23 Feb 2021 14:21:11 +0000</pubDate>
-      <guid>http://localhost:1313/posts/require_venv/</guid>
-      <description>&lt;p&gt;This is going to be a short one, about something I discovered in the &lt;a href=&#34;https://pip.pypa.io/en/stable/&#34;&gt;pip&lt;/a&gt; documentation the other day and never knew about and I wish I did before I broke my python installation a dozen times when I was first starting out!&lt;/p&gt;&#xA;&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;&#xA;&lt;p&gt;We all know the dangers of breaking your system python installation with package conflicts.&lt;/p&gt;&#xA;&lt;p&gt;Virtual environments are probably the most common way of avoiding nasty package conflicts. A virtual environment is effectively (but not exactly) a self contained version of python you can install packages into without touching your system python.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Pyenv is Awesome!</title>
-      <link>http://localhost:1313/posts/pyenv/</link>
-      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pyenv/</guid>
-      <description>&lt;p&gt;I think everyone who has touched python at some point has seen this picture&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/python_environment.png&#34; alt=&#34;environment hell&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s mainly poking fun at the kinds of ways you can get your installation all screwed up if you&amp;rsquo;re not careful but is often misinterpreted as throwing shade on how python works.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://snarky.ca/deconstructing-xkcd-com-1987/&#34;&gt;Brett Cannon&amp;rsquo;s Blog Post&lt;/a&gt; has an excellent deconstruction of what this xkcd means and how to avoid it.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s lots you can do to avoid this happening to you. My favourite method is &lt;a href=&#34;https://github.com/pyenv/pyenv&#34;&gt;pyenv&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>pymechtest</title>
-      <link>http://localhost:1313/projects/pymechtest/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/pymechtest/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/pymechtest/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;pymechtest is a small, hopefully helpful python package to help engineers collate, process, analyse, and report on mechanical test data. I built pymechtest to help automate the things I did on a near-daily basis as a materials engineer. I hope it can prove some use to you too!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/pymechtest&#34;&gt;https://github.com/FollowTheProcess/pymechtest&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Documentation&lt;/strong&gt;: &lt;a href=&#34;https://FollowTheProcess.github.io/pymechtest/&#34;&gt;https://FollowTheProcess.github.io/pymechtest/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Have you ever had to process a bunch of csv output from a mechanical test machine, copying and pasting data into a hacky Excel template to calculate things like elastic modulus and yield strength?&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Buggy Accelerate Backend</title>
-      <link>http://localhost:1313/posts/buggy_accelerate/</link>
-      <pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/buggy_accelerate/</guid>
-      <description>&lt;p&gt;If you work on macOS and use &lt;a href=&#34;https://numpy.org&#34;&gt;numpy&lt;/a&gt;, chances are at some point you may have had some very confusing error message appear about &amp;ldquo;buggy accelerate backend&amp;hellip; something something&amp;hellip; polyfit sanity check.&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;If you&amp;rsquo;ve not had the joy of running into this particular error: &lt;a href=&#34;https://github.com/numpy/numpy/issues/15947&#34;&gt;https://github.com/numpy/numpy/issues/15947&lt;/a&gt; I don&amp;rsquo;t envy you.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s quite a lot of information on the GitHub issue thread about it and on stack overflow etc and honestly you should look at that for a better explanation, those people know far more than me! There&amp;rsquo;s lots of informed discussion on exactly &lt;em&gt;why&lt;/em&gt; this error is raised which I&amp;rsquo;m not going to go into here.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fatigue Damage Prediction</title>
-      <link>http://localhost:1313/projects/fatigue/</link>
-      <pubDate>Mon, 28 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/fatigue/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Using machine learning to predict fatigue crack growth under complex thermomechanical loads. Achieved a damage severity predicive accuracy of ±0.25mm and a positional predictive accuracy of ±7.0mm.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Tom Fleet, Sep 2020&lt;/p&gt;&#xA;&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;&#xA;&lt;p&gt;Repeated cyclic loading of a material will eventually lead to a phenomenon called &amp;ldquo;fatigue crack growth&amp;rdquo;. I&amp;rsquo;m not going to explain the details here but I&amp;rsquo;d point you to &lt;a href=&#34;https://en.wikipedia.org/wiki/Fatigue_(material)&#34;&gt;this&lt;/a&gt; for more info. Essentially, a crack will start to form and repeated cyclic loading will progressively grow this crack until it is large enough such that the remaining material can no longer handle the stress and the component will break.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cookie Pypackage</title>
-      <link>http://localhost:1313/projects/cookie_pypackage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/cookie_pypackage/</guid>
-      <description>&lt;p&gt;&lt;em&gt;A modern python package template, inspired by the &lt;a href=&#34;https://github.com/audreyfeldroy/cookiecutter-pypackage&#34;&gt;original&lt;/a&gt; but with some updates bringing it to the forefront of modern python!&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/cookie_pypackage/&#34;&gt;https://github.com/FollowTheProcess/cookie_pypackage&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;changes-from-the-original&#34;&gt;Changes from the Original&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Changed from &lt;a href=&#34;https://tox.readthedocs.io/en/latest/&#34;&gt;tox&lt;/a&gt; to &lt;a href=&#34;https://nox.thea.codes/en/stable/&#34;&gt;nox&lt;/a&gt; for flexible python test automation&lt;/li&gt;&#xA;&lt;li&gt;Drop support for unittest in favour of &lt;a href=&#34;https://docs.pytest.org/en/stable/&#34;&gt;pytest&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Change CI provider from Travis to &lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/actions&#34;&gt;GitHub actions&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Change docs from &lt;a href=&#34;https://www.sphinx-doc.org/en/master/&#34;&gt;Sphinx&lt;/a&gt; to &lt;a href=&#34;https://www.mkdocs.org&#34;&gt;MkDocs&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Built in support for static type hinting with &lt;a href=&#34;https://mypy.readthedocs.io/en/stable/&#34;&gt;mypy&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Made compliant with PEP 517/518&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;h3 id=&#34;github-actions&#34;&gt;&lt;a href=&#34;https://docs.github.com/en/free-pro-team@latest/actions&#34;&gt;GitHub Actions&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;The project template comes with a ready to go GitHub Actions configuration file which automates all your code quality checks:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Gotoil</title>
-      <link>http://localhost:1313/projects/gotoil/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/gotoil/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/projects/gotoil/logo.png&#34; alt=&#34;logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Handy CLI to automate the development workflow &amp;#x1f916;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free software: Apache Software License 2.0&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;gotoil&lt;/code&gt; is a handly CLI tool that helps you stay on top of all your development projects, whether they&amp;rsquo;re on your local machine or on GitHub! It&amp;rsquo;s based on it&amp;rsquo;s sister project &lt;a href=&#34;https://github.com/FollowTheProcess/pytoil&#34;&gt;pytoil&lt;/a&gt; but (as you&amp;rsquo;ve probably guessed by the name) it&amp;rsquo;s written in Go, not python!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/FollowTheProcess/pytoil&#34;&gt;pytoil&lt;/a&gt; is aimed primarily at python developers, it has some python specific features such as automatically creating and managing virtual environments. Gotoil was written as a much more general tool and just implements the core features everyone is likely to use regardless of tech stack!&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>msg</title>
-      <link>http://localhost:1313/projects/msg/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/msg/</guid>
-      <description>&lt;img src=&#34;http://localhost:1313/images/projects/msg/logo.png&#34; alt=&#34;logo&#34; class=&#34;img-responsive&#34; width=50% height=50%&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;#x1f680; A lightweight console printing toolkit for Go CLIs.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Source Code&lt;/strong&gt;: &lt;a href=&#34;https://github.com/FollowTheProcess/msg/&#34;&gt;https://github.com/FollowTheProcess/msg&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Free software: MIT License&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;&#xA;&lt;p&gt;Who else is bored with boring grey text in CLIs? &amp;#x1f64b;&lt;/p&gt;&#xA;&lt;p&gt;We all have fancy terminals, utf-8 is everywhere, no one is still using the stock windows command prompt any more&amp;hellip; are they? &amp;#x1f928;&lt;/p&gt;&#xA;&lt;p&gt;When writing &lt;a href=&#34;https://github.com/FollowTheProcess/pytoil&#34;&gt;pytoil&lt;/a&gt; I discovered &lt;a href=&#34;https://github.com/ines/wasabi&#34;&gt;ines/wasabi&lt;/a&gt; for this exact purpose and absolutely loved it immediately:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;No dependencies outside the python stdlib&lt;/li&gt;&#xA;&lt;li&gt;Configurable if you want but the defaults look great&lt;/li&gt;&#xA;&lt;li&gt;Super easy to use and doesn&amp;rsquo;t get in the way of what your CLI is trying to do&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Then I started learning go and writing some CLIs I kept wishing I had it there too.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Py</title>
-      <link>http://localhost:1313/projects/py/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/py/</guid>
-      <description>&lt;p&gt;&lt;em&gt;(Experimental) port of Brett Cannon&amp;rsquo;s &lt;a href=&#34;https://github.com/brettcannon/python-launcher&#34;&gt;python-launcher&lt;/a&gt; to Go, with a few tweaks 😉&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free software: MIT License&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Description of the original &lt;a href=&#34;https://github.com/brettcannon/python-launcher&#34;&gt;python-launcher&lt;/a&gt;:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;Taken directly from the official &lt;a href=&#34;https://github.com/brettcannon/python-launcher/blob/main/README.md&#34;&gt;README&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Launch your Python interpreter the lazy/smart way!&lt;/p&gt;&#xA;&lt;p&gt;This project is an implementation of the &lt;code&gt;py&lt;/code&gt; command for Unix-based platforms&#xA;(with some potential experimentation for good measure 😉).&lt;/p&gt;&#xA;&lt;p&gt;The goal is to have &lt;code&gt;py&lt;/code&gt; become the cross-platform command that Python users&#xA;typically use to launch an interpreter while doing development. By having a&#xA;command that is version-agnostic when it comes to Python, it side-steps&#xA;the &amp;ldquo;what should the &lt;code&gt;python&lt;/code&gt; command point to?&amp;rdquo; debate by clearly specifying&#xA;that upfront (i.e. the newest version of Python that can be found). This also&#xA;unifies the suggested command to document for launching Python on both Windows&#xA;as Unix as &lt;code&gt;py&lt;/code&gt; has existed as the preferred&#xA;&lt;a href=&#34;https://docs.python.org/3/using/windows.html#launcher&#34;&gt;command on Windows&lt;/a&gt;&#xA;since 2012 with the release of Python 3.3.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Tag</title>
-      <link>http://localhost:1313/projects/tag/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/tag/</guid>
-      <description>&lt;img src=&#34;http://localhost:1313/images/projects/tag/logo.png&#34; alt=&#34;logo&#34; class=&#34;img-responsive&#34; width=50% height=50%&gt;&#xA;&lt;p&gt;Interact with semver git tags with ease! 🏷&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free software: Apache Software License 2.0&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/FollowTheProcess/tag/raw/main/img/demo.gif&#34; alt=&#34;demo&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;project-description&#34;&gt;Project Description&lt;/h2&gt;&#xA;&lt;p&gt;Releasing new versions of software can be hard! Most projects have CI/CD pipelines set up to help with this and these pipelines are typically triggered on push of a new &lt;a href=&#34;https://semver.org&#34;&gt;semver&lt;/a&gt; tag e.g. &lt;code&gt;v1.2.4&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I made tag because I can never remember the commands to correctly issue and push a tag:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&amp;ldquo;Was it &lt;code&gt;git tag v1.2.4&lt;/code&gt;?&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;Do I need to annotate it: &lt;code&gt;git tag -a v1.2.4&lt;/code&gt;?&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;Do I need to add a message: &lt;code&gt;git tag -a v1.2.4 -m &amp;quot;Some message&amp;quot;&lt;/code&gt;?&lt;/li&gt;&#xA;&lt;li&gt;&amp;ldquo;Wait how do I push it again: &lt;code&gt;git push --tags&lt;/code&gt; or &lt;code&gt;git push origin v1.2.4&lt;/code&gt;?&amp;rdquo;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This invariably ends up with me doing it differently across every project, spending (even more) time on stackoverflow googling random git commands.&lt;/p&gt;</description>
-    </item>
+    
   </channel>
 </rss>

@@ -1,7 +1,3 @@
-# FollowTheProcess.github.io
+# Testy
 
-Repo housing the content for my GitHub pages site.
-
-Built with [Hugo]
-
-[Hugo]: https://gohugo.io
+WIP new personal site with Hugo and Blowfish

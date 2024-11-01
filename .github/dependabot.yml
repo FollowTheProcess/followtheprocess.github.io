@@ -8,6 +8,5 @@ updates:
 
   - package-ecosystem: gomod
     directory: /
-    rebase-strategy: auto
     schedule:
       interval: weekly
