@@ -1,3 +1,6 @@
-# Testy
+# `followtheprocess.github.io`
 
-WIP new personal site with Hugo and Blowfish
+Repo housing my personal site, built with [hugo] and [blowfish]
+
+[hugo]: https://gohugo.io
+[blowfish]: https://blowfish.page
