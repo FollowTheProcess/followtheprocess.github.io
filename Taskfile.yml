@@ -25,7 +25,8 @@ tasks:
   update:
     desc: Update theme
     cmds:
-      - hugo mod get -u
+      - git submodule update --remote --merge
+      - git submodule foreach git pull
 
   post:
     desc: Create a new post

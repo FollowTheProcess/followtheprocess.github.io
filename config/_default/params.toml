@@ -6,19 +6,18 @@
 # https://blowfish.page/docs/configuration/#theme-parameters
 
 colorScheme = "blowfish"
-defaultAppearance = "dark"                           # valid options: light or dark
+defaultAppearance = "dark"   # valid options: light or dark
 autoSwitchAppearance = false
 enableSearch = true
-enableCodeCopy = true
-replyByEmail = false
+enableCodeCopy = false
+mainSections = [ "posts" ]
+# robots = ""
 disableImageOptimization = false
-disableTextInHeader = false
-defaultBackgroundImage = "img/background.jpg"        # used as default for background images 
+defaultBackgroundImage = "img/background.jpg" # used as default for background images 
+# defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = true
-giteaDefaultServer = "https://git.fsfe.org"
-forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [author]
 name = "Tom Fleet"
@@ -33,7 +32,7 @@ links = [
 ]
 
 [header]
-layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
 
 [footer]
 showMenu = true
@@ -46,24 +45,22 @@ showScrollToTop = true
 layout = "background"                # valid options: page, profile, hero, card, background, custom
 homepageImage = "img/background.jpg" # used in: hero, and card
 showRecent = false
-showRecentItems = 5
-showMoreLink = false
-showMoreLinkDest = "/posts/"
-cardView = false
+showRecentItems = 6
+showMoreLink = true
+showMoreLinkDest = "/posts"
+cardView = true
 cardViewScreenWidth = false
-layoutBackgroundBlur = false         # only used when layout equals background
+layoutBackgroundBlur = true          # only used when layout equals background
 
 [article]
 showDate = true
 showViews = false
 showLikes = false
-showDateOnlyInArticle = false
 showDateUpdated = false
 showAuthor = true
-# showAuthorBottom = false
-showHero = false
-# heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
-layoutBackgroundBlur = false       # only used when heroStyle equals background or thumbAndBackground
+showHero = true
+heroStyle = "background"           # valid options: basic, big, background, thumbAndBackground
+layoutBackgroundBlur = true        # only used when heroStyle equals background or thumbAndBackground
 layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
 showBreadcrumbs = false
 showDraftLabel = true
@@ -75,29 +72,27 @@ showHeadingAnchors = true
 showPagination = true
 invertPagination = false
 showReadingTime = true
-showTableOfContents = false
-# showRelatedContent = false
-# relatedContentLimit = 3
+showTableOfContents = true
+showRelatedContent = true
+relatedContentLimit = 3
 showTaxonomies = false
 showAuthorsBadges = false
 showWordCount = true
-# sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
-showZenMode = false
+# sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
 
 [list]
-showHero = false
-# heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+showHero = true
+heroStyle = "background"           # valid options: basic, big, background, thumbAndBackground
 layoutBackgroundBlur = true        # only used when heroStyle equals background or thumbAndBackground
 layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
 showBreadcrumbs = false
-showSummary = false
+showSummary = true
 showViews = false
 showLikes = false
 showTableOfContents = false
-showCards = false
-orderByWeight = false
-groupByYear = true
-cardView = false
+showCards = true
+groupByYear = false
+cardView = true
 cardViewScreenWidth = false
 constrainItemsWidth = false
 
@@ -137,16 +132,6 @@ cardViewScreenWidth = false
 [fathomAnalytics]
 # site = "ABC12345"
 # domain = "llama.yoursite.com"
-
-[umamiAnalytics]
-# websiteid = "ABC12345"
-# domain = "llama.yoursite.com"
-# dataDomains = "yoursite.com,yoursite2.com"
-# enableTrackEvent = true
-
-[selineAnalytics]
-# token = "XXXXXX"
-# enableTrackEvent = true
 
 [buymeacoffee]
 # identifier = ""
