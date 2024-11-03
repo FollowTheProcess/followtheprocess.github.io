@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>@FollowTheProcess</title>
-    <link>/</link>
+    <link>//localhost:1313/</link>
     <description>Recent content on @FollowTheProcess</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>tomfleet2018@gmail.com (Tom Fleet)</managingEditor>
     <webMaster>tomfleet2018@gmail.com (Tom Fleet)</webMaster>
     <copyright>© 2024 Tom Fleet</copyright>
-    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>//localhost:1313/about/</link>
       <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
       <author>tomfleet2018@gmail.com (Tom Fleet)</author>
-      <guid>/about/</guid>
+      <guid>//localhost:1313/about/</guid>
       <description></description>
       
     </item>

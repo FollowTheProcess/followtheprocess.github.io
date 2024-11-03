@@ -22,6 +22,14 @@ tasks:
       - open "http://localhost:1313/"
       - hugo server --buildDrafts
 
+  check:
+    desc: Check content for typos
+    preconditions:
+      - sh: command -v typos
+        msg: typos CLI not installed, see https://github.com/crate-ci/typos?tab=readme-ov-file#install
+    cmds:
+      - typos
+
   update:
     desc: Update theme
     cmds:
