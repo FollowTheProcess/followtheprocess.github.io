@@ -10,5 +10,6 @@
     <webMaster>tomfleet2018@gmail.com (Tom Fleet)</webMaster>
     <copyright>© 2024 Tom Fleet</copyright>
     <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    
   </channel>
 </rss>

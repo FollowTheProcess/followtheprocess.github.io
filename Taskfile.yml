@@ -34,7 +34,7 @@ tasks:
     desc: Update theme
     cmds:
       - git submodule update --remote --merge
-      - git submodule foreach git pull
+      - git submodule foreach git pull origin main
 
   post:
     desc: Create a new post
