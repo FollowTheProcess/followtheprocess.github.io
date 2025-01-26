@@ -39,9 +39,9 @@ tasks:
   post:
     desc: Create a new post
     cmds:
-      - hugo new --kind post content/posts/{{.CLI_ARGS}}.md
+      - hugo new --kind post content/posts/{{.CLI_ARGS}}/index.md
 
   project:
     desc: Create a new project
     cmds:
-      - hugo new --kind project content/projects/{{.CLI_ARGS}}.md
+      - hugo new --kind project content/projects/{{.CLI_ARGS}}/index.md
