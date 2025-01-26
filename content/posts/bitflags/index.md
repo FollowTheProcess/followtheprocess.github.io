@@ -245,7 +245,7 @@ if config.Secure {
 You may imagine that an "on/off" switch like a `bool` might be implemented in computers as a single bit, `1` (on/true) or a `0` (off/false). But you'd be wrong! Hovering over the fields
 of our `Config` struct in an editor that uses [gopls] reveals that a `bool` has a size of 1 byte (or 8 bits)
 
-![boolsize](boolsize.png)
+![boolsize](images/boolsize.png)
 
 So thats 8x larger than the information it's expressing!
 
