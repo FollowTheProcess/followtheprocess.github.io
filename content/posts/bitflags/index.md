@@ -14,17 +14,33 @@ Dive into using Bitflags for lightning fast configuration and state management i
 
 You may have seen this sort of thing in Go code before:
 
+At the top, a constant block using `iota`
+
+```go
+// Most often a uint, sometimes given a new type
+type Something uint
+
+const (
+    FirstThing Something = 1 << iota
+    SecondThing
+    ThirdThing
+    // ... more
+)
+```
+
+Then it gets used somewhere, like in this struct for example
+
 ```go
 type someStruct struct {
     // ... other stuff here
-    flags uint // What?
+    flags Something // What?
 }
 ```
 
 And then further down you see something like:
 
 ```go
-if s.flag&SomeConfig {
+if s.flags&ThirdThing {
     // Do something...
 }
 ```
@@ -137,7 +153,7 @@ In order to understand this pattern, we need to remember that computers speak bi
 
 And so on... There are plenty of great explanations of binary on the internet so I won't do it to death here, hopefully you're following the basics!
 
-Observe that powers of 2 (1, 2, 4, 8, 16, 32 etc.) have only a single `1` bit with the rest being `0`, but the location of the set bit moves one slot to the left every time you increase the power of 2:
+Observe that powers of 2 (1, 2, 4, 8, 16, 32 etc.) have only a single `1` bit with the rest being `0`, but the location of this bit moves one slot to the left every time you increase the power of 2:
 
 | Decimal | Binary     |
 | ------- | ---------- |
@@ -192,7 +208,7 @@ The Go Wiki has a great page on `iota` here: <https://go.dev/wiki/Iota>
 You can see the `1` moving (or shifting... 😏) one slot to the left. This is because `iota` will increment by 1 on every new constant in the block (starting from 0). And our
 constant block above has `1 << iota` as the initial expression.
 
-In other words, take the value of iota and left shift `1` (`00000001`) by that value:
+In other words, take the value of iota and left shift `1` (`00000001`) by that value. Here's a breakdown of what's really going on in the snippet above:
 
 | Constant                   | `iota` | Effective Expression | Value (Decimal) | Value (Binary) |
 | -------------------------- | ------ | -------------------- | --------------- | -------------- |
@@ -205,16 +221,19 @@ In other words, take the value of iota and left shift `1` (`00000001`) by that v
 | `sixtyFour`                | `6`    | `1 << 6`             | `64`            | `01000000`     |
 | `oneHundredAndTwentyEight` | `7`    | `1 << 7`             | `128`           | `10000000`     |
 
-So we've already answered two of our questions from the top of the article!
+You can see that `iota` just starts at zero, and increments by 1 every time there's a new constant in the block. On each new constant we're left shifting `1` by that new `iota`
+amount, again starting from zero. So `one` is `1 << 0`, `two` is `1 << 1` and so on.
+
+So we've actually already answered two of our questions from the top of the article!
 
 > Why is iota involved? And why are we bitshifting to the left?
 
 Because this is is an easy way of generating integers that are powers of two, especially when combined with Go's `iota` which lets us do this at compile time and give the
-resulting constants helpful names.
+resulting constants helpful names. These binary integers differ only by a single bit, the position of which moves left by one slot on every power of two.
 
 ## Configuration
 
-So how does this relate to configuration and state management? This power of 2 thing is cool but what do I actually use it for?
+So how does this relate to configuration and state management? This power of two thing is cool but what do I actually use it for?
 
 Well imagine you have a program that is configurable in some way, with toggles and switches that indicate that it should do one thing or another.
 
@@ -242,7 +261,7 @@ if config.Secure {
 }
 ```
 
-You may imagine that an "on/off" switch like a `bool` might be implemented in computers as a single bit, `1` (on/true) or a `0` (off/false). But you'd be wrong! Hovering over the fields
+You may imagine that a `bool` might be implemented in computers as a single bit, `1` (on/true) or a `0` (off/false). But you'd be wrong! Hovering over the fields
 of our `Config` struct in an editor that uses [gopls] reveals that a `bool` has a size of 1 byte (or 8 bits)
 
 ![boolsize](images/boolsize.png)
@@ -256,7 +275,9 @@ in terms of bytes (8 bits). So even though bools contain only 1 bit of informati
 
 And our `Config` struct has 4 of these, so for expressing 4 bits of information, we're using `4 * 8 bits = 32 bits` of space. Surely we can be more efficient than that? 🤔
 
-Recall our integer constants increasing in powers of two, and how each only has a single bit set to `1`, which is one position to the left in every power of 2.
+Of course!
+
+Recall our integer constants increasing in powers of two, and how each only has a single bit set to `1`, the position of which moves to the left in every increasing power of two.
 
 What if we named our constants differently... and gave them a type...
 
@@ -294,21 +315,31 @@ Secure: 8   00001000
 
 Can you tell where we're going yet?
 
-In this setup, it would be pretty easy to check if `Cache` was true, all we'd have to do is look at the first bit of the `uint` and check if it was `1` or `0` (`true` or `false`). Likewise for
-`Reset`, we'd look at the second bit. `Debug`, the third bit... and so on.
+In this setup, it would be pretty easy to check if `Cache` was true, all we'd have to do is look at the right-most bit of the `uint` and check if it was `1` or `0`
+(`true` or `false`). Likewise for `Reset`, we'd look at the second bit, from the right. `Debug`, the third bit... and so on.
 
-Let's look at some examples:
+Let's look at some examples to drive the point home:
 
 - `00000001` -> `Cache == true`
 - `00000010` -> `Reset == true`
 - `00000011` -> `Cache == true && Reset == true`
 
-So how do we express these states in actual Go code?
+So how do we express these states in actual Go code? We know how to do it in the struct approach:
+
+```go
+config := Config{
+    Cache = true // Turn cache on
+    Reset = true // And reset
+}
+```
+
+But what about now using these numbers to encode our state? 🤔
 
 Enter [bitwise operators]!
 
 ```go
-// New blank config, all zeros
+// New blank config, uses the zero value for Config
+// which is actually just a uint, so 0 or 00000000 in binary
 var config Config
 
 // Set Cache = true using bitwise OR (|)
@@ -329,9 +360,39 @@ if config&Cache != 0 {
 }
 ```
 
-Now we've answered all of our questions! Hopefully this makes a bit more sense, but we're not done yet! Let's look at a real use case, an ANSI colour library!
+You can see there's a 1:1 mapping between the struct/bool variant, and our uint variant. We can do all the same operations with our toggles:
+
+- Combine them to form a group of settings (using bitwise OR `|`)
+- Turn them off (using bitwise AND NOT `&^`)
+- Check if one of them is set (using bitwise AND `&`)
+
+## Why?
+
+So why do it like this? Isn't the struct of bools clearer?
+
+In a word... performance.
+
+- The space required to store `n` booleans is now `n` bits rather than `n * 8` in the struct layout. This can add up!
+- Modern computers are **really** fast at doing bitwise operations like this... like *really* fast
+- The constants are just baked into your compiled program, so no memory allocation needed
+- This pattern often results in better CPU cache locality than large structs, the entire `uint` can fit into a cache line most of the time
+
+I also think it's quite a nice pattern once you get used to it and have seen it in the wild a few times, being able to compose settings at compile time is very useful. You
+can even wrap the bitwise operator stuff in functions and methods to present a nicer API.
+
+## Recap
+
+We've now answered all of our questions from the top of the post! Hopefully this makes a bit more sense but let's have a quick recap before seeing a real example:
+
+- Integers of increasing powers of two produce binary representations that differ by a single bit, the position of which moves left with each power of two
+- The Go `iota` mechanism provides a nice way of generating such integers at compile time and giving them useful names
+- By thinking of integers as this string of bits, we can efficiently store boolean information like configuration or state
+- Bitwise operators can act on this representation and tell us which bits (settings) are set, and otherwise manipulate them
+- Modern computers can do this *very* quickly and the data structure lends itself to high performance due to its small size and efficient operations
 
 ## A Real Example: Hue
+
+Let's try and drive this home with an example from a real codebase.
 
 I recently wrote `hue`, an ANSI terminal colour library for Go, it leverages all the patterns we've discussed above to be stupidly simple to use and significantly
 faster than most of the alternatives.
@@ -361,6 +422,10 @@ These codes work like this:
 # Print "Hello" in green (32)
 echo "\x1b[32mHello\x1b[0m"
 ```
+
+Each style has a different number associated to it, and you can combine arbitrary numbers together to compose a new style.
+
+Hopefully this is triggering alarm bells after reading this far!? Lots of numbers... each one a unique style... can compose together... 🕵🏻‍♂️
 
 ### `hue.Style`
 
@@ -395,7 +460,7 @@ So styles can be composed as compile time constants using [bitwise operators], j
 const style = hue.Bold | hue.Cyan | hue.Underline
 ```
 
-And then I turn these styles into [ANSI Escape Codes] using some of the stuff we've seen above. There's a big switch statement that maps these `Style`s to their ANSI code, here's a small snippet:
+Annoyingly the ANSI codes aren't powers of two, so I turn these styles into [ANSI Escape Codes] using some of the stuff we've seen above. There's a big switch statement that maps these `Style`s to their ANSI code, here's a small snippet:
 
 ```go
 switch s { //nolint: exhaustive // We actually don't want this one to be exhaustive
@@ -439,6 +504,8 @@ for style := Bold; style <= BrightWhiteBackground; style <<= 1 {
 
 return strings.Join(styles, ";"), nil
 ```
+
+And that's it!
 
 ## See Also
 
