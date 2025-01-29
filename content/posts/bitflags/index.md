@@ -3,7 +3,7 @@ title: "Bitflags Demystified"
 date: 2025-01-26
 draft: false
 summary: "Dive into using Bitflags for lightning fast configuration and state management in Go"
-tags: ["go"]
+tags: ["go", "patterns"]
 ---
 
 {{<lead>}}
