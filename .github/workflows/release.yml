@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 0
 
       - name: Spell Check
-        uses: crate-ci/typos@v1.30.2
+        uses: crate-ci/typos@v1.31.1
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
